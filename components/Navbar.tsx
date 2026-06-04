@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 group">
-              <Image src="/mainlogo.png" alt="Nexus AI Logo" width={32} height={32} className="group-hover:opacity-80 transition-opacity" />
+              <Image src="/mainlogo.png" alt="Nexus AI Logo" width={100} height={100} className="h-8 w-auto object-contain group-hover:opacity-80 transition-opacity" />
               <span className="text-xl font-bold tracking-tight">Nexus AI</span>
             </Link>
           </div>
@@ -48,7 +48,7 @@ export default function Navbar() {
             <Link href="/contact">
               <Button variant="outline" size="sm">Contact</Button>
             </Link>
-            <Link href="/demo">
+            <Link href="/#booking-form">
               <Button size="sm">Book a Demo</Button>
             </Link>
           </div>
@@ -83,7 +83,7 @@ export default function Navbar() {
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="outline" className="w-full">Contact</Button>
               </Link>
-              <Link href="/demo" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/#booking-form" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="w-full">Book a Demo</Button>
               </Link>
             </div>

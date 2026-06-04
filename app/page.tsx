@@ -2,6 +2,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { ArrowRight, Calendar, PhoneCall, Stethoscope, Scale, Home, Zap, Clock, ShieldCheck } from "lucide-react";
+import BookingForm from "@/components/BookingForm";
 
 export default function HomePage() {
   return (
@@ -19,7 +20,7 @@ export default function HomePage() {
                 Nexus AI builds intelligent voice systems that answer calls, qualify leads, book appointments, and automate customer conversations for clinics and service businesses.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
+                <Link href="/#booking-form">
                   <Button size="lg" className="w-full sm:w-auto group">
                     Book a Demo
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -47,8 +48,11 @@ export default function HomePage() {
                   ></div>
                 ))}
               </div>
-              <div className="absolute bottom-4 left-4 right-4 bg-background/80 backdrop-blur-sm border border-border p-3 rounded-lg flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              <div className="absolute bottom-4 left-4 right-4 bg-background/80 backdrop-blur-sm border border-border p-3 rounded-lg flex items-center gap-3 shadow-lg">
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </div>
                 <p className="text-sm font-medium">AI Receptionist Active & Listening...</p>
               </div>
             </FadeIn>
@@ -134,19 +138,14 @@ export default function HomePage() {
           </FadeIn>
 
           <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl overflow-hidden border border-gray-800 bg-black aspect-video relative flex items-center justify-center group cursor-pointer">
-              {/* This would be the Loom Embed. Using a placeholder. */}
-              <div className="absolute inset-0 bg-gray-900/50 group-hover:bg-gray-900/30 transition-colors flex items-center justify-center">
-                <div className="w-20 h-20 rounded-full bg-white text-black flex items-center justify-center pl-1 group-hover:scale-110 transition-transform">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-              <div className="text-center z-10 opacity-50 font-mono text-sm">
-                [ Loom Video Embed Placeholder ]<br />
-                Flow: Booking Appointment & Handling Sunday Rejection
-              </div>
+            <div className="rounded-2xl overflow-hidden border border-gray-800 bg-black aspect-video relative flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+              <iframe
+                src="https://www.loom.com/embed/2f6a4eeb2dc1471ea8e0ce7af6ffac8a?hide_owner=true&hide_share=true&hide_title=true&embed_source=logo"
+                frameBorder="0"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full rounded-2xl"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              ></iframe>
             </div>
 
             <div className="mt-8 bg-gray-900 rounded-xl p-6 border border-gray-800 font-mono text-sm h-64 overflow-y-auto">
@@ -252,19 +251,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-32">
+      {/* Final CTA & Booking Form */}
+      <section id="booking-form" className="py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">See What an AI Receptionist Could Save Your Business</h2>
             <p className="text-xl text-muted-foreground mb-10">
-              Stop missing calls. Start automating your growth.
+              Stop missing calls. Start automating your growth. Fill out the form below to book a live demo.
             </p>
-            <Link href="/contact">
-              <Button size="lg" className="w-full sm:w-auto h-14 text-lg px-10">
-                Book a Strategy Call
-              </Button>
-            </Link>
+            <BookingForm />
           </FadeIn>
         </div>
       </section>
