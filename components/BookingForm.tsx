@@ -45,13 +45,27 @@ export default function BookingForm() {
 
   if (formStatus === "success") {
     return (
-      <div className="py-12 flex flex-col items-center justify-center text-center space-y-4">
-        <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
-          <CheckCircle2 className="w-8 h-8" />
+      <div className="w-full animate-fadeIn mt-12 max-w-3xl mx-auto">
+        <div className="text-center mb-6">
+          <span className="inline-block bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 text-xs px-3 py-1 rounded-full font-medium mb-2">
+            ✓ Information Saved Securely
+          </span>
+          <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
+            Select Your Demo Time Below
+          </h3>
         </div>
-        <p className="text-xl font-medium text-foreground max-w-md">
-          Thank you! Our AI provisioning team will reach out to you within 24 hours to schedule your live voice deployment demo.
-        </p>
+        
+        {/* Live Cal.com Router */}
+        <div className="w-full h-[600px] rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white">
+          <iframe 
+            src="https://cal.com/ritik-kumar-grealv/15min?embed=true" 
+            width="100%" 
+            height="100%" 
+            frameBorder="0" 
+            scrolling="no"
+            className="w-full h-full"
+          />
+        </div>
       </div>
     );
   }
