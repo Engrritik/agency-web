@@ -52,12 +52,14 @@ export default function Demo() {
 
         {/* Main Loom Embed */}
         <FadeIn delay={0.1} className="max-w-5xl mx-auto mb-32">
-          <div className="aspect-video w-full bg-foreground rounded-2xl overflow-hidden relative group flex flex-col items-center justify-center text-background cursor-pointer">
-            <div className="w-20 h-20 bg-background/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Play className="w-8 h-8 ml-1" />
-            </div>
-            <p className="font-mono text-sm opacity-80">[ Primary Loom Video Embed Placeholder ]</p>
-            <p className="font-mono text-xs opacity-50 mt-2">Full Platform Walkthrough</p>
+          <div className="aspect-video w-full bg-black rounded-2xl overflow-hidden relative shadow-[0_0_30px_rgba(255,255,255,0.05)] border border-gray-800">
+            <iframe
+              src="https://www.loom.com/embed/2f6a4eeb2dc1471ea8e0ce7af6ffac8a?hide_owner=true&hide_share=true&hide_title=true&embed_source=logo"
+              frameBorder="0"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full rounded-2xl"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            ></iframe>
           </div>
         </FadeIn>
 
