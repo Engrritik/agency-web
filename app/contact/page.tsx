@@ -219,18 +219,14 @@ export default function Contact() {
                     
                     {selectedDate && (
                       <div className="mt-6 pt-4 border-t border-border animate-in fade-in slide-in-from-top-2 duration-300">
-                        <div className="font-bold mb-3 text-sm text-left">Available Times</div>
-                        <div className="grid grid-cols-2 gap-2">
-                          {["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"].map((time) => (
-                            <div 
-                              key={time}
-                              onClick={() => setSelectedTime(time)}
-                              className={`p-2 text-sm border rounded-md cursor-pointer text-center transition-all ${selectedTime === time ? 'bg-foreground text-background border-foreground font-medium ring-2 ring-foreground/20 ring-offset-1 ring-offset-background' : 'border-border hover:border-foreground/30'}`}
-                            >
-                              {time}
-                            </div>
-                          ))}
-                        </div>
+                        <label htmlFor="time-picker" className="block font-bold mb-3 text-sm text-left">Choose your preferred time</label>
+                        <input 
+                          type="time" 
+                          id="time-picker"
+                          value={selectedTime || ""}
+                          onChange={(e) => setSelectedTime(e.target.value)}
+                          className="w-full h-11 px-4 rounded-md border border-border bg-background focus:outline-none focus:ring-1 focus:ring-foreground transition-all"
+                        />
                       </div>
                     )}
                   </div>
