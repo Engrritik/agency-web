@@ -9,7 +9,11 @@ import { CheckCircle2, Clock, Mail } from "lucide-react";
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
   const [selectedDate, setSelectedDate] = useState<number | null>(null);
-  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [hour, setHour] = useState("09");
+  const [minute, setMinute] = useState("00");
+  const [ampm, setAmpm] = useState("AM");
+  
+  const selectedTime = selectedDate ? `${hour}:${minute} ${ampm}` : null;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -209,7 +213,7 @@ export default function Contact() {
                       {[...Array(30)].map((_, i) => (
                         <div 
                           key={i} 
-                          onClick={() => { setSelectedDate(i + 1); setSelectedTime(null); }}
+                          onClick={() => setSelectedDate(i + 1)}
                           className={`p-2 rounded-full hover:bg-muted cursor-pointer transition-colors ${selectedDate === i + 1 ? 'bg-foreground text-background font-bold hover:bg-foreground/90' : ''}`}
                         >
                           {i + 1}
@@ -219,14 +223,45 @@ export default function Contact() {
                     
                     {selectedDate && (
                       <div className="mt-6 pt-4 border-t border-border animate-in fade-in slide-in-from-top-2 duration-300">
-                        <label htmlFor="time-picker" className="block font-bold mb-3 text-sm text-left">Choose your preferred time</label>
-                        <input 
-                          type="time" 
-                          id="time-picker"
-                          value={selectedTime || ""}
-                          onChange={(e) => setSelectedTime(e.target.value)}
-                          className="w-full h-11 px-4 rounded-md border border-border bg-background focus:outline-none focus:ring-1 focus:ring-foreground transition-all"
-                        />
+                        <label className="block font-bold mb-3 text-sm text-left">Choose your preferred time</label>
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 flex bg-background border border-border rounded-md overflow-hidden focus-within:ring-1 focus-within:ring-foreground transition-all h-11">
+                            <select 
+                              value={hour} 
+                              onChange={(e) => setHour(e.target.value)}
+                              className="w-full bg-transparent px-3 py-2 outline-none appearance-none text-center cursor-pointer hover:bg-muted/50"
+                            >
+                              {Array.from({length: 12}, (_, i) => String(i + 1).padStart(2, '0')).map(h => (
+                                <option key={h} value={h}>{h}</option>
+                              ))}
+                            </select>
+                            <span className="flex items-center text-muted-foreground font-bold">:</span>
+                            <select 
+                              value={minute} 
+                              onChange={(e) => setMinute(e.target.value)}
+                              className="w-full bg-transparent px-3 py-2 outline-none appearance-none text-center cursor-pointer hover:bg-muted/50"
+                            >
+                              {["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"].map(m => (
+                                <option key={m} value={m}>{m}</option>
+                              ))}
+                            </select>
+                          </div>
+                          
+                          <div className="flex bg-muted p-1 rounded-md border border-border h-11 w-24">
+                            <button 
+                              className={`flex-1 rounded text-xs font-bold transition-all ${ampm === "AM" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                              onClick={() => setAmpm("AM")}
+                            >
+                              AM
+                            </button>
+                            <button 
+                              className={`flex-1 rounded text-xs font-bold transition-all ${ampm === "PM" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                              onClick={() => setAmpm("PM")}
+                            >
+                              PM
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
