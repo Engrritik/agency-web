@@ -151,7 +151,7 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-muted-foreground" />
                   <h3 className="font-semibold">Email Us</h3>
                 </div>
-                <p className="text-muted-foreground">founder@nexusai.com</p>
+                <p className="text-muted-foreground"><a href="mailto:ritik@buildwithnexusai.com" className="hover:text-foreground transition-colors">ritik@buildwithnexusai.com</a></p>
               </div>
               <div className="p-6 border border-border rounded-xl bg-muted/30">
                 <div className="flex items-center gap-3 mb-2">
