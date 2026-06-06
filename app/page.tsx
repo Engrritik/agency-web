@@ -33,9 +33,9 @@ export default function HomePage() {
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2} className="relative hidden lg:block h-[400px] w-full rounded-2xl border border-border bg-muted/30 overflow-hidden flex items-center justify-center">
+            <FadeIn delay={0.2} className="relative hidden lg:flex flex-col h-[400px] w-full rounded-2xl border border-border bg-muted/30 overflow-hidden pb-20">
               {/* Minimal Animated Voice Wave Visualization placeholder */}
-              <div className="flex items-center gap-1.5 h-24">
+              <div className="flex items-center justify-center gap-1.5 h-20 mt-4">
                 {[...Array(15)].map((_, i) => (
                   <div
                     key={i}
@@ -48,12 +48,25 @@ export default function HomePage() {
                   ></div>
                 ))}
               </div>
+              
+              {/* Live Call Transcript */}
+              <div className="flex-1 px-6 flex flex-col justify-center gap-3">
+                {/* Patient Message */}
+                <div className="self-start bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[85%] text-sm shadow-sm leading-relaxed">
+                  Hi, I have a broken crown and need to book an emergency appointment with the dentist as soon as possible.
+                </div>
+                {/* AI Receptionist Message */}
+                <div className="self-end bg-black dark:bg-neutral-700 text-white rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] text-sm shadow-sm leading-relaxed">
+                  I can absolutely help you with that emergency. I have an open slot at 2:30 PM today with Dr. Doe, or tomorrow morning at 9:00 AM. Which one works better for you?
+                </div>
+              </div>
+
               <div className="absolute bottom-4 left-4 right-4 bg-background/80 backdrop-blur-sm border border-border p-3 rounded-lg flex items-center gap-3 shadow-lg">
-                <div className="relative flex h-3 w-3">
+                <div className="relative flex h-3 w-3 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </div>
-                <p className="text-sm font-medium">AI Receptionist Active & Listening...</p>
+                <p className="text-sm font-medium truncate">AI Receptionist Active & Listening...</p>
               </div>
             </FadeIn>
           </div>

@@ -12,9 +12,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Nexus AI | AI Voice Agents for Local Businesses",
   description: "Nexus AI builds intelligent voice systems that answer calls, qualify leads, book appointments, and automate customer conversations for clinics and service businesses.",
-  icons: {
-    icon: "/mainfav.png",
-  },
 };
 
 export default function RootLayout({
