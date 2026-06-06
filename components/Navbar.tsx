@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 group">
-              <Image src="/mainlogo.png" alt="Nexus AI Logo" width={100} height={100} className="h-8 w-auto object-contain group-hover:opacity-80 transition-opacity" />
+              <Image src="/mainlogo.png" alt="Nexus AI Logo" width={100} height={100} className="h-8 sm:h-9 w-auto object-contain group-hover:opacity-80 transition-opacity" />
             </Link>
           </div>
 
