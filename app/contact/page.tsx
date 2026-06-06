@@ -1,12 +1,15 @@
 "use client";
 
 import FadeIn from "@/components/ui/FadeIn";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { useState } from "react";
 import { CheckCircle2, Clock, Mail } from "lucide-react";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [selectedDate, setSelectedDate] = useState<number | null>(null);
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -134,6 +137,25 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
+                  <div className="space-y-2 border border-border p-4 rounded-md bg-muted/20">
+                    <label className="text-sm font-medium flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-muted-foreground" />
+                      Selected Demo Time
+                    </label>
+                    <div className="text-sm text-muted-foreground mt-1">
+                      {selectedDate && selectedTime ? (
+                        <span className="font-semibold text-foreground">
+                          Scheduled for Day {selectedDate} at {selectedTime}
+                        </span>
+                      ) : (
+                        "No time selected. Please select a date and time from the right panel."
+                      )}
+                    </div>
+                    {/* Hidden inputs to submit to Formspree */}
+                    <input type="hidden" name="DemoDate" value={selectedDate ? `Day ${selectedDate}` : "Not selected"} />
+                    <input type="hidden" name="DemoTime" value={selectedTime || "Not selected"} />
+                  </div>
+
                   <Button 
                     type="submit" 
                     className="w-full h-12"
@@ -173,23 +195,44 @@ export default function Contact() {
               
               {/* Simulate Calendly Embed Container */}
               <div className="w-full h-full bg-background rounded-xl border border-border relative z-10 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 rounded-full border border-border bg-muted/50 mx-auto mb-6 flex items-center justify-center">
-                    <span className="font-bold text-xl">NAI</span>
+                <div className="text-center p-8 w-full">
+                  <div className="w-20 h-20 rounded-full border border-border bg-muted/50 mx-auto mb-6 flex items-center justify-center overflow-hidden p-3">
+                    <Image src="/favicon.ico" alt="Nexus AI Logo" width={56} height={56} className="w-full h-full object-contain" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Nexus AI Strategy Session</h3>
-                  <p className="text-muted-foreground mb-8">30 min, Web conferencing details provided upon confirmation.</p>
+                  <p className="text-muted-foreground mb-8 text-sm">30 min, Web conferencing details provided upon confirmation.</p>
                   
-                  <div className="max-w-xs mx-auto border border-border rounded-lg bg-card p-6">
+                  <div className="max-w-sm mx-auto border border-border rounded-lg bg-card p-6 shadow-sm">
                     <div className="font-bold mb-4">Select a Date & Time</div>
                     <div className="grid grid-cols-7 gap-2 text-sm text-center mb-4">
                       {['S','M','T','W','T','F','S'].map((d,i) => <div key={i} className="text-muted-foreground font-medium">{d}</div>)}
                       {[...Array(30)].map((_, i) => (
-                        <div key={i} className={`p-2 rounded-full hover:bg-muted cursor-pointer transition-colors ${i === 15 ? 'bg-foreground text-background font-bold hover:bg-foreground/90' : ''}`}>
+                        <div 
+                          key={i} 
+                          onClick={() => { setSelectedDate(i + 1); setSelectedTime(null); }}
+                          className={`p-2 rounded-full hover:bg-muted cursor-pointer transition-colors ${selectedDate === i + 1 ? 'bg-foreground text-background font-bold hover:bg-foreground/90' : ''}`}
+                        >
                           {i + 1}
                         </div>
                       ))}
                     </div>
+                    
+                    {selectedDate && (
+                      <div className="mt-6 pt-4 border-t border-border animate-in fade-in slide-in-from-top-2 duration-300">
+                        <div className="font-bold mb-3 text-sm text-left">Available Times</div>
+                        <div className="grid grid-cols-2 gap-2">
+                          {["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"].map((time) => (
+                            <div 
+                              key={time}
+                              onClick={() => setSelectedTime(time)}
+                              className={`p-2 text-sm border rounded-md cursor-pointer text-center transition-all ${selectedTime === time ? 'bg-foreground text-background border-foreground font-medium ring-2 ring-foreground/20 ring-offset-1 ring-offset-background' : 'border-border hover:border-foreground/30'}`}
+                            >
+                              {time}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
