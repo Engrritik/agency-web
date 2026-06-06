@@ -8,13 +8,29 @@ import { CheckCircle2, Clock, Mail } from "lucide-react";
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus("submitting");
-    // Simulate form submission to Formspree
-    setTimeout(() => {
-      setFormStatus("success");
-    }, 1500);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mgobepzd", {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setFormStatus("success");
+      } else {
+        console.error("Form submission failed");
+        setFormStatus("idle");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setFormStatus("idle");
+    }
   };
 
   return (
@@ -57,8 +73,6 @@ export default function Contact() {
                 <form 
                   onSubmit={handleSubmit}
                   className="space-y-6"
-                  // action="https://formspree.io/f/your_id" // Ready for Formspree
-                  // method="POST"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">

@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <Image src="/favicon.ico" alt="Nexus AI Logo" width={28} height={28} className="opacity-80 group-hover:opacity-100 transition-opacity" />
+              <Image src="/favicon.ico" alt="Nexus AI Logo" width={36} height={36} className="h-8 sm:h-9 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
               <span className="font-bold text-xl text-foreground">Nexus AI</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
