@@ -7,8 +7,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <Image src="/mainlogo.png" alt="Nexus AI Logo" width={24} height={24} className="opacity-80" />
+            <Link href="/" className="flex items-center gap-2 mb-4 group">
+              <Image src="/favicon.ico" alt="Nexus AI Logo" width={28} height={28} className="opacity-80 group-hover:opacity-100 transition-opacity" />
+              <span className="font-bold text-xl text-foreground">Nexus AI</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
               Building intelligent voice systems that automate customer conversations for modern clinics and service businesses.
@@ -29,6 +30,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               <li><Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               <li><Link href="/contact" className="hover:text-foreground transition-colors">Book Strategy Call</Link></li>
+              <li><a href="mailto:ritik@buildwithnexusai.com" className="hover:text-foreground transition-colors">ritik@buildwithnexusai.com</a></li>
             </ul>
           </div>
         </div>
