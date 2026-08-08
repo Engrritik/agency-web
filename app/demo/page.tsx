@@ -5,6 +5,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { Play, Calendar, Clock, ShieldCheck, CheckCircle2, UserPlus, AlertCircle, FileText, ArrowRight, Zap, Lock, Database, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Demo() {
   const [activeScenario, setActiveScenario] = useState("booking");
@@ -217,10 +218,34 @@ export default function Demo() {
                   <span className="font-bold text-sm block">{step}</span>
                 </div>
                 {i < arr.length - 1 && (
-                  <ArrowRight className="hidden md:block w-6 h-6 text-muted-foreground shrink-0" />
+                  <motion.div
+                    initial={{ opacity: 0.3, x: 0 }}
+                    animate={{ opacity: [0.3, 1, 0.3], x: [0, 8, 0], color: ["#a3a3a3", "#000", "#a3a3a3"] }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity, 
+                      delay: i * 0.3,
+                      ease: "easeInOut"
+                    }}
+                    className="hidden md:block text-muted-foreground"
+                  >
+                    <ArrowRight className="w-6 h-6 shrink-0" />
+                  </motion.div>
                 )}
                 {i < arr.length - 1 && (
-                  <ArrowRight className="md:hidden w-6 h-6 text-muted-foreground shrink-0 rotate-90 my-2" />
+                  <motion.div
+                    initial={{ opacity: 0.3, y: 0 }}
+                    animate={{ opacity: [0.3, 1, 0.3], y: [0, 8, 0], color: ["#a3a3a3", "#000", "#a3a3a3"] }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity, 
+                      delay: i * 0.3,
+                      ease: "easeInOut"
+                    }}
+                    className="md:hidden text-muted-foreground"
+                  >
+                    <ArrowRight className="w-6 h-6 shrink-0 rotate-90 my-2" />
+                  </motion.div>
                 )}
               </FadeIn>
             ))}
