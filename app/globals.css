@@ -28,6 +28,8 @@ html {
 
 h1, h2 {
   font-family: var(--font-serif);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
 }
 
 body {
