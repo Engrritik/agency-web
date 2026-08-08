@@ -45,10 +45,10 @@ export default function Solutions() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen pt-32 pb-20">
+    <div className="flex flex-col min-h-screen pt-48 pb-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-3xl mb-24 mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
+        <FadeIn className="max-w-4xl mb-32 mx-auto text-center">
+          <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
             Solutions That Drive Revenue
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -72,11 +72,11 @@ export default function Solutions() {
       </div>
       
       {/* CTA Section */}
-      <section className="py-24 bg-foreground text-background">
+      <section className="py-48 bg-foreground text-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn className="max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">See the ROI for your clinic</h2>
-            <p className="text-xl text-gray-400 mb-10 leading-relaxed">
+          <FadeIn className="max-w-3xl mx-auto">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">See the ROI for your clinic</h2>
+            <p className="text-2xl text-gray-400 mb-12 leading-relaxed">
               Let our engineers analyze your call volume and show you exactly how much revenue an AI receptionist could recover.
             </p>
             <Link href="/contact">

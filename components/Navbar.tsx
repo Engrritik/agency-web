@@ -20,13 +20,13 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-14 items-center justify-between">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl rounded-full border border-white/10 bg-background/40 backdrop-blur-xl supports-[backdrop-filter]:bg-background/20 shadow-2xl transition-all duration-500">
+      <div className="px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 group">
               <Image src="/favicon.ico" alt="Nexus AI Logo" width={32} height={32} className="h-7 sm:h-8 w-auto object-contain group-hover:opacity-80 transition-opacity" />
-              <span className="font-bold font-serif text-xl text-foreground tracking-tight">Nexus AI</span>
+              <span className="font-bold font-serif text-xl text-foreground tracking-tight ml-2">Nexus AI</span>
             </Link>
           </div>
 

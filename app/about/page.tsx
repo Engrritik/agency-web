@@ -6,10 +6,10 @@ import { CheckCircle2, Cog, FileSearch, HardHat, Rocket, Zap } from "lucide-reac
 
 export default function About() {
   return (
-    <div className="flex flex-col min-h-screen pt-32 pb-20">
+    <div className="flex flex-col min-h-screen pt-48 pb-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-4xl mb-24 text-center mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-8">
+        <FadeIn className="max-w-5xl mb-32 text-center mx-auto">
+          <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
             Built by engineers focused on real-world automation.
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -68,9 +68,9 @@ export default function About() {
         </div>
 
         {/* Why Clinics Trust Nexus AI */}
-        <div className="mb-32">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Why Clinics Trust Nexus AI</h2>
+        <div className="mb-48 mt-32">
+          <FadeIn className="text-center mb-24">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Why Clinics Trust Nexus AI</h2>
           </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -128,8 +128,8 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <FadeIn delay={0.3} className="pt-20 border-t border-border mt-32 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">Ready to automate your clinic?</h2>
+        <FadeIn delay={0.3} className="py-48 border-t border-white/10 text-center">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12">Ready to automate your clinic?</h2>
           <Link href="/contact">
             <Button size="lg" className="h-14 px-8 text-base shadow-xl hover:scale-105 transition-transform">Book Free Strategy Call</Button>
           </Link>

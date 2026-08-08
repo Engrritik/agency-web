@@ -24,7 +24,7 @@ export default function SolutionCard({ icon, problem, solution, outcome, classNa
 
   return (
     <div
-      className={`group relative rounded-3xl border border-border/50 bg-card/40 backdrop-blur-md p-8 flex flex-col overflow-hidden hover-card shadow-sm ${className}`}
+      className={`group relative rounded-3xl bg-white/[0.02] backdrop-blur-md p-8 flex flex-col overflow-hidden hover-card shadow-sm ${className}`}
       onMouseMove={handleMouseMove}
     >
       <motion.div

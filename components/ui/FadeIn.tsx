@@ -35,11 +35,11 @@ export default function FadeIn({
     <motion.div
       initial={initial}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
+      viewport={{ once: true, margin: "-100px" }}
       transition={{
-        duration: duration,
+        duration: 0.8,
         delay: delay,
-        ease: [0.2, 0.8, 0.2, 1], // premium SaaS easing
+        ease: [0.22, 1, 0.36, 1], // premium SaaS easing
       }}
       className={className}
     >

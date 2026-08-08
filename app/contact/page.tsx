@@ -73,10 +73,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen pt-32 pb-20">
+    <div className="flex flex-col min-h-screen pt-48 pb-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-3xl mb-16 text-center lg:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+        <FadeIn className="max-w-3xl mb-32 text-center mx-auto">
+          <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-10 text-foreground">
             Let&apos;s Automate Your Systems.
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">

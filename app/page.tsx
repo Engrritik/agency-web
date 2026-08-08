@@ -10,18 +10,18 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] pointer-events-none mix-blend-overlay"></div>
+      <section className="relative pt-48 pb-32 md:pt-64 md:pb-48 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
         
         {/* Subtle background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foreground/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.03] blur-[150px] rounded-full pointer-events-none"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <FadeIn className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl lg:text-[5rem] font-bold tracking-tight leading-[1.05] mb-8">
+          <FadeIn className="max-w-5xl mx-auto">
+            <h1 className="text-6xl md:text-8xl lg:text-[8rem] font-bold tracking-tighter leading-[0.9] mb-10 text-foreground">
               Never Miss Another <br className="hidden md:block" /> Patient Call.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed">
               AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7—without hiring another front desk employee.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
@@ -75,45 +75,50 @@ export default function HomePage() {
       </section>
 
       {/* What the AI Does */}
-      <section className="py-32">
+      <section className="py-48">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-2xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Complete Front-Desk Automation</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">Everything a human receptionist does, automated with perfect consistency and zero sick days.</p>
+          <FadeIn className="text-center max-w-3xl mx-auto mb-24">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Complete Front-Desk Automation</h2>
+            <p className="text-2xl text-muted-foreground leading-relaxed">Everything a human receptionist does, automated with perfect consistency and zero sick days.</p>
           </FadeIn>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FadeIn delay={0.1}>
-              <div className="group p-10 rounded-3xl border border-border bg-card h-full flex flex-col hover-card shadow-sm">
-                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8 group-hover:bg-foreground group-hover:text-background transition-colors">
-                  <PhoneCall className="w-6 h-6" />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-6xl mx-auto">
+            <FadeIn delay={0.1} className="md:col-span-8">
+              <div className="group p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-md h-full flex flex-col hover-card shadow-sm overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-10 group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
+                  <PhoneCall className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Answer Calls Instantly</h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Answer Calls Instantly</h3>
+                <p className="text-muted-foreground leading-relaxed text-xl max-w-lg relative z-10">
                   Never miss leads or patient calls again. The AI answers on the first ring, 24/7, with zero hold times.
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="group p-10 rounded-3xl border border-border bg-card h-full flex flex-col hover-card shadow-sm">
-                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8 group-hover:bg-foreground group-hover:text-background transition-colors">
-                  <Calendar className="w-6 h-6" />
+            <FadeIn delay={0.2} className="md:col-span-4">
+              <div className="group p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-md h-full flex flex-col hover-card shadow-sm overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-10 group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
+                  <Calendar className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Book Appointments</h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  Connected directly to your calendar and scheduling logic. It finds available slots and books them instantly.
+                <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Book Appointments</h3>
+                <p className="text-muted-foreground leading-relaxed text-xl relative z-10">
+                  Connected directly to your calendar and scheduling logic.
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.3}>
-              <div className="group p-10 rounded-3xl border border-border bg-card h-full flex flex-col hover-card shadow-sm">
-                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8 group-hover:bg-foreground group-hover:text-background transition-colors">
-                  <ShieldCheck className="w-6 h-6" />
+            <FadeIn delay={0.3} className="md:col-span-12">
+              <div className="group p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-md flex flex-col md:flex-row items-center gap-12 hover-card shadow-sm overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="w-20 h-20 shrink-0 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
+                  <ShieldCheck className="w-10 h-10" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Transfer Emergencies</h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  Escalates emergencies or sensitive requests to your human staff instantly, ensuring no critical issue is missed.
-                </p>
+                <div className="relative z-10 text-center md:text-left">
+                  <h3 className="text-3xl font-bold mb-4 text-foreground">Transfer Emergencies</h3>
+                  <p className="text-muted-foreground leading-relaxed text-xl max-w-3xl">
+                    Escalates emergencies or sensitive requests to your human staff instantly, ensuring no critical issue is ever missed in translation.
+                  </p>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -121,11 +126,11 @@ export default function HomePage() {
       </section>
 
       {/* Trust / Why Clinics Choose Nexus AI */}
-      <section className="py-32 bg-muted/30 border-y border-border">
+      <section className="py-48 bg-white/[0.01] border-y border-white/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-2xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Why Clinics Choose Nexus AI</h2>
-            <p className="text-xl text-muted-foreground">Engineered specifically for the demands of high-volume healthcare practices.</p>
+          <FadeIn className="text-center max-w-3xl mx-auto mb-24">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Why Clinics Choose Nexus AI</h2>
+            <p className="text-2xl text-muted-foreground">Engineered specifically for the demands of high-volume healthcare practices.</p>
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

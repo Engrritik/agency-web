@@ -31,9 +31,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <motion.button
         ref={ref}
         className={combinedClassName}
-        whileHover={{ scale: 1.02, y: -1 }}
-        whileTap={{ scale: 0.98, y: 0 }}
-        transition={{ duration: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
+        whileHover={{ scale: 1.05, y: -2 }}
+        whileTap={{ scale: 0.95, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         {...props}
       >
         {children}

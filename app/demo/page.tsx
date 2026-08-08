@@ -71,10 +71,10 @@ export default function Demo() {
   const active = scenarios[activeScenario as keyof typeof scenarios];
 
   return (
-    <div className="flex flex-col min-h-screen pt-32 pb-20">
+    <div className="flex flex-col min-h-screen pt-48 pb-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-3xl mb-16 mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
+        <FadeIn className="max-w-4xl mb-32 mx-auto text-center">
+          <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
             Experience the Future of Patient Communications
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
