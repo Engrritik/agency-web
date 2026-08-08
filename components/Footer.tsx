@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6 group inline-flex">
               <Image src="/favicon.ico" alt="Nexus AI Logo" width={32} height={32} className="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" />
-              <span className="font-bold text-2xl text-foreground tracking-tight">Nexus AI</span>
+              <span className="font-bold font-serif text-2xl text-foreground tracking-tight">Nexus AI</span>
             </Link>
             <p className="text-base text-muted-foreground max-w-sm leading-relaxed">
               We engineer intelligent voice systems that automate customer conversations for modern clinics and service businesses in the United States.

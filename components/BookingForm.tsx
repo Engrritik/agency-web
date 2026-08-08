@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function BookingForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -47,7 +47,7 @@ export default function BookingForm() {
   return (
     <section id="booking-form" className="py-20 bg-white dark:bg-neutral-950 transition-colors">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 shadow-xl">
+        <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-xl">
           
           {!submitted ? (
             /* STEP 1: High-Converting Lead Capture Form */
@@ -62,19 +62,19 @@ export default function BookingForm() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1">Your Name</label>
-                  <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-2.5 bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none transition-all" placeholder="Dr. John Doe" />
+                  <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-2.5 bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-xl text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none transition-all" placeholder="Dr. John Doe" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1">Clinic Name</label>
-                  <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-2.5 bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none transition-all" placeholder="Apex Dental Care" />
+                  <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-2.5 bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-xl text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none transition-all" placeholder="Apex Dental Care" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1">Clinic Email</label>
-                  <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-2.5 bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none transition-all" placeholder="office@apexdental.com" />
+                  <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-2.5 bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-xl text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none transition-all" placeholder="office@apexdental.com" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1">Phone Number</label>
-                  <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-2.5 bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-lg text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none transition-all" placeholder="(555) 000-0000" />
+                  <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-2.5 bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-xl text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-black dark:focus:ring-white focus:outline-none transition-all" placeholder="(555) 000-0000" />
                 </div>
                 
                 <motion.button 
@@ -82,7 +82,7 @@ export default function BookingForm() {
                   whileTap={{ scale: 0.98 }}
                   type="submit" 
                   disabled={loading} 
-                  className="w-full mt-2 bg-black dark:bg-white text-white dark:text-black font-semibold text-sm py-3 rounded-lg hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center relative overflow-hidden"
+                  className="w-full mt-2 bg-black dark:bg-white text-white dark:text-black font-semibold text-sm py-3 rounded-full hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center relative overflow-hidden"
                 >
                   {loading ? (
                     <motion.div

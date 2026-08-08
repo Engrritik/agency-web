@@ -28,6 +28,7 @@ export default function About() {
                 className="object-cover"
                 sizes="(max-width: 768px) 80vw, 40vw"
                 priority
+                referrerPolicy="no-referrer"
               />
             </div>
             <div className="mt-8 text-center lg:text-left">
