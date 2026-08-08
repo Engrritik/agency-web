@@ -2,7 +2,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { PhoneOff, Clock, CalendarCheck, ShieldAlert, FileText, BellRing } from "lucide-react";
-import BentoCard from "@/components/BentoCard";
+import SolutionCard from "@/components/SolutionCard";
 
 export default function Solutions() {
   const solutions = [
@@ -57,22 +57,17 @@ export default function Solutions() {
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
-          {solutions.map((item, index) => {
-            // Create a bento box layout by spanning specific cards
-            // Card 0 and Card 3 span 2 columns on large screens
-            const isLargeCard = index === 0 || index === 3;
-            return (
-              <FadeIn key={index} delay={index * 0.1} className={isLargeCard ? "lg:col-span-2" : "col-span-1"}>
-                <BentoCard 
-                  icon={item.icon}
-                  problem={item.problem}
-                  solution={item.solution}
-                  outcome={item.outcome}
-                  className="h-full"
-                />
-              </FadeIn>
-            );
-          })}
+          {solutions.map((item, index) => (
+            <FadeIn key={index} delay={index * 0.1} className="col-span-1">
+              <SolutionCard 
+                icon={item.icon}
+                problem={item.problem}
+                solution={item.solution}
+                outcome={item.outcome}
+                className="h-full"
+              />
+            </FadeIn>
+          ))}
         </div>
       </div>
       
