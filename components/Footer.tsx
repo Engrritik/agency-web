@@ -31,7 +31,7 @@ export default function Footer() {
               <li><Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               <li><Link href="/contact" className="hover:text-foreground transition-colors font-medium text-foreground">Book Strategy Call</Link></li>
               <li><a href="mailto:ritik@buildwithnexusai.com" className="hover:text-foreground transition-colors">Email Us</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/in/ritiksak/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a></li>
             </ul>
           </div>
 

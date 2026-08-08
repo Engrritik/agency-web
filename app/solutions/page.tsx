@@ -1,7 +1,8 @@
 import FadeIn from "@/components/ui/FadeIn";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
-import { PhoneOff, Clock, CalendarCheck, ShieldAlert, FileText, BellRing, ArrowRight } from "lucide-react";
+import { PhoneOff, Clock, CalendarCheck, ShieldAlert, FileText, BellRing } from "lucide-react";
+import BentoCard from "@/components/BentoCard";
 
 export default function Solutions() {
   const solutions = [
@@ -56,35 +57,22 @@ export default function Solutions() {
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
-          {solutions.map((item, index) => (
-            <FadeIn key={index} delay={index * 0.1}>
-              <div className="bg-card border border-border rounded-3xl p-8 flex flex-col h-full hover-card shadow-sm">
-                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center text-foreground mb-8">
-                  {item.icon}
-                </div>
-                
-                <div className="space-y-6 flex-grow">
-                  <div>
-                    <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-2">Problem</h3>
-                    <p className="text-xl font-semibold text-foreground">{item.problem}</p>
-                  </div>
-                  
-                  <div className="border-t border-border/50 pt-6">
-                    <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-2">Solution</h3>
-                    <p className="text-lg text-foreground leading-relaxed">{item.solution}</p>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-border/50">
-                  <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-2">Business Outcome</h3>
-                  <div className="flex items-center gap-2 text-foreground font-bold text-lg">
-                    <ArrowRight className="w-5 h-5" />
-                    {item.outcome}
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          ))}
+          {solutions.map((item, index) => {
+            // Create a bento box layout by spanning specific cards
+            // Card 0 and Card 3 span 2 columns on large screens
+            const isLargeCard = index === 0 || index === 3;
+            return (
+              <FadeIn key={index} delay={index * 0.1} className={isLargeCard ? "lg:col-span-2" : "col-span-1"}>
+                <BentoCard 
+                  icon={item.icon}
+                  problem={item.problem}
+                  solution={item.solution}
+                  outcome={item.outcome}
+                  className="h-full"
+                />
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
       
