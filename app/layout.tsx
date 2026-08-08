@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import ChatWidget from "@/components/ChatWidget";
+import PageLoader from "@/components/ui/PageLoader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
+        <PageLoader />
         <Navbar />
         <main className="flex-1">{children}</main>
         <FloatingCTA />

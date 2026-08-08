@@ -39,7 +39,7 @@ export default function FadeIn({
       transition={{
         duration: duration,
         delay: delay,
-        ease: [0.21, 0.47, 0.32, 0.98], // elegant ease-out
+        ease: [0.2, 0.8, 0.2, 1], // premium SaaS easing
       }}
       className={className}
     >

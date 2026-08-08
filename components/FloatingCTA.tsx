@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import Button from "./ui/Button";
 
 export default function FloatingCTA() {
@@ -24,12 +25,30 @@ export default function FloatingCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <motion.div 
+      className="fixed bottom-6 right-6 z-40"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+    >
       <Link href="/contact">
-        <Button size="lg" className="shadow-2xl rounded-full px-6 py-6 font-semibold hover:scale-105 transition-transform bg-foreground text-background">
-          Book Strategy Call
-        </Button>
+        <motion.div
+          animate={{
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 1.5,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatDelay: 8
+          }}
+          className="rounded-full"
+        >
+          <Button size="lg" className="shadow-2xl rounded-full px-6 py-6 font-semibold bg-foreground text-background">
+            Book Strategy Call
+          </Button>
+        </motion.div>
       </Link>
-    </div>
+    </motion.div>
   );
 }
