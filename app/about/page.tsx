@@ -8,12 +8,13 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen pt-48 pb-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-5xl mb-32 text-center mx-auto">
+        <FadeIn className="max-w-5xl mb-32 md:text-left">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Our Mission</p>
           <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
             Built by engineers focused on real-world automation.
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            We don&apos;t build toys. We engineer robust AI systems that solve actual operational bottlenecks for local clinics.
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+            We saw private practices losing tens of thousands of dollars a month to missed calls. So we built the ultimate solution.
           </p>
         </FadeIn>
 
@@ -68,9 +69,11 @@ export default function About() {
         </div>
 
         {/* Why Clinics Trust Nexus AI */}
-        <div className="mb-48 mt-32">
-          <FadeIn className="text-center mb-24">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Why Clinics Trust Nexus AI</h2>
+        <div className="mb-48 mt-32 relative">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.03),transparent_60%)] pointer-events-none"></div>
+          <FadeIn className="mb-24 md:text-left max-w-4xl">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">The Standard</p>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Why Clinics Trust Nexus AI.</h2>
           </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -128,7 +131,8 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <FadeIn delay={0.3} className="py-48 border-t border-white/10 text-center">
+        <FadeIn delay={0.3} className="py-48 border-t border-white/10 md:text-left">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Take Action</p>
           <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12">Ready to automate your clinic?</h2>
           <Link href="/contact">
             <Button size="lg" className="h-14 px-8 text-base shadow-xl hover:scale-105 transition-transform">Book Free Strategy Call</Button>

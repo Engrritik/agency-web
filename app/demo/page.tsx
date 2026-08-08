@@ -73,11 +73,12 @@ export default function Demo() {
   return (
     <div className="flex flex-col min-h-screen pt-48 pb-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-4xl mb-32 mx-auto text-center">
+        <FadeIn className="max-w-5xl mb-32 md:text-left">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Interactive Demo</p>
           <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
-            Experience the Future of Patient Communications
+            Experience the Future of Patient Communications.
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
             Listen to our AI interact naturally with patients, handle complex objections, and integrate directly with practice management software.
           </p>
         </FadeIn>

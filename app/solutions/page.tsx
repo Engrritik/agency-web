@@ -47,11 +47,12 @@ export default function Solutions() {
   return (
     <div className="flex flex-col min-h-screen pt-48 pb-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-4xl mb-32 mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
-            Solutions That Drive Revenue
+        <FadeIn className="max-w-5xl mb-32 md:text-left">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Our Capabilities</p>
+          <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-bold tracking-tighter leading-[0.85] mb-12 text-foreground">
+            Solutions That Drive Revenue.
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
             We don&apos;t build generic chatbots. We engineer custom voice workflows designed to solve the most expensive operational bottlenecks in private clinics.
           </p>
         </FadeIn>
@@ -72,15 +73,16 @@ export default function Solutions() {
       </div>
       
       {/* CTA Section */}
-      <section className="py-48 bg-foreground text-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn className="max-w-3xl mx-auto">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">See the ROI for your clinic</h2>
-            <p className="text-2xl text-gray-400 mb-12 leading-relaxed">
+      <section className="py-48 relative border-t border-white/5">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 md:text-left">
+          <FadeIn className="max-w-5xl">
+            <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter leading-[0.9] mb-10">See the ROI for your clinic.</h2>
+            <p className="text-2xl text-muted-foreground mb-16 leading-relaxed max-w-3xl">
               Let our engineers analyze your call volume and show you exactly how much revenue an AI receptionist could recover.
             </p>
             <Link href="/contact">
-              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 h-14 px-8 text-base">
+              <Button size="lg" className="h-14 px-8 text-base shadow-2xl hover:scale-105 transition-transform">
                 Book Free Strategy Call
               </Button>
             </Link>

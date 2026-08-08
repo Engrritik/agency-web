@@ -13,40 +13,50 @@ export default function HomePage() {
       <section className="relative pt-48 pb-32 md:pt-64 md:pb-48 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
         
-        {/* Subtle background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.03] blur-[150px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/[0.02] blur-[150px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <FadeIn className="max-w-5xl mx-auto">
-            <h1 className="text-6xl md:text-8xl lg:text-[8rem] font-bold tracking-tighter leading-[0.9] mb-10 text-foreground">
-              Never Miss Another <br className="hidden md:block" /> Patient Call.
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed">
-              AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7—without hiring another front desk employee.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-              <Link href="/contact">
-                <Button size="lg" className="w-full sm:w-auto group h-14 px-8 text-base shadow-xl hover:scale-105 transition-transform">
-                  Book Free Strategy Call
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link href="/demo">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base hover:bg-muted/50">
-                  Watch Live Demo
-                </Button>
-              </Link>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium text-muted-foreground">
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> 24/7 Availability</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> Calendar Integration</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> Sub-800ms Response Time</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> HIPAA-Friendly Architecture</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> Built for Private Clinics</div>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <FadeIn className="lg:col-span-8">
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-8">Nexus AI Voice Agents</p>
+              <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-bold tracking-tighter leading-[0.85] mb-12 text-foreground">
+                Never Miss Another Patient Call.
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-2xl leading-relaxed">
+                AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7—without hiring another front desk employee.
+              </p>
+              <div className="flex flex-col sm:flex-row items-start gap-6 mb-16">
+                <Link href="/contact">
+                  <Button size="lg" className="w-full sm:w-auto group h-14 px-8 text-base shadow-2xl hover:scale-105 transition-transform">
+                    Book Free Strategy Call
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/demo">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base hover:bg-white/5 border-white/10">
+                    Watch Live Demo
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
+            
+            <FadeIn delay={0.2} className="lg:col-span-4 hidden lg:block">
+              <div className="flex flex-col gap-8 border-l border-white/10 pl-8">
+                <div>
+                  <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">24/7 Availability</span></div>
+                  <p className="text-sm text-muted-foreground">Always on, never sick.</p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Sub-800ms Latency</span></div>
+                  <p className="text-sm text-muted-foreground">Indistinguishable from human speed.</p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Calendar Sync</span></div>
+                  <p className="text-sm text-muted-foreground">Direct write-access to your EMR.</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -75,11 +85,13 @@ export default function HomePage() {
       </section>
 
       {/* What the AI Does */}
-      <section className="py-48">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-3xl mx-auto mb-24">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Complete Front-Desk Automation</h2>
-            <p className="text-2xl text-muted-foreground leading-relaxed">Everything a human receptionist does, automated with perfect consistency and zero sick days.</p>
+      <section className="py-48 relative border-t border-white/5">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn className="max-w-4xl mb-24 md:text-left">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">The Platform</p>
+            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">Complete Front-Desk Automation.</h2>
+            <p className="text-2xl text-muted-foreground leading-relaxed max-w-2xl">Everything a human receptionist does, automated with perfect consistency and zero sick days.</p>
           </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-6xl mx-auto">
@@ -126,11 +138,13 @@ export default function HomePage() {
       </section>
 
       {/* Trust / Why Clinics Choose Nexus AI */}
-      <section className="py-48 bg-white/[0.01] border-y border-white/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-3xl mx-auto mb-24">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Why Clinics Choose Nexus AI</h2>
-            <p className="text-2xl text-muted-foreground">Engineered specifically for the demands of high-volume healthcare practices.</p>
+      <section className="py-48 bg-white/[0.01] border-y border-white/5 relative overflow-hidden">
+        <div className="absolute -left-1/4 top-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn className="max-w-4xl mb-32 md:text-left">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">The Advantage</p>
+            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-10">Why Clinics Choose Nexus AI.</h2>
+            <p className="text-2xl text-muted-foreground max-w-2xl">Engineered specifically for the demands of high-volume healthcare practices.</p>
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -204,17 +218,39 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA & Booking Form */}
-      <section id="booking-form" className="py-32 bg-foreground text-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn className="max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">Ready to Stop Missing Patient Calls?</h2>
-            <p className="text-xl text-gray-400 mb-12 leading-relaxed">
-              Book a free strategy session and we&apos;ll show exactly how AI can fit into your clinic&apos;s operational workflow.
-            </p>
-            <div className="bg-background rounded-3xl p-2 max-w-xl mx-auto text-foreground">
-              <BookingForm />
-            </div>
-          </FadeIn>
+      <section id="booking-form" className="py-48 relative border-t border-white/5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.02),transparent_70%)] pointer-events-none"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <FadeIn className="max-w-2xl">
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Get Started</p>
+              <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter leading-[0.9] mb-10">Ready to Stop Missing Calls?</h2>
+              <p className="text-2xl text-muted-foreground mb-16 leading-relaxed">
+                Book a free strategy session and we&apos;ll show exactly how AI can fit into your clinic&apos;s operational workflow.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <p className="font-medium">Free Workflow Analysis</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <p className="font-medium">14-Day Risk-Free Pilot</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <p className="font-medium">Custom Voice Cloning</p>
+                </div>
+              </div>
+            </FadeIn>
+            
+            <FadeIn delay={0.2}>
+              <div className="bg-white/[0.02] border border-white/5 rounded-3xl p-2 relative overflow-hidden backdrop-blur-xl shadow-2xl">
+                <BookingForm />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </div>
