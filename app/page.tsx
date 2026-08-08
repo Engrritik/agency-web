@@ -1,139 +1,115 @@
 import FadeIn from "@/components/ui/FadeIn";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
-import { ArrowRight, Calendar, PhoneCall, Stethoscope, Scale, Home, Zap, Clock, ShieldCheck } from "lucide-react";
+import { ArrowRight, Calendar, PhoneCall, ShieldCheck, CheckCircle2, Activity, Clock, Zap, Stethoscope } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <FadeIn>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-                AI Voice Agents That Never Miss a Customer Call
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
-                Nexus AI builds intelligent voice systems that answer calls, qualify leads, book appointments, and automate customer conversations for clinics and service businesses.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/#booking-form">
-                  <Button size="lg" className="w-full sm:w-auto group">
-                    Book a Demo
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link href="/demo">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                    Watch Live Demo
-                  </Button>
-                </Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2} className="relative hidden lg:flex flex-col h-[400px] w-full rounded-2xl border border-border bg-muted/30 overflow-hidden pb-20">
-              {/* Minimal Animated Voice Wave Visualization placeholder */}
-              <div className="flex items-center justify-center gap-1.5 h-20 mt-4">
-                {[...Array(15)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-2 bg-foreground rounded-full animate-pulse"
-                    style={{
-                      height: `${Math.max(20, Math.random() * 100)}%`,
-                      animationDelay: `${i * 0.1}s`,
-                      animationDuration: '1s'
-                    }}
-                  ></div>
-                ))}
-              </div>
-              
-              {/* Live Call Transcript */}
-              <div className="flex-1 px-6 flex flex-col justify-center gap-3">
-                {/* Patient Message */}
-                <div className="self-start bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[85%] text-sm shadow-sm leading-relaxed">
-                  Hi, I have a broken crown and need to book an emergency appointment with the dentist as soon as possible.
-                </div>
-                {/* AI Receptionist Message */}
-                <div className="self-end bg-black dark:bg-neutral-700 text-white rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] text-sm shadow-sm leading-relaxed">
-                  I can absolutely help you with that emergency. I have an open slot at 2:30 PM today with Dr. Doe, or tomorrow morning at 9:00 AM. Which one works better for you?
-                </div>
-              </div>
+      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] pointer-events-none mix-blend-overlay"></div>
+        
+        {/* Subtle background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foreground/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-              <div className="absolute bottom-4 left-4 right-4 bg-background/80 backdrop-blur-sm border border-border p-3 rounded-lg flex items-center gap-3 shadow-lg">
-                <div className="relative flex h-3 w-3 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                </div>
-                <p className="text-sm font-medium truncate">AI Receptionist Active & Listening...</p>
-              </div>
-            </FadeIn>
-          </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <FadeIn className="max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-7xl lg:text-[5rem] font-bold tracking-tight leading-[1.05] mb-8">
+              Never Miss Another <br className="hidden md:block" /> Patient Call.
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+              AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7—without hiring another front desk employee.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+              <Link href="/contact">
+                <Button size="lg" className="w-full sm:w-auto group h-14 px-8 text-base shadow-xl hover:scale-105 transition-transform">
+                  Book Free Strategy Call
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/demo">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base hover:bg-muted/50">
+                  Watch Live Demo
+                </Button>
+              </Link>
+            </div>
+
+            {/* Trust Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium text-muted-foreground">
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> 24/7 Availability</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> Calendar Integration</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> Sub-800ms Response Time</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> HIPAA-Friendly Architecture</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-foreground" /> Built for Private Clinics</div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <section className="py-10 border-y border-border bg-muted/30">
+      {/* Statistics Section */}
+      <section className="py-12 border-y border-border bg-foreground text-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-medium text-muted-foreground mb-8 tracking-widest uppercase">
-            Built for modern clinics and service businesses
-          </p>
-          <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60 grayscale">
-            <div className="flex items-center gap-2 font-semibold text-lg">
-              <Stethoscope className="w-6 h-6" /> Dental Clinics
-            </div>
-            <div className="flex items-center gap-2 font-semibold text-lg">
-              <Zap className="w-6 h-6" /> Med Spas
-            </div>
-            <div className="flex items-center gap-2 font-semibold text-lg">
-              <Scale className="w-6 h-6" /> Law Firms
-            </div>
-            <div className="flex items-center gap-2 font-semibold text-lg">
-              <Home className="w-6 h-6" /> Home Services
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-background/20">
+            <FadeIn delay={0.1} className="text-center px-4">
+              <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2">99.9%</div>
+              <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Call Availability</div>
+            </FadeIn>
+            <FadeIn delay={0.2} className="text-center px-4">
+              <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2">24/7</div>
+              <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Answers Every Call</div>
+            </FadeIn>
+            <FadeIn delay={0.3} className="text-center px-4">
+              <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2">&lt;800ms</div>
+              <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Average Response</div>
+            </FadeIn>
+            <FadeIn delay={0.4} className="text-center px-4">
+              <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2">0</div>
+              <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Missed After-Hours Calls</div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
       {/* What the AI Does */}
-      <section className="py-24 md:py-32">
+      <section className="py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Complete Call Automation</h2>
-            <p className="text-lg text-muted-foreground">Everything a human receptionist does, automated with perfect consistency.</p>
+          <FadeIn className="text-center max-w-2xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Complete Front-Desk Automation</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">Everything a human receptionist does, automated with perfect consistency and zero sick days.</p>
           </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FadeIn delay={0.1}>
-              <div className="group p-8 rounded-2xl border border-border hover:border-foreground/20 transition-colors bg-card h-full flex flex-col">
-                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-6 group-hover:bg-foreground group-hover:text-background transition-colors">
+              <div className="group p-10 rounded-3xl border border-border bg-card h-full flex flex-col hover-card shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8 group-hover:bg-foreground group-hover:text-background transition-colors">
                   <PhoneCall className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Answer Calls Instantly</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl font-bold mb-4">Answer Calls Instantly</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">
                   Never miss leads or patient calls again. The AI answers on the first ring, 24/7, with zero hold times.
                 </p>
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <div className="group p-8 rounded-2xl border border-border hover:border-foreground/20 transition-colors bg-card h-full flex flex-col">
-                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-6 group-hover:bg-foreground group-hover:text-background transition-colors">
+              <div className="group p-10 rounded-3xl border border-border bg-card h-full flex flex-col hover-card shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8 group-hover:bg-foreground group-hover:text-background transition-colors">
                   <Calendar className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Book Appointments Automatically</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl font-bold mb-4">Book Appointments</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">
                   Connected directly to your calendar and scheduling logic. It finds available slots and books them instantly.
                 </p>
               </div>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <div className="group p-8 rounded-2xl border border-border hover:border-foreground/20 transition-colors bg-card h-full flex flex-col">
-                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-6 group-hover:bg-foreground group-hover:text-background transition-colors">
+              <div className="group p-10 rounded-3xl border border-border bg-card h-full flex flex-col hover-card shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8 group-hover:bg-foreground group-hover:text-background transition-colors">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Transfer Complex Calls</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl font-bold mb-4">Transfer Emergencies</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">
                   Escalates emergencies or sensitive requests to your human staff instantly, ensuring no critical issue is missed.
                 </p>
               </div>
@@ -142,137 +118,105 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Live Conversation Demo Section */}
-      <section className="py-24 md:py-32 bg-foreground text-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Listen to the AI Handle a Real Customer Call</h2>
-            <p className="text-lg text-gray-400">Experience the natural, human-like voice and complex reasoning capabilities.</p>
-          </FadeIn>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl overflow-hidden border border-gray-800 bg-black aspect-video relative flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-              <iframe
-                src="https://www.loom.com/embed/2f6a4eeb2dc1471ea8e0ce7af6ffac8a?hide_owner=true&hide_share=true&hide_title=true&embed_source=logo"
-                frameBorder="0"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full rounded-2xl"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-              ></iframe>
-            </div>
-
-            <div className="mt-8 bg-gray-900 rounded-xl p-6 border border-gray-800 font-mono text-sm h-64 overflow-y-auto">
-              <div className="flex gap-4 mb-4">
-                <div className="font-bold text-gray-400 w-16 shrink-0">Caller:</div>
-                <div className="text-gray-300">Hi, I'd like to book an appointment for a cleaning this Sunday.</div>
-              </div>
-              <div className="flex gap-4 mb-4">
-                <div className="font-bold text-white w-16 shrink-0">AI:</div>
-                <div className="text-white">I'd be happy to help you with that. However, we are actually closed on Sundays. We have availability on Monday at 10:00 AM or Tuesday at 2:00 PM. Would either of those work for you?</div>
-              </div>
-              <div className="flex gap-4 mb-4">
-                <div className="font-bold text-gray-400 w-16 shrink-0">Caller:</div>
-                <div className="text-gray-300">Oh, I see. Monday at 10 AM works great.</div>
-              </div>
-              <div className="flex gap-4">
-                <div className="font-bold text-white w-16 shrink-0">AI:</div>
-                <div className="text-white">Perfect. I have you scheduled for a cleaning on Monday at 10:00 AM. Is there anything else I can assist you with today?</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-24 md:py-32">
+      {/* Trust / Why Clinics Choose Nexus AI */}
+      <section className="py-32 bg-muted/30 border-y border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center max-w-2xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Fast Deployment</h2>
-            <p className="text-lg text-muted-foreground">Go live in days, not months.</p>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Why Clinics Choose Nexus AI</h2>
+            <p className="text-xl text-muted-foreground">Engineered specifically for the demands of high-volume healthcare practices.</p>
           </FadeIn>
 
-          <div className="max-w-4xl mx-auto relative">
-            <div className="absolute left-[27px] md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2"></div>
-            
-            <div className="space-y-16">
-              {[
-                { step: "01", title: "We map your business logic", desc: "We learn how you handle calls, objections, pricing, and scheduling rules." },
-                { step: "02", title: "We connect your calendar and workflows", desc: "Seamless integration with your existing CRM, calendar, and operational software." },
-                { step: "03", title: "Your AI receptionist goes live", desc: "Start automating your inbound volume instantly with ongoing optimization." }
-              ].map((item, i) => (
-                <FadeIn key={i} delay={i * 0.2} className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-16">
-                  <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:text-right md:pr-16' : 'md:order-2 md:pl-16'}`}>
-                    <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "No Long-Term Contracts", icon: <ShieldCheck className="w-6 h-6" /> },
+              { title: "14-Day Risk-Free Pilot", icon: <Activity className="w-6 h-6" /> },
+              { title: "Custom AI Voice", icon: <PhoneCall className="w-6 h-6" /> },
+              { title: "Human Escalation", icon: <CheckCircle2 className="w-6 h-6" /> },
+              { title: "Works After Hours", icon: <Clock className="w-6 h-6" /> },
+              { title: "Calendar Integration", icon: <Calendar className="w-6 h-6" /> },
+              { title: "Built For Clinics", icon: <Stethoscope className="w-6 h-6" /> },
+              { title: "Lightning Fast", icon: <Zap className="w-6 h-6" /> },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="bg-card border border-border rounded-2xl p-6 flex items-center gap-4 hover-card shadow-sm">
+                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-foreground shrink-0">
+                    {item.icon}
                   </div>
-                  <div className="absolute left-0 md:left-1/2 w-14 h-14 rounded-full bg-background border-4 border-foreground text-foreground flex items-center justify-center font-bold text-lg md:-translate-x-1/2 z-10 shrink-0 shadow-sm">
-                    {item.step}
-                  </div>
-                  <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:order-2 md:pl-16 hidden md:block' : 'md:pr-16 hidden md:block'}`}></div>
-                </FadeIn>
-              ))}
-            </div>
+                  <h3 className="font-bold text-lg leading-tight">{item.title}</h3>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Nexus AI */}
-      <section className="py-24 md:py-32 bg-muted/30 border-y border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Engineered for Reliability</h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                We don't build generic chatbots. We engineer robust, intelligent voice systems tailored to your specific operational workflows.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Custom AI workflows built for your specific needs",
-                  "Real-time appointment booking and syncing",
-                  "Human-like voice interaction with under 800ms latency",
-                  "Complex business-specific logic handling",
-                  "Continuous ongoing optimization and learning"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="mt-1 w-5 h-5 rounded-full bg-foreground text-background flex items-center justify-center shrink-0">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </div>
-                    <span className="font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
-            <FadeIn delay={0.2} className="relative h-[500px] rounded-2xl border border-border bg-card p-8 flex flex-col justify-center">
-               <div className="font-mono text-sm space-y-4 text-muted-foreground">
-                 <div className="text-foreground font-semibold mb-6">// Core System Architecture</div>
-                 <div>{'const system = new NexusEngine({'}</div>
-                 <div className="pl-4">{'latency_target: "under_800ms",'}</div>
-                 <div className="pl-4">{'voice_model: "ultra_realistic",'}</div>
-                 <div className="pl-4">{'integrations: ["calendar", "crm", "emr"],'}</div>
-                 <div className="pl-4">{'fallback: "human_transfer"'}</div>
-                 <div>{'});'}</div>
-                 <br />
-                 <div>{'system.on("call_received", async (call) => {'}</div>
-                 <div className="pl-4">{'const intent = await nlp.analyze(call);'}</div>
-                 <div className="pl-4">{'if (intent === "booking") {'}</div>
-                 <div className="pl-8">{'await calendar.schedule(call);'}</div>
-                 <div className="pl-4">{'}'}</div>
-                 <div>{'});'}</div>
-               </div>
-            </FadeIn>
+      {/* FAQ Section */}
+      <section className="py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Frequently Asked Questions</h2>
+          </FadeIn>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "How does the AI answer calls?",
+                a: "We integrate directly with your existing phone system (via SIP forwarding or a dedicated Twilio number). When a patient calls, the AI picks up instantly, understanding intent through advanced NLP and responding with a natural human voice."
+              },
+              {
+                q: "Can it book appointments?",
+                a: "Yes. It connects directly to your scheduling software (like Cal.com, Google Calendar, or select EMRs) via secure API. It reads real-time availability and writes appointments directly into your system without double-booking."
+              },
+              {
+                q: "Can it transfer emergencies?",
+                a: "Absolutely. We map your specific emergency protocols. If a patient mentions keywords like 'pain', 'broken', or 'emergency', the AI immediately puts them on a brief hold and transfers the call to a designated priority human line."
+              },
+              {
+                q: "Does it replace my receptionist?",
+                a: "No, it augments them. It handles the repetitive, high-volume tasks (booking, FAQs, hours) so your front desk can focus on in-person patient experience, complex billing issues, and high-value interactions."
+              },
+              {
+                q: "Does it integrate with my calendar?",
+                a: "Yes. We support custom API integrations with major calendar providers and can build webhooks for specific practice management software."
+              },
+              {
+                q: "How long is setup?",
+                a: "Deployment typically takes 3 to 7 days depending on the complexity of your workflow mapping and integration requirements."
+              },
+              {
+                q: "What happens after the pilot?",
+                a: "After the 14-day risk-free pilot, you review the call logs and performance metrics. If you love it, we move you to a standard month-to-month plan based on your call volume."
+              }
+            ].map((faq, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <details className="group border border-border rounded-2xl bg-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                  <summary className="flex items-center justify-between p-6 font-bold text-lg cursor-pointer hover:bg-muted/30 transition-colors">
+                    {faq.q}
+                    <span className="transition-transform group-open:rotate-180">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </span>
+                  </summary>
+                  <div className="p-6 pt-0 text-muted-foreground leading-relaxed text-lg border-t border-border mt-2">
+                    {faq.a}
+                  </div>
+                </details>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Final CTA & Booking Form */}
-      <section id="booking-form" className="py-32">
+      <section id="booking-form" className="py-32 bg-foreground text-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn className="max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">See What an AI Receptionist Could Save Your Business</h2>
-            <p className="text-xl text-muted-foreground mb-10">
-              Stop missing calls. Start automating your growth. Fill out the form below to book a live demo.
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">Ready to Stop Missing Patient Calls?</h2>
+            <p className="text-xl text-gray-400 mb-12 leading-relaxed">
+              Book a free strategy session and we&apos;ll show exactly how AI can fit into your clinic&apos;s operational workflow.
             </p>
-            <BookingForm />
+            <div className="bg-background rounded-3xl p-2 max-w-xl mx-auto text-foreground">
+              <BookingForm />
+            </div>
           </FadeIn>
         </div>
       </section>
