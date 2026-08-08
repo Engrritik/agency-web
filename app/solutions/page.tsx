@@ -73,8 +73,8 @@ export default function Solutions() {
       </div>
       
       {/* CTA Section */}
-      <section className="py-48 relative border-t border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none"></div>
+      <section className="py-48 relative border-t border-black/5">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/[0.02] to-transparent pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 md:text-left">
           <FadeIn className="max-w-5xl">
             <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter leading-[0.9] mb-10">See the ROI for your clinic.</h2>

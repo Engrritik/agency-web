@@ -70,7 +70,7 @@ export default function About() {
 
         {/* Why Clinics Trust Nexus AI */}
         <div className="mb-48 mt-32 relative">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.03),transparent_60%)] pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.02),transparent_60%)] pointer-events-none"></div>
           <FadeIn className="mb-24 md:text-left max-w-4xl">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">The Standard</p>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Why Clinics Trust Nexus AI.</h2>
@@ -131,7 +131,7 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <FadeIn delay={0.3} className="py-48 border-t border-white/10 md:text-left">
+        <FadeIn delay={0.3} className="py-48 border-t border-black/10 md:text-left">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Take Action</p>
           <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12">Ready to automate your clinic?</h2>
           <Link href="/contact">

@@ -11,9 +11,9 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 md:pt-64 md:pb-48 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.05] pointer-events-none mix-blend-overlay"></div>
         
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/[0.02] blur-[150px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-black/[0.02] blur-[150px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -33,7 +33,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/demo">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base hover:bg-white/5 border-white/10">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base hover:bg-black/5 border-black/10">
                     Watch Live Demo
                   </Button>
                 </Link>
@@ -41,7 +41,7 @@ export default function HomePage() {
             </FadeIn>
             
             <FadeIn delay={0.2} className="lg:col-span-4 hidden lg:block">
-              <div className="flex flex-col gap-8 border-l border-white/10 pl-8">
+              <div className="flex flex-col gap-8 border-l border-black/10 pl-8">
                 <div>
                   <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">24/7 Availability</span></div>
                   <p className="text-sm text-muted-foreground">Always on, never sick.</p>
@@ -85,8 +85,8 @@ export default function HomePage() {
       </section>
 
       {/* What the AI Does */}
-      <section className="py-48 relative border-t border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none"></div>
+      <section className="py-48 relative border-t border-black/5">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/[0.02] to-transparent pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="max-w-4xl mb-24 md:text-left">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">The Platform</p>
@@ -96,9 +96,9 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-6xl mx-auto">
             <FadeIn delay={0.1} className="md:col-span-8">
-              <div className="group p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-md h-full flex flex-col hover-card shadow-sm overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-10 group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
+              <div className="group p-12 rounded-3xl border border-black/5 bg-black/[0.02] backdrop-blur-md h-full flex flex-col hover-card shadow-sm overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="w-16 h-16 rounded-2xl bg-black/10 flex items-center justify-center mb-10 group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
                   <PhoneCall className="w-8 h-8" />
                 </div>
                 <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Answer Calls Instantly</h3>
@@ -108,9 +108,9 @@ export default function HomePage() {
               </div>
             </FadeIn>
             <FadeIn delay={0.2} className="md:col-span-4">
-              <div className="group p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-md h-full flex flex-col hover-card shadow-sm overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-10 group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
+              <div className="group p-12 rounded-3xl border border-black/5 bg-black/[0.02] backdrop-blur-md h-full flex flex-col hover-card shadow-sm overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="w-16 h-16 rounded-2xl bg-black/10 flex items-center justify-center mb-10 group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
                   <Calendar className="w-8 h-8" />
                 </div>
                 <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Book Appointments</h3>
@@ -120,9 +120,9 @@ export default function HomePage() {
               </div>
             </FadeIn>
             <FadeIn delay={0.3} className="md:col-span-12">
-              <div className="group p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-md flex flex-col md:flex-row items-center gap-12 hover-card shadow-sm overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="w-20 h-20 shrink-0 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
+              <div className="group p-12 rounded-3xl border border-black/5 bg-black/[0.02] backdrop-blur-md flex flex-col md:flex-row items-center gap-12 hover-card shadow-sm overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="w-20 h-20 shrink-0 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
                   <ShieldCheck className="w-10 h-10" />
                 </div>
                 <div className="relative z-10 text-center md:text-left">
@@ -138,8 +138,8 @@ export default function HomePage() {
       </section>
 
       {/* Trust / Why Clinics Choose Nexus AI */}
-      <section className="py-48 bg-white/[0.01] border-y border-white/5 relative overflow-hidden">
-        <div className="absolute -left-1/4 top-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none"></div>
+      <section className="py-48 bg-black/[0.03] border-y border-black/5 relative overflow-hidden">
+        <div className="absolute -left-1/4 top-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.03),transparent_70%)] pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="max-w-4xl mb-32 md:text-left">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">The Advantage</p>
@@ -218,8 +218,8 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA & Booking Form */}
-      <section id="booking-form" className="py-48 relative border-t border-white/5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.02),transparent_70%)] pointer-events-none"></div>
+      <section id="booking-form" className="py-48 relative border-t border-black/5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.02),transparent_70%)] pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:text-left">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <FadeIn className="max-w-2xl">
@@ -231,22 +231,22 @@ export default function HomePage() {
               
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
                   <p className="font-medium">Free Workflow Analysis</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
                   <p className="font-medium">14-Day Risk-Free Pilot</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
                   <p className="font-medium">Custom Voice Cloning</p>
                 </div>
               </div>
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <div className="bg-white/[0.02] border border-white/5 rounded-3xl p-2 relative overflow-hidden backdrop-blur-xl shadow-2xl">
+              <div className="bg-black/[0.02] border border-black/5 rounded-3xl p-2 relative overflow-hidden backdrop-blur-xl shadow-2xl">
                 <BookingForm />
               </div>
             </FadeIn>

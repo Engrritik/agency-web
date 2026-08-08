@@ -97,7 +97,7 @@ export default function Demo() {
                   {[...Array(20)].map((_, i) => (
                     <div
                       key={i}
-                      className="w-3 bg-white/80 rounded-full group-hover:animate-pulse transition-all duration-300"
+                      className="w-3 bg-black/80 rounded-full group-hover:animate-pulse transition-all duration-300"
                       style={{
                         height: `${Math.max(20, ((i * 17) % 100))}%`,
                         animationDelay: `${i * 0.05}s`,
@@ -115,7 +115,7 @@ export default function Demo() {
                       <div className="text-sm opacity-80">Listening to patient...</div>
                     </div>
                   </div>
-                  <div className="font-mono text-sm text-white/80">0:12 / {active.outcome.duration}</div>
+                  <div className="font-mono text-sm text-black/80">0:12 / {active.outcome.duration}</div>
                 </div>
               </div>
             </FadeIn>

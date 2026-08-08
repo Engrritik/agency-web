@@ -24,7 +24,7 @@ export default function SolutionCard({ icon, problem, solution, outcome, classNa
 
   return (
     <div
-      className={`group relative rounded-3xl bg-white/[0.02] backdrop-blur-md p-8 flex flex-col overflow-hidden hover-card shadow-sm ${className}`}
+      className={`group relative rounded-3xl bg-black/[0.02] backdrop-blur-md p-8 flex flex-col overflow-hidden hover-card shadow-sm border border-transparent ${className}`}
       onMouseMove={handleMouseMove}
     >
       <motion.div
@@ -33,7 +33,7 @@ export default function SolutionCard({ icon, problem, solution, outcome, classNa
           background: useMotionTemplate`
             radial-gradient(
               600px circle at ${mouseX}px ${mouseY}px,
-              rgba(255, 255, 255, 0.05),
+              rgba(0, 0, 0, 0.05),
               transparent 80%
             )
           `,

@@ -47,7 +47,7 @@ export default function BookingForm() {
   return (
     <section id="booking-form" className="py-32 bg-transparent transition-colors">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="bg-white/[0.02] border border-white/5 backdrop-blur-xl rounded-3xl p-10 shadow-2xl relative overflow-hidden">
+        <div className="bg-black/[0.02] border border-black/5 backdrop-blur-xl rounded-3xl p-10 shadow-xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
           
           {!submitted ? (
@@ -63,19 +63,19 @@ export default function BookingForm() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1">Your Name</label>
-                  <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-white/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="Dr. John Doe" />
+                  <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-black/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="Dr. John Doe" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">Clinic Name</label>
-                  <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-white/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="Apex Dental Care" />
+                  <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-black/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="Apex Dental Care" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">Clinic Email</label>
-                  <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-white/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="office@apexdental.com" />
+                  <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-black/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="office@apexdental.com" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">Phone Number</label>
-                  <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-white/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="(555) 000-0000" />
+                  <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-black/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="(555) 000-0000" />
                 </div>
                 
                 <motion.button 
