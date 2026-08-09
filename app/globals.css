@@ -113,6 +113,12 @@ input, textarea {
 }
 
 /* Glow effects */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .hover-glow {
   position: relative;
   z-index: 1;
@@ -121,15 +127,17 @@ input, textarea {
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6, #8b5cf6);
+  background-size: 300% 100%;
   border-radius: inherit;
   z-index: -1;
   filter: blur(12px);
   opacity: 0;
   transition: opacity 0.5s ease;
+  animation: gradient-shift 4s linear infinite;
 }
 .hover-glow:hover::after {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .static-glow {
@@ -140,9 +148,11 @@ input, textarea {
   content: '';
   position: absolute;
   inset: -4px;
-  background: linear-gradient(to right, #2563eb, #7c3aed, #db2777);
+  background: linear-gradient(90deg, #2563eb, #7c3aed, #db2777, #2563eb, #7c3aed);
+  background-size: 300% 100%;
   border-radius: inherit;
   z-index: -1;
   filter: blur(16px);
-  opacity: 0.4;
+  opacity: 0.6;
+  animation: gradient-shift 4s linear infinite;
 }
