@@ -6,9 +6,9 @@ import { CheckCircle2, Cog, FileSearch, HardHat, Rocket, Zap } from "lucide-reac
 
 export default function About() {
   return (
-    <div className="flex flex-col min-h-screen pt-48 pb-32">
+    <div className="flex flex-col min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-5xl mb-32 md:text-left">
+        <FadeIn className="max-w-5xl mb-16 md:text-left">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Our Mission</p>
           <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
             Built by engineers focused on real-world automation.
@@ -19,7 +19,7 @@ export default function About() {
         </FadeIn>
 
         {/* Founder Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-16">
           <FadeIn delay={0.1} className="lg:col-span-5 relative flex flex-col items-center lg:items-start">
             <div className="w-[80%] aspect-[4/5] rounded-[2rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-border shadow-xl">
               <Image 
@@ -69,7 +69,7 @@ export default function About() {
         </div>
 
         {/* Why Clinics Trust Nexus AI */}
-        <div className="mb-48 mt-32 relative">
+        <div className="mb-24 mt-24 relative">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.02),transparent_60%)] pointer-events-none"></div>
           <FadeIn className="mb-24 md:text-left max-w-4xl">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">The Standard</p>
@@ -131,7 +131,7 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <FadeIn delay={0.3} className="py-48 border-t border-black/10 md:text-left">
+        <FadeIn delay={0.3} className="py-24 border-t border-black/10 md:text-left">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Take Action</p>
           <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12">Ready to automate your clinic?</h2>
           <Link href="/contact">

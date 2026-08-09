@@ -71,9 +71,9 @@ export default function Demo() {
   const active = scenarios[activeScenario as keyof typeof scenarios];
 
   return (
-    <div className="flex flex-col min-h-screen pt-48 pb-32">
+    <div className="flex flex-col min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-5xl mb-32 md:text-left">
+        <FadeIn className="max-w-5xl mb-16 md:text-left">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Interactive Demo</p>
           <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
             Experience the Future of Patient Communications.
@@ -84,7 +84,7 @@ export default function Demo() {
         </FadeIn>
 
         {/* Demo Section (Audio Player + Dashboard + Scenarios) */}
-        <div className="max-w-6xl mx-auto mb-32 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="max-w-6xl mx-auto mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Left Side: Player and Scenarios */}
           <div className="lg:col-span-7 flex flex-col gap-8">
@@ -188,7 +188,7 @@ export default function Demo() {
         </div>
 
         {/* AI Capability Grid */}
-        <div className="max-w-6xl mx-auto mb-32">
+        <div className="max-w-6xl mx-auto mb-16">
           <FadeIn>
             <h2 className="text-3xl font-bold tracking-tight mb-10 text-center">Engineered Capabilities</h2>
           </FadeIn>
@@ -208,7 +208,7 @@ export default function Demo() {
         </div>
 
         {/* Workflow Visualization */}
-        <div className="max-w-6xl mx-auto mb-32">
+        <div className="max-w-6xl mx-auto mb-16">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight mb-4">How It Works in Real-Time</h2>
           </FadeIn>
@@ -254,7 +254,7 @@ export default function Demo() {
         </div>
 
         {/* Security & Reliability */}
-        <div className="max-w-6xl mx-auto mb-32">
+        <div className="max-w-6xl mx-auto mb-16">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight mb-4">Enterprise-Grade Infrastructure</h2>
           </FadeIn>
@@ -279,7 +279,7 @@ export default function Demo() {
         </div>
 
         {/* Before vs After */}
-        <div className="max-w-5xl mx-auto mb-32">
+        <div className="max-w-5xl mx-auto mb-16">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight mb-4">The Nexus AI Difference</h2>
           </FadeIn>
@@ -314,7 +314,7 @@ export default function Demo() {
         </div>
         
         {/* Technology Stack */}
-        <div className="max-w-4xl mx-auto mb-32 text-center">
+        <div className="max-w-4xl mx-auto mb-16 text-center">
           <FadeIn>
             <h3 className="text-sm font-bold tracking-widest uppercase text-muted-foreground mb-8">Powered by Trusted AI Infrastructure</h3>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale font-bold text-xl">

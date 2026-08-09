@@ -45,11 +45,11 @@ export default function Solutions() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen pt-48 pb-32">
+    <div className="flex flex-col min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-5xl mb-32 md:text-left">
+        <FadeIn className="max-w-5xl mb-16 md:text-left">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Our Capabilities</p>
-          <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-bold tracking-tighter leading-[0.85] mb-12 text-foreground">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 text-foreground">
             Solutions That Drive Revenue.
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
@@ -57,7 +57,7 @@ export default function Solutions() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {solutions.map((item, index) => (
             <FadeIn key={index} delay={index * 0.1} className="col-span-1">
               <SolutionCard 
@@ -73,12 +73,12 @@ export default function Solutions() {
       </div>
       
       {/* CTA Section */}
-      <section className="py-48 relative border-t border-black/5">
+      <section className="py-24 relative border-t border-black/5">
         <div className="absolute inset-0 bg-gradient-to-b from-black/[0.02] to-transparent pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 md:text-left">
           <FadeIn className="max-w-5xl">
-            <h2 className="text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter leading-[0.9] mb-10">See the ROI for your clinic.</h2>
-            <p className="text-2xl text-muted-foreground mb-16 leading-relaxed max-w-3xl">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.9] mb-8">See the ROI for your clinic.</h2>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl">
               Let our engineers analyze your call volume and show you exactly how much revenue an AI receptionist could recover.
             </p>
             <Link href="/contact">
