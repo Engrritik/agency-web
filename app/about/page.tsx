@@ -2,6 +2,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import InteractiveCard from "@/components/InteractiveCard";
 import { CheckCircle2, Cog, FileSearch, HardHat, Rocket, Zap } from "lucide-react";
 
 export default function About() {
@@ -85,10 +86,10 @@ export default function About() {
               "Fast Support"
             ].map((trust, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-card border border-border rounded-2xl p-8 flex items-center gap-4 hover-card shadow-sm h-full">
-                  <CheckCircle2 className="w-8 h-8 text-foreground shrink-0" />
-                  <h3 className="font-bold text-xl">{trust}</h3>
-                </div>
+                <InteractiveCard innerClassName="p-8 flex items-center gap-4 h-full">
+                  <CheckCircle2 className="w-8 h-8 text-foreground shrink-0 relative z-10" />
+                  <h3 className="font-bold text-xl relative z-10">{trust}</h3>
+                </InteractiveCard>
               </FadeIn>
             ))}
           </div>
@@ -115,10 +116,10 @@ export default function About() {
               ].map((step, i) => (
                 <FadeIn key={i} delay={i * 0.15} className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-16 group">
                   <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:text-right md:pr-16' : 'md:order-2 md:pl-16'}`}>
-                    <div className="bg-card border border-border rounded-2xl p-8 shadow-sm group-hover:border-foreground/30 transition-colors">
-                      <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-lg">{step.desc}</p>
-                    </div>
+                    <InteractiveCard innerClassName="p-8">
+                      <h3 className="text-2xl font-bold mb-3 relative z-10">{step.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed text-lg relative z-10">{step.desc}</p>
+                    </InteractiveCard>
                   </div>
                   <div className="hidden md:flex absolute left-1/2 w-20 h-20 rounded-full bg-background border-4 border-border text-foreground items-center justify-center -translate-x-1/2 z-10 shadow-sm group-hover:border-foreground group-hover:scale-110 transition-all">
                     {step.icon}

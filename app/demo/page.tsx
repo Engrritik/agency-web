@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { Play, Calendar, Clock, ShieldCheck, CheckCircle2, UserPlus, AlertCircle, FileText, ArrowRight, Zap, Lock, Database, X } from "lucide-react";
 import { motion } from "framer-motion";
+import InteractiveCard from "@/components/InteractiveCard";
 
 export default function Demo() {
   const [activeScenario, setActiveScenario] = useState("booking");
@@ -267,12 +268,12 @@ export default function Demo() {
               { title: "Secure API Integrations", icon: <ShieldCheck className="w-6 h-6" /> },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-card border border-border rounded-2xl p-6 text-center flex flex-col items-center gap-4 h-full hover-card">
-                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-foreground">
+                <InteractiveCard innerClassName="p-6 text-center flex flex-col items-center gap-4 h-full">
+                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-foreground relative z-10 transition-transform group-hover:scale-110">
                     {item.icon}
                   </div>
-                  <h3 className="font-bold text-sm">{item.title}</h3>
-                </div>
+                  <h3 className="font-bold text-sm relative z-10">{item.title}</h3>
+                </InteractiveCard>
               </FadeIn>
             ))}
           </div>

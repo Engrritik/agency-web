@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
+import InteractiveCard from "./InteractiveCard";
 
 interface SolutionCardProps {
   icon: ReactNode;
@@ -13,38 +13,9 @@ interface SolutionCardProps {
 }
 
 export default function SolutionCard({ icon, problem, solution, outcome, className = "" }: SolutionCardProps) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
   return (
-    <div className={`relative group ${className}`}>
-      {/* Colorful Background Glow */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-30 transition duration-700"></div>
-      
-      <div
-        className="relative h-full rounded-3xl bg-white backdrop-blur-md p-8 flex flex-col overflow-hidden shadow-sm border border-black/5 transition-transform duration-500 group-hover:-translate-y-1"
-        onMouseMove={handleMouseMove}
-      >
-        <motion.div
-          className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
-          style={{
-            background: useMotionTemplate`
-              radial-gradient(
-                600px circle at ${mouseX}px ${mouseY}px,
-                rgba(0, 0, 0, 0.03),
-                transparent 80%
-              )
-            `,
-          }}
-        />
-        
-        <div className="w-14 h-14 rounded-2xl bg-muted/80 flex items-center justify-center text-foreground mb-8 relative z-10 transition-transform duration-300 group-hover:scale-110">
+    <InteractiveCard className={className}>
+      <div className="w-14 h-14 rounded-2xl bg-muted/80 flex items-center justify-center text-foreground mb-8 relative z-10 transition-transform duration-300 group-hover:scale-110">
         {icon}
       </div>
       
@@ -67,7 +38,6 @@ export default function SolutionCard({ icon, problem, solution, outcome, classNa
           {outcome}
         </div>
       </div>
-    </div>
-    </div>
+    </InteractiveCard>
   );
 }
