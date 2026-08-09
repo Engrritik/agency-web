@@ -97,3 +97,52 @@ input, textarea {
 .hover-card:hover::before {
   opacity: 1;
 }
+
+/* Animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-hover:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Glow effects */
+.hover-glow {
+  position: relative;
+  z-index: 1;
+}
+.hover-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.hover-glow:hover::after {
+  opacity: 0.6;
+}
+
+.static-glow {
+  position: relative;
+  z-index: 1;
+}
+.static-glow::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(to right, #2563eb, #7c3aed, #db2777);
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(16px);
+  opacity: 0.4;
+}

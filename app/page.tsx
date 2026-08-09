@@ -42,18 +42,18 @@ export default function HomePage() {
             
             <FadeIn delay={0.2} className="lg:col-span-4 hidden lg:block">
               <div className="flex flex-col gap-8 border-l border-black/10 pl-8">
-                <div>
+                <FadeIn delay={0.3} className="hover:-translate-y-1 transition-transform duration-300">
                   <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">24/7 Availability</span></div>
                   <p className="text-sm text-muted-foreground">Always on, never sick.</p>
-                </div>
-                <div>
+                </FadeIn>
+                <FadeIn delay={0.4} className="hover:-translate-y-1 transition-transform duration-300">
                   <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Sub-800ms Latency</span></div>
                   <p className="text-sm text-muted-foreground">Indistinguishable from human speed.</p>
-                </div>
-                <div>
+                </FadeIn>
+                <FadeIn delay={0.5} className="hover:-translate-y-1 transition-transform duration-300">
                   <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Calendar Sync</span></div>
                   <p className="text-sm text-muted-foreground">Direct write-access to your EMR.</p>
-                </div>
+                </FadeIn>
               </div>
             </FadeIn>
           </div>
@@ -95,7 +95,7 @@ export default function HomePage() {
           </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-6xl mx-auto">
-            <FadeIn delay={0.1} className="md:col-span-8">
+            <FadeIn delay={0.1} className="md:col-span-8 hover-glow">
               <div className="group p-12 rounded-3xl border border-black/5 bg-black/[0.02] backdrop-blur-md h-full flex flex-col hover-card shadow-sm overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="w-16 h-16 rounded-2xl bg-black/10 flex items-center justify-center mb-10 group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
@@ -107,7 +107,7 @@ export default function HomePage() {
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2} className="md:col-span-4">
+            <FadeIn delay={0.2} className="md:col-span-4 hover-glow">
               <div className="group p-12 rounded-3xl border border-black/5 bg-black/[0.02] backdrop-blur-md h-full flex flex-col hover-card shadow-sm overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="w-16 h-16 rounded-2xl bg-black/10 flex items-center justify-center mb-10 group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
@@ -119,7 +119,7 @@ export default function HomePage() {
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.3} className="md:col-span-12">
+            <FadeIn delay={0.3} className="md:col-span-12 hover-glow">
               <div className="group p-12 rounded-3xl border border-black/5 bg-black/[0.02] backdrop-blur-md flex flex-col md:flex-row items-center gap-12 hover-card shadow-sm overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="w-20 h-20 shrink-0 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors relative z-10">
@@ -147,26 +147,37 @@ export default function HomePage() {
             <p className="text-xl text-muted-foreground max-w-2xl">Engineered specifically for the demands of high-volume healthcare practices.</p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "No Long-Term Contracts", icon: <ShieldCheck className="w-6 h-6" /> },
-              { title: "14-Day Risk-Free Pilot", icon: <Activity className="w-6 h-6" /> },
-              { title: "Custom AI Voice", icon: <PhoneCall className="w-6 h-6" /> },
-              { title: "Human Escalation", icon: <CheckCircle2 className="w-6 h-6" /> },
-              { title: "Works After Hours", icon: <Clock className="w-6 h-6" /> },
-              { title: "Calendar Integration", icon: <Calendar className="w-6 h-6" /> },
-              { title: "Built For Clinics", icon: <Stethoscope className="w-6 h-6" /> },
-              { title: "Lightning Fast", icon: <Zap className="w-6 h-6" /> },
-            ].map((item, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-card border border-border rounded-2xl p-6 flex items-center gap-4 hover-card shadow-sm">
-                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-foreground shrink-0">
-                    {item.icon}
+          <div className="relative overflow-hidden w-full group animate-marquee-hover pb-10">
+            <div className="flex gap-6 w-max animate-marquee">
+              {[
+                { title: "No Long-Term Contracts", icon: <ShieldCheck className="w-6 h-6" /> },
+                { title: "14-Day Risk-Free Pilot", icon: <Activity className="w-6 h-6" /> },
+                { title: "Custom AI Voice", icon: <PhoneCall className="w-6 h-6" /> },
+                { title: "Human Escalation", icon: <CheckCircle2 className="w-6 h-6" /> },
+                { title: "Works After Hours", icon: <Clock className="w-6 h-6" /> },
+                { title: "Calendar Integration", icon: <Calendar className="w-6 h-6" /> },
+                { title: "Built For Clinics", icon: <Stethoscope className="w-6 h-6" /> },
+                { title: "Lightning Fast", icon: <Zap className="w-6 h-6" /> },
+                // Duplicate for infinite scroll
+                { title: "No Long-Term Contracts", icon: <ShieldCheck className="w-6 h-6" /> },
+                { title: "14-Day Risk-Free Pilot", icon: <Activity className="w-6 h-6" /> },
+                { title: "Custom AI Voice", icon: <PhoneCall className="w-6 h-6" /> },
+                { title: "Human Escalation", icon: <CheckCircle2 className="w-6 h-6" /> },
+                { title: "Works After Hours", icon: <Clock className="w-6 h-6" /> },
+                { title: "Calendar Integration", icon: <Calendar className="w-6 h-6" /> },
+                { title: "Built For Clinics", icon: <Stethoscope className="w-6 h-6" /> },
+                { title: "Lightning Fast", icon: <Zap className="w-6 h-6" /> },
+              ].map((item, i) => (
+                <div key={i} className="hover-glow shrink-0 w-72">
+                  <div className="bg-card border border-border rounded-2xl p-6 flex items-center gap-4 hover-card shadow-sm h-full">
+                    <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-foreground shrink-0">
+                      {item.icon}
+                    </div>
+                    <h3 className="font-bold text-lg leading-tight">{item.title}</h3>
                   </div>
-                  <h3 className="font-bold text-lg leading-tight">{item.title}</h3>
                 </div>
-              </FadeIn>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

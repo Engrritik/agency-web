@@ -47,35 +47,35 @@ export default function BookingForm() {
   return (
     <section id="booking-form" className="py-32 bg-transparent transition-colors">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="bg-black/[0.02] border border-black/5 backdrop-blur-xl rounded-3xl p-10 shadow-xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
+        <div className="static-glow bg-black/[0.85] dark:bg-black/[0.85] border border-white/10 backdrop-blur-xl rounded-3xl p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.08] pointer-events-none mix-blend-overlay"></div>
           
           {!submitted ? (
             /* STEP 1: High-Converting Lead Capture Form */
             <div className="max-w-md mx-auto">
-              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white text-center mb-2">
+              <h3 className="text-2xl font-bold text-white text-center mb-2">
                 Book a 15-Minute Voice AI Demo
               </h3>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 text-center mb-8">
+              <p className="text-sm text-neutral-400 text-center mb-8">
                 See how Nexus AI answers calls, qualifies patients, and updates your PMS live.
               </p>
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1">Your Name</label>
-                  <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-black/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="Dr. John Doe" />
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1">Your Name</label>
+                  <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 focus:outline-none transition-all placeholder:text-neutral-500" placeholder="Dr. John Doe" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">Clinic Name</label>
-                  <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-black/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="Apex Dental Care" />
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">Clinic Name</label>
+                  <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 focus:outline-none transition-all placeholder:text-neutral-500" placeholder="Apex Dental Care" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">Clinic Email</label>
-                  <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-black/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="office@apexdental.com" />
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">Clinic Email</label>
+                  <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 focus:outline-none transition-all placeholder:text-neutral-500" placeholder="office@apexdental.com" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">Phone Number</label>
-                  <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-xl text-foreground text-sm focus:ring-2 focus:ring-black/20 focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="(555) 000-0000" />
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">Phone Number</label>
+                  <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 focus:outline-none transition-all placeholder:text-neutral-500" placeholder="(555) 000-0000" />
                 </div>
                 
                 <motion.button 
@@ -83,13 +83,13 @@ export default function BookingForm() {
                   whileTap={{ scale: 0.98 }}
                   type="submit" 
                   disabled={loading} 
-                  className="w-full mt-2 bg-black dark:bg-white text-white dark:text-black font-semibold text-sm py-3 rounded-full hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center relative overflow-hidden"
+                  className="hover-glow w-full mt-6 bg-white text-black font-bold text-sm py-4 rounded-xl transition-all disabled:opacity-50 flex items-center justify-center relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
                 >
                   {loading ? (
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                      className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full dark:border-black/30 dark:border-t-black"
+                      className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full"
                     />
                   ) : "Proceed to Calendar →"}
                 </motion.button>
@@ -108,11 +108,11 @@ export default function BookingForm() {
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="inline-block bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 text-xs px-3 py-1 rounded-full font-medium mb-2"
+                  className="inline-block bg-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full font-medium mb-4"
                 >
                   ✓ Information Saved Securely
                 </motion.span>
-                <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
+                <h3 className="text-xl font-bold text-white">
                   Select Your Demo Time Below
                 </h3>
               </div>

@@ -89,7 +89,7 @@ export default function Demo() {
           {/* Left Side: Player and Scenarios */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             {/* Audio Player Replacement / Video Player */}
-            <FadeIn delay={0.1}>
+            <FadeIn delay={0.1} className="hover-glow">
               <div className="aspect-video w-full bg-black rounded-3xl overflow-hidden relative shadow-[0_0_50px_rgba(0,0,0,0.1)] border border-border group flex items-center justify-center">
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
                 {/* Simulated Audio Visualizer */}
@@ -121,7 +121,7 @@ export default function Demo() {
             </FadeIn>
 
             {/* Scenario Selector */}
-            <FadeIn delay={0.2} className="bg-card border border-border rounded-3xl p-6">
+            <FadeIn delay={0.2} className="bg-card border border-border rounded-3xl p-6 hover-glow">
               <h3 className="font-bold text-lg mb-4">Select Call Scenario</h3>
               <div className="flex flex-wrap gap-3">
                 {Object.entries(scenarios).map(([key, scenario]) => (
@@ -145,8 +145,8 @@ export default function Demo() {
           {/* Right Side: Dashboard */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             {/* Call Outcome Dashboard */}
-            <FadeIn delay={0.3} className="bg-card border border-border rounded-3xl p-8 h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-8 border-b border-border/50 pb-6">
+            <FadeIn delay={0.3} className="bg-card border border-border rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.05)] h-full flex flex-col hover-glow">
+              <div className="flex items-center gap-3 mb-8 border-b border-border/50 p-8 pb-6">
                 <div className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
@@ -198,7 +198,7 @@ export default function Demo() {
               "Human Escalation", "After Hours Coverage", "Captures New Patients", "Natural Human Voice"
             ].map((cap, i) => (
               <FadeIn key={i} delay={i * 0.05}>
-                <div className="bg-muted/30 border border-border rounded-xl p-4 flex items-center gap-3 hover-card">
+                <div className="bg-muted/30 border border-border rounded-xl p-4 flex items-center gap-3 hover-card hover-glow">
                   <CheckCircle2 className="w-5 h-5 text-foreground shrink-0" />
                   <span className="font-semibold text-sm">{cap}</span>
                 </div>
@@ -215,7 +215,7 @@ export default function Demo() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {['Patient Calls', 'AI Answers', 'Understands Intent', 'Checks Calendar', 'Books Appointment', 'Confirmation Sent'].map((step, i, arr) => (
               <FadeIn key={i} delay={i * 0.1} className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
-                <div className="bg-card border border-border rounded-2xl p-6 text-center shadow-sm w-full md:w-auto min-w-[140px]">
+                <div className="bg-card border border-border rounded-2xl p-6 text-center shadow-sm w-full md:w-auto min-w-[140px] hover-glow">
                   <span className="font-bold text-sm block">{step}</span>
                 </div>
                 {i < arr.length - 1 && (
