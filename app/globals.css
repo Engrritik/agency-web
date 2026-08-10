@@ -108,10 +108,6 @@ input, textarea {
   animation: marquee 30s linear infinite;
 }
 
-.animate-marquee-hover:hover .animate-marquee {
-  animation-play-state: paused;
-}
-
 /* Glow effects */
 @keyframes gradient-shift {
   0% { background-position: 0% 50%; }
@@ -126,17 +122,35 @@ input, textarea {
 .hover-glow::after {
   content: '';
   position: absolute;
-  inset: -1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.15), transparent);
+  inset: -2px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.4), transparent);
   background-size: 200% 100%;
   border-radius: inherit;
   z-index: -1;
   opacity: 0;
   transition: opacity 0.5s ease;
   animation: gradient-shift 3s linear infinite;
+  filter: blur(6px);
 }
 .hover-glow:hover::after {
   opacity: 1;
+}
+
+.moving-glow {
+  position: relative;
+  z-index: 1;
+}
+.moving-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, #2563eb, transparent, #2563eb);
+  background-size: 200% 100%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: gradient-shift 3s linear infinite;
+  filter: blur(8px);
+  opacity: 0.6;
 }
 
 .static-glow {

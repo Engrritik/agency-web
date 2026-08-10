@@ -93,7 +93,7 @@ export default function Demo() {
           {/* Left Side: Player and Scenarios */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             {/* Audio Player Replacement / Video Player */}
-            <FadeIn delay={0.1} className="hover-glow">
+            <FadeIn delay={0.1} className="moving-glow">
               <div className="aspect-video w-full bg-black rounded-3xl overflow-hidden relative shadow-[0_0_50px_rgba(0,0,0,0.1)] border border-border group flex items-center justify-center">
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
                 {/* Simulated Audio Visualizer */}

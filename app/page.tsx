@@ -266,7 +266,7 @@ export default function HomePage() {
               </div>
             </FadeIn>
             
-            <FadeIn delay={0.2}>
+            <FadeIn delay={0.2} className="moving-glow">
               <div className="bg-black/[0.02] border border-black/5 rounded-[32px] p-2 relative overflow-hidden backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                 <BookingForm />
               </div>
