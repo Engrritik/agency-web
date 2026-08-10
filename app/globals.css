@@ -123,14 +123,14 @@ input, textarea {
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, #2563eb, transparent);
   background-size: 200% 100%;
   border-radius: inherit;
   z-index: -1;
   opacity: 0;
   transition: opacity 0.5s ease;
   animation: gradient-shift 3s linear infinite;
-  filter: blur(6px);
+  filter: blur(12px);
 }
 .hover-glow:hover::after {
   opacity: 1;
@@ -144,13 +144,22 @@ input, textarea {
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(90deg, #2563eb, transparent, #2563eb);
+  background: linear-gradient(90deg, #2563eb, rgba(37, 99, 235, 0.5), #2563eb);
   background-size: 200% 100%;
   border-radius: inherit;
   z-index: -1;
   animation: gradient-shift 3s linear infinite;
-  filter: blur(8px);
-  opacity: 0.6;
+  filter: blur(16px);
+  opacity: 1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 .static-glow {
