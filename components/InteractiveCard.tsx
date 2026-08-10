@@ -14,7 +14,7 @@ interface InteractiveCardProps {
 export default function InteractiveCard({ 
   children, 
   className = "", 
-  innerClassName = "p-8", 
+  innerClassName = "p-8 md:p-10", 
   permanent = false, 
   darker = false 
 }: InteractiveCardProps) {
@@ -27,30 +27,22 @@ export default function InteractiveCard({
     mouseY.set(clientY - top);
   }
 
-  const glowGradient = darker 
-    ? "from-blue-700 via-purple-700 to-pink-700" 
-    : "from-blue-500 via-purple-500 to-pink-500";
-    
-  const radialColor = darker ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.03)";
+  const radialColor = darker ? "rgba(255, 255, 255, 0.05)" : "rgba(0, 0, 0, 0.02)";
   
-  const opacityClass = permanent ? "opacity-30" : "opacity-0 group-hover:opacity-30";
   const innerOpacityClass = permanent ? "opacity-100" : "opacity-0 group-hover:opacity-100 transition duration-300";
 
   return (
     <div className={`relative group h-full ${className}`}>
-      {/* Colorful Background Glow */}
-      <div className={`absolute -inset-0.5 bg-gradient-to-r ${glowGradient} rounded-[2rem] blur-xl transition duration-700 ${opacityClass}`}></div>
-      
       <div
-        className={`relative h-full rounded-3xl ${darker ? 'bg-zinc-950 text-zinc-100 border-white/10' : 'bg-white backdrop-blur-md border-black/5'} flex flex-col overflow-hidden shadow-sm transition-transform duration-500 group-hover:-translate-y-1 ${innerClassName}`}
+        className={`relative h-full rounded-[32px] ${darker ? 'bg-[#0a0a0a] text-zinc-100 border-white/[0.08]' : 'bg-white border-black/5'} flex flex-col overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 border ${innerClassName}`}
         onMouseMove={handleMouseMove}
       >
         <motion.div
-          className={`pointer-events-none absolute -inset-px rounded-3xl ${innerOpacityClass}`}
+          className={`pointer-events-none absolute -inset-px rounded-[32px] ${innerOpacityClass}`}
           style={{
             background: useMotionTemplate`
               radial-gradient(
-                600px circle at ${mouseX}px ${mouseY}px,
+                800px circle at ${mouseX}px ${mouseY}px,
                 ${radialColor},
                 transparent 80%
               )
