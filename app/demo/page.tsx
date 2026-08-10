@@ -125,17 +125,17 @@ export default function Demo() {
             </FadeIn>
 
             {/* Scenario Selector */}
-            <FadeIn delay={0.2} className="bg-card border border-border rounded-3xl p-6 hover-glow">
-              <h3 className="font-bold text-lg mb-4">Select Call Scenario</h3>
+            <FadeIn delay={0.2} className="bg-white border border-black/5 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+              <h3 className="font-bold text-lg mb-4 tracking-[-0.02em]">Select Call Scenario</h3>
               <div className="flex flex-wrap gap-3">
                 {Object.entries(scenarios).map(([key, scenario]) => (
                   <button
                     key={key}
                     onClick={() => setActiveScenario(key)}
-                    className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                    className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                       activeScenario === key
-                        ? "bg-foreground text-background shadow-md scale-[1.02]"
-                        : "bg-muted/50 text-foreground hover:bg-muted"
+                        ? "bg-blue-600 text-white shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] scale-[1.02]"
+                        : "bg-black/5 text-foreground hover:bg-black/10"
                     }`}
                   >
                     {scenario.icon}
@@ -149,41 +149,41 @@ export default function Demo() {
           {/* Right Side: Dashboard */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             {/* Call Outcome Dashboard */}
-            <FadeIn delay={0.3} className="bg-card border border-border rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.05)] h-full flex flex-col hover-glow">
-              <div className="flex items-center gap-3 mb-8 border-b border-border/50 p-8 pb-6">
+            <FadeIn delay={0.3} className="bg-white border border-black/5 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col">
+              <div className="flex items-center gap-3 mb-8 border-b border-black/5 p-8 pb-6 bg-black/[0.02]">
                 <div className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
                 </div>
-                <h3 className="font-bold text-xl">Call Outcome Dashboard</h3>
+                <h3 className="font-bold text-xl tracking-tight">Call Outcome Dashboard</h3>
               </div>
 
-              <div className="space-y-6 flex-grow">
+              <div className="space-y-8 flex-grow px-8 pb-8">
                 <div>
-                  <div className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Call Status</div>
-                  <div className="flex items-center gap-2 font-semibold text-lg">
-                    {active.outcome.status === "Escalated to Human" ? <AlertCircle className="w-5 h-5 text-yellow-500" /> : <CheckCircle2 className="w-5 h-5 text-green-500" />}
+                  <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Call Status</div>
+                  <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
+                    {active.outcome.status === "Escalated to Human" ? <AlertCircle className="w-5 h-5 text-yellow-500" /> : <CheckCircle2 className="w-5 h-5 text-blue-600" />}
                     {active.outcome.status}
                   </div>
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Action Taken</div>
-                  <div className="font-semibold text-lg">{active.outcome.appointment}</div>
+                  <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Action Taken</div>
+                  <div className="font-bold text-xl tracking-tight">{active.outcome.appointment}</div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <div className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Wait Time</div>
-                    <div className="font-semibold text-lg">{active.outcome.wait}</div>
+                    <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Wait Time</div>
+                    <div className="font-bold text-xl tracking-tight">{active.outcome.wait}</div>
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Duration</div>
-                    <div className="font-semibold text-lg">{active.outcome.duration}</div>
+                    <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Duration</div>
+                    <div className="font-bold text-xl tracking-tight">{active.outcome.duration}</div>
                   </div>
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">System Status</div>
-                  <div className="font-semibold text-lg flex items-center gap-2">
-                    <Database className="w-5 h-5 text-muted-foreground" /> {active.outcome.calendar}
+                  <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">System Status</div>
+                  <div className="font-bold text-xl tracking-tight flex items-center gap-2">
+                    <Database className="w-5 h-5 text-blue-600" /> {active.outcome.calendar}
                   </div>
                 </div>
               </div>
