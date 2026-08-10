@@ -84,10 +84,7 @@ export default function About() {
           </FadeIn>
           
           <div className="relative max-w-5xl mx-auto py-10">
-            {/* Tree Trunk */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-600/30 to-transparent -translate-x-1/2 hidden md:block"></div>
-            
-            <div className="flex flex-col gap-16 relative z-10">
+            <div className="flex flex-col gap-12 relative z-10">
               {[
                 "Custom Workflows", 
                 "No Hallucinated Answers", 
@@ -97,11 +94,8 @@ export default function About() {
               ].map((trust, i) => {
                 const isLeft = i % 2 === 0;
                 return (
-                  <div key={i} className={`flex w-full md:w-1/2 ${isLeft ? 'md:pr-16 md:self-start md:justify-end' : 'md:pl-16 md:self-end justify-start'} relative group`}>
-                    {/* Branch connector */}
-                    <div className={`hidden md:block absolute top-1/2 w-16 h-px bg-gradient-to-r ${isLeft ? 'from-blue-600/30 to-transparent right-0' : 'from-transparent to-blue-600/30 left-0'} -translate-y-1/2`}></div>
-                    
-                    <FadeIn delay={i * 0.1} className="w-full sm:w-[90%] md:w-[85%]">
+                  <div key={i} className={`flex w-full md:w-3/4 ${isLeft ? 'md:self-start' : 'md:self-end'} relative group`}>
+                    <FadeIn delay={i * 0.1} className="w-full">
                       <div 
                         className="animate-float w-full"
                         style={{ animationDelay: `${i * 0.7}s` }}

@@ -20,7 +20,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl rounded-full border border-black/5 bg-white/70 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.02)] transition-all duration-500">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl rounded-full border border-black/10 bg-transparent backdrop-blur-xl shadow-sm transition-all duration-500">
       <div className="px-5 lg:px-6">
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center gap-2">

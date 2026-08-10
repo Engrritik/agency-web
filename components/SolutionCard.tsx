@@ -14,7 +14,7 @@ interface SolutionCardProps {
 
 export default function SolutionCard({ icon, problem, solution, outcome, className = "" }: SolutionCardProps) {
   return (
-    <InteractiveCard className={className} innerClassName="p-8">
+    <InteractiveCard className={className} innerClassName="p-8 bg-white/40 backdrop-blur-xl border-white/20">
       <div className="w-14 h-14 rounded-[16px] bg-black/5 flex items-center justify-center text-blue-600 mb-8 relative z-10 transition-transform duration-300 group-hover:scale-105 border border-black/5">
         {icon}
       </div>

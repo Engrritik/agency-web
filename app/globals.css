@@ -122,18 +122,19 @@ input, textarea {
 .hover-glow::after {
   content: '';
   position: absolute;
-  inset: -2px;
-  background: linear-gradient(90deg, transparent, #2563eb, transparent);
+  inset: -3px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
   background-size: 200% 100%;
   border-radius: inherit;
   z-index: -1;
   opacity: 0;
   transition: opacity 0.5s ease;
   animation: gradient-shift 3s linear infinite;
-  filter: blur(12px);
+  filter: blur(16px);
 }
 .hover-glow:hover::after {
   opacity: 1;
+  box-shadow: 0 0 30px 10px rgba(59, 130, 246, 0.5);
 }
 
 .moving-glow {
