@@ -93,7 +93,7 @@ export default function Demo() {
           {/* Left Side: Player and Scenarios */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             {/* Audio Player Replacement / Video Player */}
-            <FadeIn delay={0.1}>
+            <FadeIn delay={0.1} className="moving-glow">
               <div className="aspect-video w-full bg-black rounded-3xl overflow-hidden relative shadow-[0_0_50px_rgba(0,0,0,0.1)] border border-border group flex items-center justify-center">
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
                 {/* Simulated Audio Visualizer */}
@@ -125,7 +125,7 @@ export default function Demo() {
             </FadeIn>
 
             {/* Scenario Selector */}
-            <FadeIn delay={0.2} className="bg-white/40 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-sm hover-glow group relative z-10">
+            <FadeIn delay={0.2} className="bg-white border border-black/5 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover-glow group relative z-10">
               <h3 className="font-bold text-lg mb-4 tracking-[-0.02em]">Select Call Scenario</h3>
               <div className="flex flex-wrap gap-3">
                 {Object.entries(scenarios).map(([key, scenario]) => (
@@ -149,7 +149,7 @@ export default function Demo() {
           {/* Right Side: Dashboard */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             {/* Call Outcome Dashboard */}
-            <FadeIn delay={0.3} className="bg-white/40 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden shadow-sm h-full flex flex-col hover-glow group relative z-10">
+            <FadeIn delay={0.3} className="bg-white border border-black/5 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col hover-glow group relative z-10">
               <div className="flex items-center gap-3 mb-8 border-b border-black/5 p-8 pb-6 bg-black/[0.02]">
                 <div className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>

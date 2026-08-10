@@ -103,35 +103,35 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-6xl mx-auto">
             <FadeIn delay={0.1} className="md:col-span-8">
-              <InteractiveCard innerClassName="p-12 flex flex-col h-full bg-white/40 backdrop-blur-xl border-white/20" permanent={true} darker={false}>
-                <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center mb-10 group-hover:bg-blue-600 group-hover:text-white transition-colors relative z-10">
+              <InteractiveCard innerClassName="p-12 flex flex-col h-full" permanent={true} darker={true}>
+                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-10 group-hover:bg-white group-hover:text-zinc-950 transition-colors relative z-10">
                   <PhoneCall className="w-8 h-8" />
                 </div>
-                <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Answer Calls Instantly</h3>
-                <p className="text-muted-foreground leading-relaxed text-xl max-w-lg relative z-10">
+                <h3 className="text-3xl font-bold mb-4 relative z-10 text-white">Answer Calls Instantly</h3>
+                <p className="text-zinc-400 leading-relaxed text-xl max-w-lg relative z-10">
                   Never miss leads or patient calls again. The AI answers on the first ring, 24/7, with zero hold times.
                 </p>
               </InteractiveCard>
             </FadeIn>
             <FadeIn delay={0.2} className="md:col-span-4">
-              <InteractiveCard innerClassName="p-12 flex flex-col h-full bg-white/40 backdrop-blur-xl border-white/20" permanent={true} darker={false}>
-                <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center mb-10 group-hover:bg-blue-600 group-hover:text-white transition-colors relative z-10">
+              <InteractiveCard innerClassName="p-12 flex flex-col h-full" permanent={true} darker={true}>
+                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-10 group-hover:bg-white group-hover:text-zinc-950 transition-colors relative z-10">
                   <Calendar className="w-8 h-8" />
                 </div>
-                <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Book Appointments</h3>
-                <p className="text-muted-foreground leading-relaxed text-xl relative z-10">
+                <h3 className="text-3xl font-bold mb-4 relative z-10 text-white">Book Appointments</h3>
+                <p className="text-zinc-400 leading-relaxed text-xl relative z-10">
                   Connected directly to your calendar and scheduling logic.
                 </p>
               </InteractiveCard>
             </FadeIn>
             <FadeIn delay={0.3} className="md:col-span-12">
-              <InteractiveCard innerClassName="p-12 flex flex-col md:flex-row items-center gap-12 bg-white/40 backdrop-blur-xl border-white/20" permanent={true} darker={false}>
-                <div className="w-20 h-20 shrink-0 rounded-full bg-black/5 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors relative z-10">
+              <InteractiveCard innerClassName="p-12 flex flex-col md:flex-row items-center gap-12" permanent={true} darker={true}>
+                <div className="w-20 h-20 shrink-0 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-zinc-950 transition-colors relative z-10">
                   <ShieldCheck className="w-10 h-10" />
                 </div>
                 <div className="relative z-10 text-center md:text-left">
-                  <h3 className="text-3xl font-bold mb-4 text-foreground">Transfer Emergencies</h3>
-                  <p className="text-muted-foreground leading-relaxed text-xl max-w-3xl">
+                  <h3 className="text-3xl font-bold mb-4 text-white">Transfer Emergencies</h3>
+                  <p className="text-zinc-400 leading-relaxed text-xl max-w-3xl">
                     Escalates emergencies or sensitive requests to your human staff instantly, ensuring no critical issue is ever missed in translation.
                   </p>
                 </div>
@@ -266,7 +266,7 @@ export default function HomePage() {
               </div>
             </FadeIn>
             
-            <FadeIn delay={0.2}>
+            <FadeIn delay={0.2} className="moving-glow">
               <div className="bg-black/[0.02] border border-black/5 rounded-[32px] p-2 relative overflow-hidden backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                 <BookingForm />
               </div>
