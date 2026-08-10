@@ -22,7 +22,6 @@ export default function BookingForm() {
     setLoading(true);
 
     try {
-      // 🚀 Real Formspree Endpoint Live Integration
       const response = await fetch('https://formspree.io/f/mgobepzd', {
         method: 'POST',
         headers: { 
@@ -45,93 +44,78 @@ export default function BookingForm() {
   };
 
   return (
-    <section id="booking-form" className="py-32 bg-transparent transition-colors">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="static-glow bg-black/[0.85] dark:bg-black/[0.85] border border-white/10 backdrop-blur-xl rounded-3xl p-10 shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.08] pointer-events-none mix-blend-overlay"></div>
+    <div className="w-full bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-black/5">
+      {!submitted ? (
+        <div className="w-full">
+          <h3 className="text-2xl font-bold text-foreground mb-2">
+            Book a 15-Minute Voice AI Demo
+          </h3>
+          <p className="text-sm text-muted-foreground mb-8">
+            See how Nexus AI answers calls, qualifies patients, and updates your PMS live.
+          </p>
           
-          {!submitted ? (
-            /* STEP 1: High-Converting Lead Capture Form */
-            <div className="max-w-md mx-auto">
-              <h3 className="text-2xl font-bold text-white text-center mb-2">
-                Book a 15-Minute Voice AI Demo
-              </h3>
-              <p className="text-sm text-neutral-400 text-center mb-8">
-                See how Nexus AI answers calls, qualifies patients, and updates your PMS live.
-              </p>
-              
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1">Your Name</label>
-                  <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 focus:outline-none transition-all placeholder:text-neutral-500" placeholder="Dr. John Doe" />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">Clinic Name</label>
-                  <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 focus:outline-none transition-all placeholder:text-neutral-500" placeholder="Apex Dental Care" />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">Clinic Email</label>
-                  <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 focus:outline-none transition-all placeholder:text-neutral-500" placeholder="office@apexdental.com" />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">Phone Number</label>
-                  <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 focus:outline-none transition-all placeholder:text-neutral-500" placeholder="(555) 000-0000" />
-                </div>
-                
-                <motion.button 
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit" 
-                  disabled={loading} 
-                  className="hover-glow w-full mt-6 bg-white text-black font-bold text-sm py-4 rounded-xl transition-all disabled:opacity-50 flex items-center justify-center relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-                >
-                  {loading ? (
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                      className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full"
-                    />
-                  ) : "Proceed to Calendar →"}
-                </motion.button>
-              </form>
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-1.5">Your Name</label>
+              <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-muted/30 border border-border rounded-xl text-foreground text-sm focus:ring-2 focus:ring-foreground focus:border-foreground focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="Dr. John Doe" />
             </div>
-          ) : (
-            /* STEP 2: Live Cal.com Scheduler Embed */
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="w-full"
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-1.5">Clinic Name</label>
+              <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-3 bg-muted/30 border border-border rounded-xl text-foreground text-sm focus:ring-2 focus:ring-foreground focus:border-foreground focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="Apex Dental Care" />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-1.5">Clinic Email</label>
+              <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-muted/30 border border-border rounded-xl text-foreground text-sm focus:ring-2 focus:ring-foreground focus:border-foreground focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="office@apexdental.com" />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-1.5">Phone Number</label>
+              <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 bg-muted/30 border border-border rounded-xl text-foreground text-sm focus:ring-2 focus:ring-foreground focus:border-foreground focus:outline-none transition-all placeholder:text-muted-foreground" placeholder="(555) 000-0000" />
+            </div>
+            
+            <button 
+              type="submit" 
+              disabled={loading} 
+              className="w-full mt-2 bg-foreground text-background font-semibold text-sm py-4 rounded-xl hover:bg-foreground/90 transition-colors disabled:opacity-70 flex items-center justify-center"
             >
-              <div className="text-center mb-6">
-                <motion.span 
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="inline-block bg-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full font-medium mb-4"
-                >
-                  ✓ Information Saved Securely
-                </motion.span>
-                <h3 className="text-xl font-bold text-white">
-                  Select Your Demo Time Below
-                </h3>
-              </div>
-              
-              <div className="w-full h-[600px] rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white">
-                <iframe 
-                  src="https://cal.com/ritik-kumar-grealv/15min?embed=true" 
-                  width="100%" 
-                  height="100%" 
-                  frameBorder="0" 
-                  scrolling="no"
-                  className="w-full h-full"
+              {loading ? (
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  className="w-5 h-5 border-2 border-background/30 border-t-background rounded-full"
                 />
-              </div>
-            </motion.div>
-          )}
-
+              ) : "Proceed to Calendar"}
+            </button>
+          </form>
         </div>
-      </div>
-    </section>
+      ) : (
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full"
+        >
+          <div className="text-center mb-6">
+            <span className="inline-block bg-green-500/10 text-green-600 text-xs px-3 py-1.5 rounded-full font-semibold mb-4">
+              ✓ Information Saved Securely
+            </span>
+            <h3 className="text-xl font-bold text-foreground">
+              Select Your Demo Time Below
+            </h3>
+          </div>
+          
+          <div className="w-full h-[600px] rounded-xl overflow-hidden border border-border bg-white">
+            <iframe 
+              src="https://cal.com/ritik-kumar-grealv/15min?embed=true" 
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              scrolling="no"
+              className="w-full h-full"
+            />
+          </div>
+        </motion.div>
+      )}
+    </div>
   );
 }
+
