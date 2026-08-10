@@ -74,15 +74,18 @@ export default function Demo() {
   return (
     <div className="flex flex-col min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-5xl mb-16 md:text-left">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Interactive Demo</p>
-          <h1 className="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-12 text-foreground">
-            Experience the Future of Patient Communications.
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-            Listen to our AI interact naturally with patients, handle complex objections, and integrate directly with practice management software.
-          </p>
-        </FadeIn>
+          <FadeIn className="max-w-4xl mb-16 md:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+              <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Live Demonstration</p>
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">
+              Hear The AI In Action.
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl tracking-tight">
+              Listen to unedited, real-world recordings of our AI Voice Receptionist handling actual patient scenarios.
+            </p>
+          </FadeIn>
 
         {/* Demo Section (Audio Player + Dashboard + Scenarios) */}
         <div className="max-w-6xl mx-auto mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -285,8 +288,8 @@ export default function Demo() {
             <h2 className="text-3xl font-bold tracking-tight mb-4">The Nexus AI Difference</h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <FadeIn delay={0.1} className="bg-muted/20 border border-border rounded-3xl p-8">
-              <h3 className="text-2xl font-bold mb-6 text-muted-foreground">Without Nexus AI</h3>
+            <FadeIn delay={0.1} className="bg-white border border-black/5 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+              <h3 className="text-2xl font-bold mb-6 text-muted-foreground tracking-[-0.02em]">Without Nexus AI</h3>
               <ul className="space-y-4">
                 {["Missed Calls", "Lost Revenue", "Long Hold Times", "Frustrated Patients", "Overwhelmed Staff"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-muted-foreground font-medium text-lg">
@@ -298,8 +301,8 @@ export default function Demo() {
                 ))}
               </ul>
             </FadeIn>
-            <FadeIn delay={0.2} className="bg-foreground text-background border border-foreground rounded-3xl p-8 shadow-xl transform md:-translate-y-4">
-              <h3 className="text-2xl font-bold mb-6">With Nexus AI</h3>
+            <FadeIn delay={0.2} className="bg-blue-600 text-white border border-blue-500 rounded-3xl p-8 shadow-[0_8px_30px_rgba(37,99,235,0.2)] transform md:-translate-y-4">
+              <h3 className="text-2xl font-bold mb-6 tracking-[-0.02em]">With Nexus AI</h3>
               <ul className="space-y-4">
                 {["Every Call Answered instantly", "More Bookings & Revenue", "24/7 Availability", "Better Patient Experience", "Freed-Up Front Desk"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 font-medium text-lg">
@@ -329,13 +332,13 @@ export default function Demo() {
         </div>
 
         {/* CTA */}
-        <FadeIn delay={0.4} className="mt-32 max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">Ready to test it for your clinic?</h2>
-          <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+        <FadeIn delay={0.4} className="mt-40 max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.04em] mb-8 text-foreground">Ready to test it for your clinic?</h2>
+          <p className="text-xl text-muted-foreground mb-10 leading-relaxed tracking-tight">
             Book a call with our engineers and we&apos;ll build a live prototype tailored to your specific clinical workflows.
           </p>
           <Link href="/contact">
-            <Button size="lg" className="h-14 px-8 text-base shadow-xl hover:scale-105 transition-transform">Book Free Strategy Call</Button>
+            <Button size="lg" className="h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:scale-[1.02] transition-transform rounded-full bg-blue-600 text-white hover:bg-blue-700">Book Free Strategy Call</Button>
           </Link>
         </FadeIn>
       </div>

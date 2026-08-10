@@ -34,7 +34,7 @@ export default function FloatingCTA() {
       <Link href="/contact">
         <motion.div
           animate={{
-            scale: [1, 1.05, 1],
+            scale: [1, 1.02, 1],
           }}
           transition={{
             duration: 1.5,
@@ -44,7 +44,7 @@ export default function FloatingCTA() {
           }}
           className="rounded-full"
         >
-          <Button size="lg" className="shadow-2xl rounded-full px-6 py-6 font-semibold bg-foreground text-background">
+          <Button size="lg" className="shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] rounded-full px-6 py-6 font-semibold bg-blue-600 text-white hover:bg-blue-700">
             Book Strategy Call
           </Button>
         </motion.div>

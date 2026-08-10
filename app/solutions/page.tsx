@@ -48,11 +48,14 @@ export default function Solutions() {
     <div className="flex flex-col min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn className="max-w-5xl mb-16 md:text-left">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-6">Our Capabilities</p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 text-foreground">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+            <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Our Capabilities</p>
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">
             Solutions That Drive Revenue.
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl tracking-tight">
             We don&apos;t build generic chatbots. We engineer custom voice workflows designed to solve the most expensive operational bottlenecks in private clinics.
           </p>
         </FadeIn>
@@ -77,12 +80,16 @@ export default function Solutions() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/[0.02] to-transparent pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 md:text-left">
           <FadeIn className="max-w-5xl">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.9] mb-8">See the ROI for your clinic.</h2>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+              <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Get Started</p>
+            </div>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">See the ROI for your clinic.</h2>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl tracking-tight">
               Let our engineers analyze your call volume and show you exactly how much revenue an AI receptionist could recover.
             </p>
             <Link href="/contact">
-              <Button size="lg" className="h-14 px-8 text-base shadow-2xl hover:scale-105 transition-transform">
+              <Button size="lg" className="h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:scale-[1.02] transition-transform rounded-full bg-blue-600 text-white hover:bg-blue-700">
                 Book Free Strategy Call
               </Button>
             </Link>

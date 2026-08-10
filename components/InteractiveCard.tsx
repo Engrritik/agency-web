@@ -34,11 +34,11 @@ export default function InteractiveCard({
   return (
     <div className={`relative group h-full ${className}`}>
       <div
-        className={`relative h-full rounded-[32px] ${darker ? 'bg-[#0a0a0a] text-zinc-100 border-white/[0.08]' : 'bg-white border-black/5'} flex flex-col overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 border ${innerClassName}`}
+        className={`relative h-full rounded-3xl ${darker ? 'bg-[#0a0a0a] text-zinc-100 border-white/[0.08]' : 'bg-white border-black/5'} flex flex-col overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 border ${innerClassName}`}
         onMouseMove={handleMouseMove}
       >
         <motion.div
-          className={`pointer-events-none absolute -inset-px rounded-[32px] ${innerOpacityClass}`}
+          className={`pointer-events-none absolute -inset-px rounded-3xl ${innerOpacityClass}`}
           style={{
             background: useMotionTemplate`
               radial-gradient(

@@ -76,7 +76,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-white/95 backdrop-blur-xl absolute w-full left-0 animate-in slide-in-from-top-2 duration-200 shadow-2xl rounded-b-[2rem] overflow-hidden">
+        <div className="md:hidden border-t border-border bg-white/95 backdrop-blur-xl absolute w-full left-0 animate-in slide-in-from-top-2 duration-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-b-[2rem] overflow-hidden">
           <div className="px-4 py-6 flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link

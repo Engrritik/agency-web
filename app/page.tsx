@@ -31,7 +31,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full sm:w-auto">
                 <Link href="/contact" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full sm:w-auto group h-14 px-8 text-base shadow-lg hover:shadow-xl transition-all rounded-full">
+                  <Button size="lg" className="w-full sm:w-auto group h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] hover:bg-blue-700 bg-blue-600 text-white transition-all rounded-full">
                     Book Free Strategy Call
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -267,7 +267,7 @@ export default function HomePage() {
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <div className="bg-black/[0.02] border border-black/5 rounded-3xl p-2 relative overflow-hidden backdrop-blur-xl shadow-2xl">
+              <div className="bg-black/[0.02] border border-black/5 rounded-[32px] p-2 relative overflow-hidden backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                 <BookingForm />
               </div>
             </FadeIn>
