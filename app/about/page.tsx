@@ -145,7 +145,7 @@ export default function About() {
           </div>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] mb-12 text-foreground">Ready to automate your clinic?</h2>
           <Link href="/contact">
-            <Button size="lg" className="h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:scale-[1.02] transition-transform rounded-full bg-blue-600 text-white hover:bg-blue-700">Book Free Strategy Call</Button>
+            <Button size="lg" className="h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:scale-[1.02] transition-transform rounded-full ">Book Free Strategy Call</Button>
           </Link>
         </FadeIn>
       </div>

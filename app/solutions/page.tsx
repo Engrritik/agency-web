@@ -89,7 +89,7 @@ export default function Solutions() {
               Let our engineers analyze your call volume and show you exactly how much revenue an AI receptionist could recover.
             </p>
             <Link href="/contact">
-              <Button size="lg" className="h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:scale-[1.02] transition-transform rounded-full bg-blue-600 text-white hover:bg-blue-700">
+              <Button size="lg" className="h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:scale-[1.02] transition-transform rounded-full ">
                 Book Free Strategy Call
               </Button>
             </Link>

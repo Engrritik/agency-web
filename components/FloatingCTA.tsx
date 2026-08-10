@@ -44,7 +44,7 @@ export default function FloatingCTA() {
           }}
           className="rounded-full"
         >
-          <Button size="lg" className="shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] rounded-full px-6 py-6 font-semibold bg-blue-600 text-white hover:bg-blue-700">
+          <Button size="lg" className="shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] rounded-full px-6 py-6 font-semibold ">
             Book Strategy Call
           </Button>
         </motion.div>
