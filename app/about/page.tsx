@@ -83,33 +83,23 @@ export default function About() {
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] mb-8 text-foreground">Why Clinics Trust Nexus AI.</h2>
           </FadeIn>
           
-          <div className="relative max-w-5xl mx-auto py-10">
-            <div className="flex flex-col gap-12 relative z-10">
-              {[
-                "Custom Workflows", 
-                "No Hallucinated Answers", 
-                "Built For Healthcare", 
-                "Calendar Integration", 
-                "Fast Support"
-              ].map((trust, i) => {
-                const isLeft = i % 2 === 0;
-                return (
-                  <div key={i} className={`flex w-full md:w-3/4 ${isLeft ? 'md:self-start' : 'md:self-end'} relative group`}>
-                    <FadeIn delay={i * 0.1} className="w-full">
-                      <div 
-                        className="animate-float w-full"
-                        style={{ animationDelay: `${i * 0.7}s` }}
-                      >
-                        <InteractiveCard innerClassName="p-8 flex items-center gap-4 h-full bg-white/40 backdrop-blur-xl border border-white/20">
-                          <CheckCircle2 className="w-8 h-8 text-blue-600 shrink-0 relative z-10" />
-                          <h3 className="font-bold text-xl relative z-10">{trust}</h3>
-                        </InteractiveCard>
-                      </div>
-                    </FadeIn>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto py-10 relative z-10">
+            {[
+              "Custom Workflows", 
+              "No Hallucinated Answers", 
+              "Built For Healthcare", 
+              "Calendar Integration", 
+              "Fast Support"
+            ].map((trust, i) => {
+              return (
+                <FadeIn key={i} delay={i * 0.1} className="w-full h-full">
+                  <InteractiveCard innerClassName="p-8 flex items-center gap-4 h-full bg-white border border-black/5">
+                    <CheckCircle2 className="w-8 h-8 text-blue-600 shrink-0 relative z-10" />
+                    <h3 className="font-bold text-xl relative z-10">{trust}</h3>
+                  </InteractiveCard>
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
 

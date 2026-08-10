@@ -149,7 +149,7 @@ export default function Demo() {
           {/* Right Side: Dashboard */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             {/* Call Outcome Dashboard */}
-            <FadeIn delay={0.3} className="bg-white border border-black/5 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col hover-glow group relative z-10">
+            <FadeIn delay={0.3} className="bg-white border border-black/5 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col relative z-10">
               <div className="flex items-center gap-3 mb-8 border-b border-black/5 p-8 pb-6 bg-black/[0.02]">
                 <div className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
