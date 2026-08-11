@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-5xl mb-16 md:text-left">
+        <FadeIn className="max-w-5xl mx-auto mb-16 text-center flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
             <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Our Mission</p>
@@ -17,26 +17,26 @@ export default function About() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">
             Built by engineers focused on real-world automation.
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl tracking-tight">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl tracking-tight mx-auto">
             We saw private practices losing tens of thousands of dollars a month to missed calls. So we built the ultimate solution.
           </p>
         </FadeIn>
 
         {/* Founder Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-16">
-          <FadeIn delay={0.1} className="lg:col-span-5 relative flex flex-col items-center lg:items-start">
-            <div className="w-[80%] aspect-[4/5] rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+        <div className="flex flex-col items-center mb-16 max-w-4xl mx-auto">
+          <FadeIn delay={0.1} className="relative flex flex-col items-center mb-12">
+            <div className="w-64 aspect-[4/5] rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
               <Image 
                 src="/ritik.jpeg" 
                 alt="Nexus AI Founder" 
                 fill 
                 className="object-cover"
-                sizes="(max-width: 768px) 80vw, 40vw"
+                sizes="256px"
                 priority
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="mt-8 text-center lg:text-left">
+            <div className="mt-8 text-center">
               <h3 className="text-2xl font-bold mb-2">Ritik</h3>
               <div className="text-muted-foreground font-medium space-y-1">
                 <p>Founder</p>
@@ -47,7 +47,7 @@ export default function About() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.2} className="lg:col-span-7 space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <FadeIn delay={0.2} className="space-y-6 text-lg leading-relaxed text-muted-foreground text-center">
             <p>
               I started Nexus AI because I noticed a massive gap between the cutting-edge AI models being developed and the actual software being used by private clinics.
             </p>
@@ -64,7 +64,7 @@ export default function About() {
               When we partner with a clinic, we dive deep into their operational logic, mapping out exactly how they handle edge cases, scheduling rules, and emergency escalations. Then, we build a customized voice system that handles those exact workflows flawlessly, 24/7.
             </p>
             
-            <div className="pt-10 mt-10">
+            <div className="pt-10 mt-10 flex justify-center">
               <Link href="/contact">
                 <Button size="lg" className="h-14 px-8 text-base">Talk to the Founder</Button>
               </Link>
@@ -73,10 +73,10 @@ export default function About() {
         </div>
 
         {/* Why Clinics Trust Nexus AI */}
-        <div className="mb-24 mt-24 relative">
+        <div className="mb-24 mt-24 relative flex flex-col items-center">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.02),transparent_60%)] pointer-events-none"></div>
-          <FadeIn className="mb-24 md:text-left max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+          <FadeIn className="mb-24 text-center max-w-4xl mx-auto flex flex-col items-center">
+            <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
               <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">The Standard</p>
             </div>
@@ -93,7 +93,7 @@ export default function About() {
             ].map((trust, i) => {
               return (
                 <FadeIn key={i} delay={i * 0.1} className="w-full h-full">
-                  <InteractiveCard innerClassName="p-8 flex items-center gap-4 h-full bg-white border border-black/5">
+                  <InteractiveCard innerClassName="p-8 flex flex-col items-center justify-center gap-4 h-full bg-white border border-black/5 text-center">
                     <CheckCircle2 className="w-8 h-8 text-blue-600 shrink-0 relative z-10" />
                     <h3 className="font-bold text-xl relative z-10">{trust}</h3>
                   </InteractiveCard>
@@ -124,7 +124,7 @@ export default function About() {
               ].map((step, i) => (
                 <FadeIn key={i} delay={i * 0.15} className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-16 group">
                   <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:text-right md:pr-16' : 'md:order-2 md:pl-16'}`}>
-                    <InteractiveCard innerClassName="p-8">
+                    <InteractiveCard innerClassName="p-8 text-center flex flex-col items-center">
                       <h3 className="text-2xl font-bold mb-3 relative z-10">{step.title}</h3>
                       <p className="text-muted-foreground leading-relaxed text-lg relative z-10">{step.desc}</p>
                     </InteractiveCard>
@@ -140,8 +140,8 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <FadeIn delay={0.3} className="py-24 border-t border-black/5 md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+        <FadeIn delay={0.3} className="py-24 border-t border-black/5 text-center flex flex-col items-center">
+          <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
             <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Take Action</p>
           </div>

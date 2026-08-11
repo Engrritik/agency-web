@@ -17,10 +17,10 @@ export default function HomePage() {
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-black/[0.02] blur-[150px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <FadeIn className="lg:col-span-8 flex flex-col items-start">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-8">
-                <span className="flex w-2 h-2 rounded-full bg-foreground"></span>
+          <div className="flex flex-col items-center">
+            <FadeIn className="flex flex-col items-center text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-8">
+                <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Nexus AI Voice Agents</p>
               </div>
               <h1 className="text-6xl md:text-[5rem] lg:text-[6.5rem] font-bold tracking-[-0.04em] leading-[0.85] mb-8 text-foreground">
@@ -29,7 +29,7 @@ export default function HomePage() {
               <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl leading-relaxed tracking-tight">
                 AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7—without hiring another front desk employee.
               </p>
-              <div className="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 w-full">
                 <Link href="/contact" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto group h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] transition-all rounded-full">
                     Book Free Strategy Call
@@ -44,21 +44,19 @@ export default function HomePage() {
               </div>
             </FadeIn>
             
-            <FadeIn delay={0.2} className="lg:col-span-4 hidden lg:block">
-              <div className="flex flex-col gap-8 border-l border-black/10 pl-8">
-                <FadeIn delay={0.3} className="hover:-translate-y-1 transition-transform duration-300">
-                  <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">24/7 Availability</span></div>
+            <FadeIn delay={0.2} className="hidden md:flex flex-row gap-8 justify-center w-full max-w-4xl mt-4">
+                <FadeIn delay={0.3} className="hover:-translate-y-1 transition-transform duration-300 text-center flex flex-col items-center">
+                  <div className="flex items-center justify-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">24/7 Availability</span></div>
                   <p className="text-sm text-muted-foreground">Always on, never sick.</p>
                 </FadeIn>
-                <FadeIn delay={0.4} className="hover:-translate-y-1 transition-transform duration-300">
-                  <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Sub-800ms Latency</span></div>
+                <FadeIn delay={0.4} className="hover:-translate-y-1 transition-transform duration-300 text-center flex flex-col items-center">
+                  <div className="flex items-center justify-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Sub-800ms Latency</span></div>
                   <p className="text-sm text-muted-foreground">Indistinguishable from human speed.</p>
                 </FadeIn>
-                <FadeIn delay={0.5} className="hover:-translate-y-1 transition-transform duration-300">
-                  <div className="flex items-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Calendar Sync</span></div>
+                <FadeIn delay={0.5} className="hover:-translate-y-1 transition-transform duration-300 text-center flex flex-col items-center">
+                  <div className="flex items-center justify-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Calendar Sync</span></div>
                   <p className="text-sm text-muted-foreground">Direct write-access to your EMR.</p>
                 </FadeIn>
-              </div>
             </FadeIn>
           </div>
         </div>
@@ -92,13 +90,13 @@ export default function HomePage() {
       <section className="py-24 relative border-t border-black/5">
         <div className="absolute inset-0 bg-gradient-to-b from-black/[0.02] to-transparent pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <FadeIn className="max-w-4xl mb-24 md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
-              <span className="flex w-2 h-2 rounded-full bg-foreground"></span>
+          <FadeIn className="max-w-4xl mx-auto mb-24 text-center">
+            <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+              <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">The Platform</p>
             </div>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">Complete Front-Desk Automation.</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl tracking-tight">Everything a human receptionist does, automated with perfect consistency and zero sick days.</p>
+            <p className="text-xl text-muted-foreground mx-auto leading-relaxed max-w-2xl tracking-tight">Everything a human receptionist does, automated with perfect consistency and zero sick days.</p>
           </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-6xl mx-auto">
@@ -145,13 +143,13 @@ export default function HomePage() {
       <section className="py-24 bg-black/[0.03] border-y border-black/5 relative overflow-hidden">
         <div className="absolute -left-1/4 top-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.03),transparent_70%)] pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <FadeIn className="max-w-4xl mb-32 md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
-              <span className="flex w-2 h-2 rounded-full bg-foreground"></span>
+          <FadeIn className="max-w-4xl mx-auto mb-32 text-center">
+            <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+              <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">The Advantage</p>
             </div>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">Why Clinics Choose Nexus AI.</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl tracking-tight">Engineered specifically for the demands of high-volume healthcare practices.</p>
+            <p className="text-xl text-muted-foreground mx-auto max-w-2xl tracking-tight">Engineered specifically for the demands of high-volume healthcare practices.</p>
           </FadeIn>
 
           <div className="relative overflow-hidden w-full group animate-marquee-hover pb-10">
@@ -238,36 +236,36 @@ export default function HomePage() {
       {/* Final CTA & Booking Form */}
       <section id="booking-form" className="py-24 relative border-t border-black/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.02),transparent_70%)] pointer-events-none"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:text-left">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            <FadeIn className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
-                <span className="flex w-2 h-2 rounded-full bg-foreground"></span>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex flex-col items-center">
+            <FadeIn className="max-w-3xl mb-16">
+              <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+                <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Get Started</p>
               </div>
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">Ready to Stop Missing Calls?</h2>
-              <p className="text-xl text-muted-foreground mb-12 leading-relaxed tracking-tight">
+              <p className="text-xl text-muted-foreground mb-12 mx-auto leading-relaxed tracking-tight max-w-2xl">
                 Book a free strategy session and we&apos;ll show exactly how AI can fit into your clinic&apos;s operational workflow.
               </p>
               
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
                   <p className="font-medium">Free Workflow Analysis</p>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
-                  <p className="font-medium">14-Day Risk-Free Pilot</p>
+                  <p className="font-medium">14-Day Pilot</p>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
-                  <p className="font-medium">Custom Voice Cloning</p>
+                  <p className="font-medium">Custom Voice</p>
                 </div>
               </div>
             </FadeIn>
             
-            <FadeIn delay={0.2} className="moving-glow">
-              <div className="bg-black/[0.02] border border-black/5 rounded-[32px] p-2 relative overflow-hidden backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+            <FadeIn delay={0.2} className="moving-glow w-full max-w-xl">
+              <div className="bg-black/[0.02] border border-black/5 rounded-[32px] p-2 relative overflow-hidden backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-left">
                 <BookingForm />
               </div>
             </FadeIn>

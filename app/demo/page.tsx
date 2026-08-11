@@ -74,7 +74,7 @@ export default function Demo() {
   return (
     <div className="flex flex-col min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="max-w-4xl mb-16 md:text-left">
+          <FadeIn className="max-w-4xl mx-auto mb-16 text-center flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
               <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Live Demonstration</p>
@@ -82,7 +82,7 @@ export default function Demo() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">
               Hear The AI In Action.
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl tracking-tight">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl tracking-tight mx-auto">
               Listen to unedited, real-world recordings of our AI Voice Receptionist handling actual patient scenarios.
             </p>
           </FadeIn>
@@ -202,10 +202,10 @@ export default function Demo() {
               "Human Escalation", "After Hours Coverage", "Captures New Patients", "Natural Human Voice"
             ].map((cap, i) => (
               <FadeIn key={i} delay={i * 0.05}>
-                <div className="bg-muted/30 border border-border rounded-xl p-4 flex items-center gap-3 hover-card hover-glow">
-                  <CheckCircle2 className="w-5 h-5 text-foreground shrink-0" />
-                  <span className="font-semibold text-sm">{cap}</span>
-                </div>
+                <InteractiveCard innerClassName="p-4 flex items-center gap-3 h-full" className="h-full">
+                  <CheckCircle2 className="w-5 h-5 text-foreground shrink-0 relative z-10" />
+                  <span className="font-semibold text-sm relative z-10">{cap}</span>
+                </InteractiveCard>
               </FadeIn>
             ))}
           </div>
@@ -219,9 +219,9 @@ export default function Demo() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {['Patient Calls', 'AI Answers', 'Understands Intent', 'Checks Calendar', 'Books Appointment', 'Confirmation Sent'].map((step, i, arr) => (
               <FadeIn key={i} delay={i * 0.1} className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
-                <div className="bg-card border border-border rounded-2xl p-6 text-center shadow-sm w-full md:w-auto min-w-[140px] hover-glow">
-                  <span className="font-bold text-sm block">{step}</span>
-                </div>
+                <InteractiveCard innerClassName="p-6 text-center h-full flex flex-col justify-center" className="w-full md:w-auto min-w-[140px]">
+                  <span className="font-bold text-sm block relative z-10">{step}</span>
+                </InteractiveCard>
                 {i < arr.length - 1 && (
                   <motion.div
                     initial={{ opacity: 0.3, x: 0 }}
