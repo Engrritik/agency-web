@@ -74,35 +74,34 @@ export default function HomePage() {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-12 border-y border-border bg-foreground text-background">
+      <section className="py-12 my-12 mx-4 sm:mx-8 rounded-[3rem] neu-inset text-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-background/20">
-            <FadeIn delay={0.1} className="text-center px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-black/10">
+            <FadeIn delay={0.1} className="text-center px-4 animate-float" style={{ animationDelay: '0s' }}>
               <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2"><AnimatedCounter value={99.9} decimals={1} suffix="%" /></div>
-              <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Call Availability</div>
+              <div className="text-sm font-medium text-gray-500 uppercase tracking-widest">Call Availability</div>
             </FadeIn>
-            <FadeIn delay={0.2} className="text-center px-4">
+            <FadeIn delay={0.2} className="text-center px-4 animate-float" style={{ animationDelay: '1s' }}>
               <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2"><AnimatedCounter value={24} suffix="/7" /></div>
-              <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Answers Every Call</div>
+              <div className="text-sm font-medium text-gray-500 uppercase tracking-widest">Answers Every Call</div>
             </FadeIn>
-            <FadeIn delay={0.3} className="text-center px-4">
+            <FadeIn delay={0.3} className="text-center px-4 animate-float" style={{ animationDelay: '2s' }}>
               <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2"><AnimatedCounter value={800} prefix="<" suffix="ms" /></div>
-              <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Average Response</div>
+              <div className="text-sm font-medium text-gray-500 uppercase tracking-widest">Average Response</div>
             </FadeIn>
-            <FadeIn delay={0.4} className="text-center px-4">
+            <FadeIn delay={0.4} className="text-center px-4 animate-float" style={{ animationDelay: '3s' }}>
               <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2"><AnimatedCounter value={0} /></div>
-              <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">Missed After-Hours Calls</div>
+              <div className="text-sm font-medium text-gray-500 uppercase tracking-widest">Missed After-Hours Calls</div>
             </FadeIn>
           </div>
         </div>
       </section>
 
       {/* What the AI Does */}
-      <section className="py-24 relative border-t border-black/5">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/[0.02] to-transparent pointer-events-none"></div>
+      <section className="py-24 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="max-w-4xl mx-auto mb-24 text-center">
-            <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+            <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full neu-pressed mb-6">
               <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">The Platform</p>
             </div>
@@ -112,35 +111,35 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-6xl mx-auto">
             <FadeIn delay={0.1} className="md:col-span-8">
-              <InteractiveCard innerClassName="p-12 flex flex-col h-full" permanent={true} darker={true}>
-                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-10 group-hover:bg-white group-hover:text-zinc-950 transition-colors relative z-10">
+              <InteractiveCard innerClassName="p-12 flex flex-col h-full" permanent={true}>
+                <div className="w-16 h-16 rounded-2xl neu-inset flex items-center justify-center mb-10 text-foreground transition-colors relative z-10 animate-float">
                   <PhoneCall className="w-8 h-8" />
                 </div>
-                <h3 className="text-3xl font-bold mb-4 relative z-10 text-white">Answer Calls Instantly</h3>
-                <p className="text-zinc-400 leading-relaxed text-xl max-w-lg relative z-10">
+                <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Answer Calls Instantly</h3>
+                <p className="text-gray-600 leading-relaxed text-xl max-w-lg relative z-10">
                   Never miss leads or patient calls again. The AI answers on the first ring, 24/7, with zero hold times.
                 </p>
               </InteractiveCard>
             </FadeIn>
             <FadeIn delay={0.2} className="md:col-span-4">
-              <InteractiveCard innerClassName="p-12 flex flex-col h-full" permanent={true} darker={true}>
-                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-10 group-hover:bg-white group-hover:text-zinc-950 transition-colors relative z-10">
+              <InteractiveCard innerClassName="p-12 flex flex-col h-full" permanent={true}>
+                <div className="w-16 h-16 rounded-2xl neu-inset flex items-center justify-center mb-10 text-foreground transition-colors relative z-10 animate-float" style={{ animationDelay: '1s' }}>
                   <Calendar className="w-8 h-8" />
                 </div>
-                <h3 className="text-3xl font-bold mb-4 relative z-10 text-white">Book Appointments</h3>
-                <p className="text-zinc-400 leading-relaxed text-xl relative z-10">
+                <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Book Appointments</h3>
+                <p className="text-gray-600 leading-relaxed text-xl relative z-10">
                   Connected directly to your calendar and scheduling logic.
                 </p>
               </InteractiveCard>
             </FadeIn>
             <FadeIn delay={0.3} className="md:col-span-12">
-              <InteractiveCard innerClassName="p-12 flex flex-col md:flex-row items-center gap-12" permanent={true} darker={true}>
-                <div className="w-20 h-20 shrink-0 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-zinc-950 transition-colors relative z-10">
+              <InteractiveCard innerClassName="p-12 flex flex-col md:flex-row items-center gap-12" permanent={true}>
+                <div className="w-20 h-20 shrink-0 rounded-full neu-inset flex items-center justify-center text-foreground transition-colors relative z-10 animate-float" style={{ animationDelay: '2s' }}>
                   <ShieldCheck className="w-10 h-10" />
                 </div>
                 <div className="relative z-10 text-center md:text-left">
-                  <h3 className="text-3xl font-bold mb-4 text-white">Transfer Emergencies</h3>
-                  <p className="text-zinc-400 leading-relaxed text-xl max-w-3xl">
+                  <h3 className="text-3xl font-bold mb-4 text-foreground">Transfer Emergencies</h3>
+                  <p className="text-gray-600 leading-relaxed text-xl max-w-3xl">
                     Escalates emergencies or sensitive requests to your human staff instantly, ensuring no critical issue is ever missed in translation.
                   </p>
                 </div>
@@ -151,11 +150,10 @@ export default function HomePage() {
       </section>
 
       {/* Trust / Why Clinics Choose Nexus AI */}
-      <section className="py-24 bg-black/[0.03] border-y border-black/5 relative overflow-hidden">
-        <div className="absolute -left-1/4 top-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.03),transparent_70%)] pointer-events-none"></div>
+      <section className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="max-w-4xl mx-auto mb-32 text-center">
-            <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+            <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full neu-pressed mb-6">
               <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">The Advantage</p>
             </div>
@@ -186,7 +184,7 @@ export default function HomePage() {
               ].map((item, i) => (
                 <div key={i} className="shrink-0 w-72">
                   <InteractiveCard innerClassName="p-6 flex items-center gap-4 h-full">
-                    <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-foreground shrink-0 relative z-10 transition-transform group-hover:scale-110">
+                    <div className="w-12 h-12 rounded-full neu-inset flex items-center justify-center text-foreground shrink-0 relative z-10 transition-transform group-hover:scale-110">
                       {item.icon}
                     </div>
                     <h3 className="font-bold text-lg leading-tight relative z-10">{item.title}</h3>
@@ -197,6 +195,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
 
       {/* FAQ Section */}
       <section className="py-32">
@@ -245,12 +244,11 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA & Booking Form */}
-      <section id="booking-form" className="py-24 relative border-t border-black/5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.02),transparent_70%)] pointer-events-none"></div>
+      <section id="booking-form" className="py-24 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex flex-col items-center">
             <FadeIn className="max-w-3xl mb-16">
-              <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
+              <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full neu-pressed mb-6">
                 <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Get Started</p>
               </div>
@@ -261,22 +259,22 @@ export default function HomePage() {
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <div className="w-12 h-12 rounded-full neu-inset flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
                   <p className="font-medium">Free Workflow Analysis</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <div className="w-12 h-12 rounded-full neu-inset flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
                   <p className="font-medium">14-Day Pilot</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
+                  <div className="w-12 h-12 rounded-full neu-inset flex items-center justify-center"><CheckCircle2 className="w-5 h-5" /></div>
                   <p className="font-medium">Custom Voice</p>
                 </div>
               </div>
             </FadeIn>
             
-            <FadeIn delay={0.2} className="moving-glow w-full max-w-xl">
-              <div className="bg-black/[0.02] border border-black/5 rounded-[32px] p-2 relative overflow-hidden backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-left">
+            <FadeIn delay={0.2} className="w-full max-w-xl animate-float">
+              <div className="neu-flat rounded-[32px] p-2 relative overflow-hidden text-left">
                 <BookingForm />
               </div>
             </FadeIn>

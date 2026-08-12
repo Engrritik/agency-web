@@ -32,9 +32,9 @@ export default function InteractiveCard({
   const innerOpacityClass = permanent ? "opacity-100" : "opacity-0 group-hover:opacity-100 transition duration-300";
 
   return (
-    <div className={`relative group h-full hover-glow ${className}`}>
+    <div className={`relative group h-full ${className}`}>
       <div
-        className={`relative h-full rounded-3xl ${darker ? 'bg-[#0a0a0a] text-zinc-100 border-white/[0.08]' : 'bg-white border-black/5'} flex flex-col overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 border ${innerClassName}`}
+        className={`relative h-full rounded-3xl bg-[var(--background)] neu-flat hover:neu-flat-lg transition-all duration-500 border border-transparent ${innerClassName}`}
         onMouseMove={handleMouseMove}
       >
         <motion.div

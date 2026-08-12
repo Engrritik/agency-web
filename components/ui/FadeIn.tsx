@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 
 interface FadeInProps {
   children: ReactNode;
@@ -9,6 +9,7 @@ interface FadeInProps {
   direction?: "up" | "down" | "left" | "right" | "none";
   className?: string;
   duration?: number;
+  style?: CSSProperties;
 }
 
 export default function FadeIn({
@@ -17,6 +18,7 @@ export default function FadeIn({
   direction = "up",
   className = "",
   duration = 0.5,
+  style,
 }: FadeInProps) {
   const directionOffset = {
     up: { y: 20, x: 0 },
@@ -42,6 +44,7 @@ export default function FadeIn({
         ease: [0.21, 0.47, 0.32, 0.98],
       }}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>
