@@ -13,7 +13,10 @@ export default function AnimatedBackground() {
   const translateY = useTransform(scrollY, [0, 1000], [0, -100]);
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   if (!mounted) return null;

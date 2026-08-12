@@ -2,16 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import Button from "./ui/Button";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Demo", href: "/demo" },
+  { name: "Features", href: "/features" },
+  { name: "Pricing", href: "/pricing" },
   { name: "About", href: "/about" },
 ];
 
@@ -20,47 +18,43 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl rounded-full border border-black/5 bg-white/70 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.02)] transition-all duration-500">
-      <div className="px-5 lg:px-6">
+    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-4rem)] max-w-4xl rounded-full neu-flat transition-all duration-500">
+      <div className="px-6">
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 group">
-              <Image src="/favicon.ico" alt="Nexus AI Logo" width={28} height={28} className="h-6 sm:h-7 w-auto object-contain group-hover:opacity-80 transition-opacity" />
-              <span className="font-bold font-sans text-lg text-foreground tracking-tight ml-1.5">Nexus AI</span>
+              <div className="w-5 h-5 flex items-end gap-[2px]">
+                <div className="w-1 h-3 bg-foreground rounded-full"></div>
+                <div className="w-1 h-5 bg-foreground rounded-full"></div>
+                <div className="w-1 h-2 bg-foreground rounded-full"></div>
+              </div>
+              <span className="font-bold font-sans text-[17px] text-foreground tracking-tight ml-1.5">Nexus AI</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8 relative">
+          <nav className="hidden md:flex items-center gap-2 relative">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-1 py-1.5 text-sm font-medium transition-colors hover:text-foreground ${
-                    isActive ? "text-foreground font-semibold" : "text-muted-foreground"
+                  className={`relative px-4 py-2 text-[13px] font-medium transition-colors hover:text-foreground rounded-full ${
+                    isActive ? "text-foreground neu-pressed" : "text-muted-foreground"
                   }`}
                 >
                   {link.name}
-                  {isActive && (
-                    <motion.div
-                      layoutId="nav-indicator"
-                      className="absolute left-0 right-0 -bottom-[15px] h-[2px] bg-foreground"
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    />
-                  )}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center">
             <Link href="/contact">
-              <Button variant="outline" size="sm" className="hidden lg:flex rounded-full border-black/10 hover:bg-black/5">Contact</Button>
-            </Link>
-            <Link href="/contact">
-              <Button size="sm" className="rounded-full">Book Free Strategy Call</Button>
+              <button className="text-[13px] font-medium px-5 py-2 rounded-full neu-flat hover:neu-pressed transition-all">
+                Start My Free Trial
+              </button>
             </Link>
           </div>
 

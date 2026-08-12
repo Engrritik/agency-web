@@ -1,5 +1,4 @@
 import FadeIn from "@/components/ui/FadeIn";
-import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { ArrowRight, Calendar, PhoneCall, ShieldCheck, CheckCircle2, Activity, Clock, Zap, Stethoscope } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
@@ -7,58 +6,70 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import FAQItem from "@/components/FAQItem";
 import InteractiveCard from "@/components/InteractiveCard";
 
+import NeumorphicBlob from "@/components/NeumorphicBlob";
+import { Phone, Menu } from "lucide-react";
+
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.05] pointer-events-none mix-blend-overlay"></div>
+    <div className="flex flex-col min-h-screen bg-[var(--background)]">
+      {/* Hero Section - Neumorphic Redesign */}
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-24 overflow-hidden">
         
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-black/[0.02] blur-[150px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+        {/* Floating Side Buttons */}
+        <button className="fixed left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-2xl neu-flat flex items-center justify-center text-foreground hover:neu-pressed z-50 transition-all hidden md:flex">
+          <Menu className="w-5 h-5" />
+        </button>
+        <button className="fixed right-8 bottom-12 w-14 h-14 rounded-full neu-flat flex items-center justify-center text-foreground hover:neu-pressed z-50 transition-all">
+          <Phone className="w-6 h-6" />
+        </button>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col items-center">
-            <FadeIn className="flex flex-col items-center text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-8">
-                <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Nexus AI Voice Agents</p>
-              </div>
-              <h1 className="text-6xl md:text-[5rem] lg:text-[6.5rem] font-bold tracking-[-0.04em] leading-[0.85] mb-8 text-foreground">
-                Never Miss Another Patient Call.
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl leading-relaxed tracking-tight">
-                AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7—without hiring another front desk employee.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 w-full">
-                <Link href="/contact" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full sm:w-auto group h-14 px-8 text-base shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] transition-all rounded-full">
-                    Book Free Strategy Call
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link href="/contact" className="w-full sm:w-auto">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-transparent border-black/10 hover:bg-black/5 rounded-full">
-                    Watch Live Demo
-                  </Button>
-                </Link>
-              </div>
-            </FadeIn>
-            
-            <FadeIn delay={0.2} className="hidden md:flex flex-row gap-8 justify-center w-full max-w-4xl mt-4">
-                <FadeIn delay={0.3} className="hover:-translate-y-1 transition-transform duration-300 text-center flex flex-col items-center">
-                  <div className="flex items-center justify-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">24/7 Availability</span></div>
-                  <p className="text-sm text-muted-foreground">Always on, never sick.</p>
-                </FadeIn>
-                <FadeIn delay={0.4} className="hover:-translate-y-1 transition-transform duration-300 text-center flex flex-col items-center">
-                  <div className="flex items-center justify-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Sub-800ms Latency</span></div>
-                  <p className="text-sm text-muted-foreground">Indistinguishable from human speed.</p>
-                </FadeIn>
-                <FadeIn delay={0.5} className="hover:-translate-y-1 transition-transform duration-300 text-center flex flex-col items-center">
-                  <div className="flex items-center justify-center gap-3 mb-2"><CheckCircle2 className="w-5 h-5 text-foreground" /><span className="font-bold">Calendar Sync</span></div>
-                  <p className="text-sm text-muted-foreground">Direct write-access to your EMR.</p>
-                </FadeIn>
-            </FadeIn>
+        {/* Concentric Neumorphic Circles */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] max-w-[1200px] aspect-square rounded-full neu-inset opacity-80 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] aspect-square rounded-full neu-inset">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65%] aspect-square rounded-full neu-inset"></div>
           </div>
+        </div>
+
+        {/* 3D Blob Background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] z-0 pointer-events-none">
+          <NeumorphicBlob />
+        </div>
+
+        {/* Hero Content */}
+        <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center max-w-4xl mt-12">
+          
+          <FadeIn className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full neu-pressed mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#a3a3a3]"></span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#6b7280]">Nexus AI Voice Agents</span>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight leading-[1.05] text-foreground mb-8">
+              Never Miss<br />
+              Another Patient<br />
+              Call. Period.
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <p className="text-lg md:text-xl text-[#4b5563] max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
+              AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7—without hiring another front desk employee. Our AI is always on, always ready, and never takes a break.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.3} className="flex flex-col sm:flex-row items-center gap-6">
+            <Link href="/contact">
+              <button className="px-8 py-4 rounded-full neu-flat hover:neu-pressed transition-all text-sm font-semibold flex items-center gap-2 text-foreground">
+                Start My Free Trial <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
+            <Link href="/demo">
+              <button className="px-8 py-4 rounded-full neu-flat hover:neu-pressed transition-all text-sm font-semibold text-foreground">
+                See How it Works
+              </button>
+            </Link>
+          </FadeIn>
+          
         </div>
       </section>
 
