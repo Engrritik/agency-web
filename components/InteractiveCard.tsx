@@ -34,7 +34,7 @@ export default function InteractiveCard({
   return (
     <div className={`relative group h-full ${className}`}>
       <div
-        className={`relative h-full rounded-3xl bg-[var(--background)] neu-flat hover:neu-flat-lg transition-all duration-500 ${innerClassName}`}
+        className={`relative h-full rounded-3xl bg-[var(--background)] neu-flat hover:neu-flat-lg hover-glow transition-all duration-500 border border-transparent ${innerClassName}`}
         onMouseMove={handleMouseMove}
       >
         <motion.div
