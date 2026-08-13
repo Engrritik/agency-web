@@ -19,7 +19,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-4rem)] max-w-4xl rounded-full neu-flat transition-all duration-500">
+    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-4rem)] max-w-4xl rounded-full bento-card transition-all duration-500">
       <div className="px-6">
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center gap-2">
@@ -37,8 +37,8 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-[13px] font-medium transition-all hover:text-foreground hover:neu-flat rounded-full ${
-                    isActive ? "text-foreground neu-pressed" : "text-muted-foreground"
+                  className={`relative px-4 py-2 text-[13px] font-medium transition-all hover:text-foreground hover:bg-white/5 rounded-full ${
+                    isActive ? "text-foreground bg-white/10" : "text-muted-foreground"
                   }`}
                 >
                   {link.name}

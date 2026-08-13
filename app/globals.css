@@ -1,15 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --muted: #27272a;
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #111111;
   --muted-foreground: #a1a1aa;
-  --accent: #3b82f6;
-  --border: rgba(255, 255, 255, 0.1);
-  --card: rgba(255, 255, 255, 0.03);
-  --neu-light: rgba(255, 255, 255, 0.05);
-  --neu-dark: rgba(0, 0, 0, 0.8);
+  --accent: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --card: rgba(10, 10, 10, 0.5);
 }
 
 @theme inline {
@@ -29,7 +27,7 @@ html {
 
 h1, h2, h3, h4 {
   font-family: var(--font-sans), sans-serif;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.06em;
   line-height: 1.05;
 }
 
@@ -178,47 +176,22 @@ input, textarea {
   animation: gradient-shift 4s linear infinite;
 }
 
-/* Glassmorphism Utilities (replacing Neumorphic) */
-.neu-flat {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Bento Box Utilities */
+.bento-card {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.neu-flat-lg {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(16px);
+.bento-card:hover {
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-  transition: all 0.3s ease-in-out;
+  background: rgba(15, 15, 15, 0.8);
 }
 
-.neu-pressed {
+.bento-inner {
   background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.8);
-}
-
-.neu-inset {
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.neu-button {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.neu-button:active {
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: inherit;
 }

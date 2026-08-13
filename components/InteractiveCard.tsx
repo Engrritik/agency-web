@@ -27,14 +27,14 @@ export default function InteractiveCard({
     mouseY.set(clientY - top);
   }
 
-  const radialColor = "rgba(139, 92, 246, 0.15)"; // Neon Purple spotlight
+  const radialColor = "rgba(255, 255, 255, 0.08)"; // Subtle white spotlight
   
-  const innerOpacityClass = permanent ? "opacity-100" : "opacity-0 group-hover:opacity-100 transition duration-300";
+  const innerOpacityClass = permanent ? "opacity-100" : "opacity-0 group-hover:opacity-100 transition duration-500";
 
   return (
     <div className={`relative group h-full ${className}`}>
       <div
-        className={`relative h-full rounded-2xl neu-flat hover:neu-flat-lg hover-glow transition-all duration-500 border border-transparent overflow-hidden ${innerClassName}`}
+        className={`relative h-full rounded-2xl bento-card overflow-hidden ${innerClassName}`}
         onMouseMove={handleMouseMove}
       >
         <motion.div

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import FadeIn from "@/components/ui/FadeIn";
+import FadeIn, { FadeInStagger } from "@/components/ui/FadeIn";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { Play, Calendar, Clock, ShieldCheck, CheckCircle2, UserPlus, AlertCircle, FileText, ArrowRight, Zap, Lock, Database, X } from "lucide-react";
@@ -74,12 +74,13 @@ export default function Demo() {
   return (
     <div className="flex flex-col min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="max-w-4xl mx-auto mb-16 text-center flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/5 mb-6">
-              <span className="flex w-2 h-2 rounded-full bg-blue-600"></span>
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Live Demonstration</p>
+        <FadeInStagger staggerDelay={0.15}>
+          <FadeIn useStagger className="max-w-4xl mx-auto mb-16 text-center flex flex-col items-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bento-card border-white/10 mb-6">
+              <span className="flex w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Live Simulator</p>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] leading-[0.9] mb-8 text-foreground">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 text-foreground">
               Hear The AI In Action.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl tracking-tight mx-auto">
@@ -92,50 +93,52 @@ export default function Demo() {
           
           {/* Left Side: Player and Scenarios */}
           <div className="lg:col-span-7 flex flex-col gap-8">
-            {/* Audio Player Replacement / Video Player */}
-            <FadeIn delay={0.1} className="moving-glow">
-              <div className="aspect-video w-full bg-black rounded-3xl overflow-hidden relative shadow-[0_0_50px_rgba(0,0,0,0.1)] border border-border group flex items-center justify-center">
-                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
-                {/* Simulated Audio Visualizer */}
-                <div className="flex items-center justify-center gap-2 h-24">
-                  {[...Array(20)].map((_, i) => (
+            {/* Audio Player Replacement */}
+            <FadeIn useStagger>
+              <div className="aspect-video w-full bg-black rounded-3xl overflow-hidden relative border border-white/10 flex items-center justify-center shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
+                
+                {/* Simulated Audio Visualizer (Sleek Dark Mode) */}
+                <div className="flex items-center justify-center gap-1.5 h-24">
+                  {[...Array(24)].map((_, i) => (
                     <div
                       key={i}
-                      className="w-3 bg-black/80 rounded-full group-hover:animate-pulse transition-all duration-300"
+                      className="w-1.5 bg-white/40 rounded-full group-hover:bg-white transition-all duration-300"
                       style={{
-                        height: `${Math.max(20, ((i * 17) % 100))}%`,
+                        height: `${Math.max(10, ((i * 17) % 100))}%`,
                         animationDelay: `${i * 0.05}s`,
                       }}
                     ></div>
                   ))}
                 </div>
+                
                 <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
                   <div className="flex items-center gap-4 text-white">
-                    <button className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 transition-transform">
+                    <button className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                       <Play className="w-5 h-5 ml-1" fill="currentColor" />
                     </button>
                     <div>
-                      <div className="font-bold">{active.label} Simulation</div>
-                      <div className="text-sm opacity-80">Listening to patient...</div>
+                      <div className="font-bold tracking-tight">{active.label}</div>
+                      <div className="text-sm text-white/50 tracking-tight">Listening to patient...</div>
                     </div>
                   </div>
-                  <div className="font-mono text-sm text-black/80">0:12 / {active.outcome.duration}</div>
+                  <div className="font-mono text-sm text-white/50">0:12 / {active.outcome.duration}</div>
                 </div>
               </div>
             </FadeIn>
 
             {/* Scenario Selector */}
-            <FadeIn delay={0.2} className="bg-white border border-black/5 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover-glow group relative z-10">
-              <h3 className="font-bold text-lg mb-4 tracking-[-0.02em]">Select Call Scenario</h3>
+            <FadeIn useStagger className="bento-card border-white/10 rounded-3xl p-6 relative z-10">
+              <h3 className="font-bold text-lg mb-4 tracking-tight text-white/80">Select Scenario</h3>
               <div className="flex flex-wrap gap-3">
                 {Object.entries(scenarios).map(([key, scenario]) => (
                   <button
                     key={key}
                     onClick={() => setActiveScenario(key)}
-                    className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                    className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all border ${
                       activeScenario === key
-                        ? "bg-blue-600 text-white shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] scale-[1.02]"
-                        : "bg-black/5 text-foreground hover:bg-black/10"
+                        ? "bg-white text-black border-transparent shadow-[0_0_15px_rgba(255,255,255,0.3)] scale-[1.02]"
+                        : "bg-white/5 text-foreground border-white/10 hover:bg-white/10"
                     }`}
                   >
                     {scenario.icon}
@@ -149,51 +152,52 @@ export default function Demo() {
           {/* Right Side: Dashboard */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             {/* Call Outcome Dashboard */}
-            <FadeIn delay={0.3} className="bg-white border border-black/5 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col relative z-10">
-              <div className="flex items-center gap-3 mb-8 border-b border-black/5 p-8 pb-6 bg-black/[0.02]">
+            <FadeIn useStagger className="bento-card border-white/10 rounded-3xl overflow-hidden h-full flex flex-col relative z-10">
+              <div className="flex items-center gap-3 mb-8 border-b border-white/10 p-8 pb-6 bg-white/[0.02]">
                 <div className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
                 </div>
-                <h3 className="font-bold text-xl tracking-tight">Call Outcome Dashboard</h3>
+                <h3 className="font-bold text-xl tracking-tight text-white/90">Execution Output</h3>
               </div>
 
               <div className="space-y-8 flex-grow px-8 pb-8">
                 <div>
-                  <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Call Status</div>
+                  <div className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Call Status</div>
                   <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
-                    {active.outcome.status === "Escalated to Human" ? <AlertCircle className="w-5 h-5 text-yellow-500" /> : <CheckCircle2 className="w-5 h-5 text-blue-600" />}
+                    {active.outcome.status === "Escalated to Human" ? <AlertCircle className="w-5 h-5 text-yellow-500" /> : <CheckCircle2 className="w-5 h-5 text-white" />}
                     {active.outcome.status}
                   </div>
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Action Taken</div>
+                  <div className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Action Taken</div>
                   <div className="font-bold text-xl tracking-tight">{active.outcome.appointment}</div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Wait Time</div>
+                    <div className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Wait Time</div>
                     <div className="font-bold text-xl tracking-tight">{active.outcome.wait}</div>
                   </div>
                   <div>
-                    <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Duration</div>
+                    <div className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-2">Duration</div>
                     <div className="font-bold text-xl tracking-tight">{active.outcome.duration}</div>
                   </div>
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">System Status</div>
+                  <div className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-2">System Status</div>
                   <div className="font-bold text-xl tracking-tight flex items-center gap-2">
-                    <Database className="w-5 h-5 text-blue-600" /> {active.outcome.calendar}
+                    <Database className="w-5 h-5 text-white/70" /> {active.outcome.calendar}
                   </div>
                 </div>
               </div>
             </FadeIn>
           </div>
         </div>
+        </FadeInStagger>
 
         {/* AI Capability Grid */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <FadeIn>
+        <FadeInStagger staggerDelay={0.1} className="max-w-6xl mx-auto mb-16">
+          <FadeIn useStagger>
             <h2 className="text-3xl font-bold tracking-tight mb-10 text-center">Engineered Capabilities</h2>
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -201,15 +205,15 @@ export default function Demo() {
               "Books Appointments", "Answers FAQs", "Transfers Emergencies", "Calendar Integration",
               "Human Escalation", "After Hours Coverage", "Captures New Patients", "Natural Human Voice"
             ].map((cap, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <InteractiveCard innerClassName="p-4 flex items-center gap-3 h-full" className="h-full">
-                  <CheckCircle2 className="w-5 h-5 text-foreground shrink-0 relative z-10" />
+              <FadeIn useStagger key={i}>
+                <InteractiveCard innerClassName="p-4 flex items-center gap-3 h-full bento-inner border-white/10" className="h-full">
+                  <CheckCircle2 className="w-5 h-5 text-white/50 shrink-0 relative z-10" />
                   <span className="font-semibold text-sm relative z-10">{cap}</span>
                 </InteractiveCard>
               </FadeIn>
             ))}
           </div>
-        </div>
+        </FadeInStagger>
 
         {/* Workflow Visualization */}
         <div className="max-w-6xl mx-auto mb-16">
@@ -258,9 +262,9 @@ export default function Demo() {
         </div>
 
         {/* Security & Reliability */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">Enterprise-Grade Infrastructure</h2>
+        <FadeInStagger staggerDelay={0.1} className="max-w-6xl mx-auto mb-16">
+          <FadeIn useStagger className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tighter mb-4">Enterprise-Grade Infrastructure</h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {[
@@ -270,9 +274,9 @@ export default function Demo() {
               { title: "Clinic-Specific Knowledge", icon: <Database className="w-6 h-6" /> },
               { title: "Secure API Integrations", icon: <ShieldCheck className="w-6 h-6" /> },
             ].map((item, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <InteractiveCard innerClassName="p-6 text-center flex flex-col items-center gap-4 h-full">
-                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-foreground relative z-10 transition-transform group-hover:scale-110">
+              <FadeIn useStagger key={i}>
+                <InteractiveCard innerClassName="p-6 text-center flex flex-col items-center gap-4 h-full bento-inner border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white/80 relative z-10 transition-transform group-hover:scale-110">
                     {item.icon}
                   </div>
                   <h3 className="font-bold text-sm relative z-10">{item.title}</h3>
@@ -280,20 +284,20 @@ export default function Demo() {
               </FadeIn>
             ))}
           </div>
-        </div>
+        </FadeInStagger>
 
         {/* Before vs After */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">The Nexus AI Difference</h2>
+        <FadeInStagger staggerDelay={0.1} className="max-w-5xl mx-auto mb-16">
+          <FadeIn useStagger className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tighter mb-4">The Nexus AI Difference</h2>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <FadeIn delay={0.1} className="bg-white border border-black/5 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-              <h3 className="text-2xl font-bold mb-6 text-muted-foreground tracking-[-0.02em]">Without Nexus AI</h3>
+            <FadeIn useStagger className="bento-card border-white/5 rounded-3xl p-8">
+              <h3 className="text-2xl font-bold mb-6 text-white/50 tracking-tight">Without Nexus AI</h3>
               <ul className="space-y-4">
                 {["Missed Calls", "Lost Revenue", "Long Hold Times", "Frustrated Patients", "Overwhelmed Staff"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-muted-foreground font-medium text-lg">
-                    <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center text-red-600 shrink-0">
+                  <li key={i} className="flex items-center gap-3 text-white/60 font-medium text-lg">
+                    <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 shrink-0 border border-red-500/20">
                       <X className="w-4 h-4" />
                     </div>
                     {item}
@@ -301,12 +305,12 @@ export default function Demo() {
                 ))}
               </ul>
             </FadeIn>
-            <FadeIn delay={0.2} className="bg-blue-600 text-white border border-blue-500 rounded-3xl p-8 shadow-[0_8px_30px_rgba(37,99,235,0.2)] transform md:-translate-y-4">
-              <h3 className="text-2xl font-bold mb-6 tracking-[-0.02em]">With Nexus AI</h3>
+            <FadeIn useStagger className="bg-white text-black border border-white rounded-3xl p-8 transform md:-translate-y-4 shadow-[0_0_40px_rgba(255,255,255,0.15)]">
+              <h3 className="text-2xl font-bold mb-6 tracking-tight">With Nexus AI</h3>
               <ul className="space-y-4">
                 {["Every Call Answered instantly", "More Bookings & Revenue", "24/7 Availability", "Better Patient Experience", "Freed-Up Front Desk"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 font-medium text-lg">
-                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-black/5 flex items-center justify-center text-black shrink-0 border border-black/10">
                       <CheckCircle2 className="w-4 h-4" />
                     </div>
                     {item}
@@ -315,7 +319,7 @@ export default function Demo() {
               </ul>
             </FadeIn>
           </div>
-        </div>
+        </FadeInStagger>
         
         {/* Technology Stack */}
         <div className="max-w-4xl mx-auto mb-16 text-center">
