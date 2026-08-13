@@ -52,7 +52,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center">
             <Link href="/contact">
-              <button className="text-[13px] font-medium px-5 py-2 rounded-full neu-flat hover:neu-pressed transition-all">
+              <button className="text-[13px] font-medium px-5 py-2 rounded-full neu-flat hover:neu-pressed hover-glow transition-all">
                 Book the Demo Call
               </button>
             </Link>

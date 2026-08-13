@@ -54,12 +54,12 @@ export default function HomePage() {
 
           <FadeIn delay={0.3} className="flex flex-col sm:flex-row items-center gap-6">
             <Link href="/contact">
-              <button className="px-8 py-4 rounded-full neu-flat hover:neu-pressed transition-all text-sm font-semibold flex items-center gap-2 text-foreground">
-                Start My Free Trial <ArrowRight className="w-4 h-4" />
+              <button className="px-8 py-4 rounded-full neu-flat hover:neu-pressed hover-glow transition-all text-sm font-semibold flex items-center gap-2 text-foreground">
+                Book the Demo <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
             <Link href="/demo">
-              <button className="px-8 py-4 rounded-full neu-flat hover:neu-pressed transition-all text-sm font-semibold text-foreground">
+              <button className="px-8 py-4 rounded-full neu-flat hover:neu-pressed hover-glow transition-all text-sm font-semibold text-foreground">
                 See How it Works
               </button>
             </Link>
