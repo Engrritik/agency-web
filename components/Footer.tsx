@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6 group inline-flex">
-              <Image src="/favicon.ico" alt="Nexus AI Logo" width={32} height={32} className="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" />
+              <Logo />
               <span className="font-bold font-serif text-2xl text-foreground tracking-tight">Nexus AI</span>
             </Link>
             <p className="text-base text-muted-foreground max-w-sm leading-relaxed">

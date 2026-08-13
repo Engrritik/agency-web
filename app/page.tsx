@@ -8,20 +8,13 @@ import InteractiveCard from "@/components/InteractiveCard";
 
 import NeumorphicBlob from "@/components/NeumorphicBlob";
 import { Phone, Menu } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[var(--background)]">
       {/* Hero Section - Neumorphic Redesign */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-24 overflow-hidden">
-        
-        {/* Floating Side Buttons */}
-        <button className="fixed left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-2xl neu-flat flex items-center justify-center text-foreground hover:neu-pressed z-50 transition-all hidden md:flex">
-          <Menu className="w-5 h-5" />
-        </button>
-        <button className="fixed right-8 bottom-12 w-14 h-14 rounded-full neu-flat flex items-center justify-center text-foreground hover:neu-pressed z-50 transition-all">
-          <Phone className="w-6 h-6" />
-        </button>
 
         {/* Concentric Neumorphic Circles */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] max-w-[1200px] aspect-square rounded-full neu-inset opacity-80 pointer-events-none">
@@ -54,14 +47,14 @@ export default function HomePage() {
 
           <FadeIn delay={0.3} className="flex flex-col sm:flex-row items-center gap-6">
             <Link href="/contact">
-              <button className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(139,92,246,0.7)] transition-all text-sm font-semibold flex items-center gap-2">
+              <Button size="lg" variant="primary" className="flex items-center gap-2">
                 Book the Demo <ArrowRight className="w-4 h-4" />
-              </button>
+              </Button>
             </Link>
             <Link href="/demo">
-              <button className="px-8 py-4 rounded-full neu-flat hover:neu-pressed hover-glow transition-all text-sm font-semibold text-foreground">
+              <Button size="lg" variant="outline">
                 See How it Works
-              </button>
+              </Button>
             </Link>
           </FadeIn>
           
@@ -181,7 +174,7 @@ export default function HomePage() {
                 { title: "Built For Clinics", icon: <Stethoscope className="w-6 h-6" /> },
                 { title: "Lightning Fast", icon: <Zap className="w-6 h-6" /> },
               ].map((item, i) => (
-                <div key={i} className="shrink-0 w-72">
+                <div key={i} className="shrink-0 w-64">
                   <InteractiveCard innerClassName="p-6 flex items-center gap-4 h-full">
                     <div className="w-12 h-12 rounded-full neu-inset flex items-center justify-center text-foreground shrink-0 relative z-10 transition-transform group-hover:scale-110">
                       {item.icon}

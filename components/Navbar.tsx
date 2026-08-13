@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Button from "./ui/Button";
+import Logo from "./Logo";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -23,11 +24,7 @@ export default function Navbar() {
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-5 h-5 flex items-end gap-[2px]">
-                <div className="w-1 h-3 bg-foreground rounded-full"></div>
-                <div className="w-1 h-5 bg-foreground rounded-full"></div>
-                <div className="w-1 h-2 bg-foreground rounded-full"></div>
-              </div>
+              <Logo />
               <span className="font-bold font-sans text-[17px] text-foreground tracking-tight ml-1.5">Nexus AI</span>
             </Link>
           </div>

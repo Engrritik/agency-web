@@ -14,7 +14,7 @@ interface InteractiveCardProps {
 export default function InteractiveCard({ 
   children, 
   className = "", 
-  innerClassName = "p-8 md:p-10", 
+  innerClassName = "p-6 md:p-8", 
   permanent = false, 
   darker = false 
 }: InteractiveCardProps) {
@@ -34,11 +34,11 @@ export default function InteractiveCard({
   return (
     <div className={`relative group h-full ${className}`}>
       <div
-        className={`relative h-full rounded-3xl neu-flat hover:neu-flat-lg hover-glow transition-all duration-500 border border-transparent overflow-hidden ${innerClassName}`}
+        className={`relative h-full rounded-2xl neu-flat hover:neu-flat-lg hover-glow transition-all duration-500 border border-transparent overflow-hidden ${innerClassName}`}
         onMouseMove={handleMouseMove}
       >
         <motion.div
-          className={`pointer-events-none absolute -inset-px rounded-3xl ${innerOpacityClass}`}
+          className={`pointer-events-none absolute -inset-px rounded-2xl ${innerOpacityClass}`}
           style={{
             background: useMotionTemplate`
               radial-gradient(
