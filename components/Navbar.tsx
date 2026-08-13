@@ -40,7 +40,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-[13px] font-medium transition-colors hover:text-foreground rounded-full ${
+                  className={`relative px-4 py-2 text-[13px] font-medium transition-all hover:text-foreground hover:neu-flat rounded-full ${
                     isActive ? "text-foreground neu-pressed" : "text-muted-foreground"
                   }`}
                 >
@@ -53,7 +53,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <Link href="/contact">
               <button className="text-[13px] font-medium px-5 py-2 rounded-full neu-flat hover:neu-pressed hover-glow transition-all">
-                Book the Demo Call
+                Book the Demo
               </button>
             </Link>
           </div>

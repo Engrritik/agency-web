@@ -34,8 +34,8 @@ export default function HomePage() {
         <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center max-w-4xl mt-12">
           
           <FadeIn className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full neu-pressed mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#a3a3a3]"></span>
-            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#6b7280]">Nexus AI Voice Agents</span>
+            <span className="w-2 h-2 rounded-full bg-blue-600"></span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-blue-600">Nexus AI Voice Agents</span>
           </FadeIn>
 
           <FadeIn delay={0.1}>
