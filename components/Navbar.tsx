@@ -49,7 +49,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center">
             <Link href="/contact">
-              <button className="text-[13px] font-medium px-5 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(139,92,246,0.7)] transition-all">
+              <button className="text-[13px] text-black font-bold px-6 py-2.5 rounded-full bg-[var(--accent)] hover:bg-white shadow-[0_0_15px_rgba(216,255,0,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all">
                 Book the Demo
               </button>
             </Link>
@@ -67,7 +67,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-white/95 backdrop-blur-xl absolute w-full left-0 animate-in slide-in-from-top-2 duration-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-b-[2rem] overflow-hidden">
+        <div className="md:hidden border-t border-border bg-[#050505]/95 backdrop-blur-xl absolute w-full left-0 animate-in slide-in-from-top-2 duration-200 shadow-[0_8px_30px_rgb(0,0,0,0.5)] rounded-b-[2rem] overflow-hidden">
           <div className="px-4 py-6 flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link

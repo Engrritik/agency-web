@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617; /* Deep Slate 950 */
-  --foreground: #f8fafc;
-  --muted: #0f172a;
-  --muted-foreground: #94a3b8;
-  --accent: #8b5cf6; /* Vibrant violet */
-  --border: rgba(255, 255, 255, 0.05);
-  --card: rgba(255, 255, 255, 0.02);
+  --background: #050505; /* Near Black */
+  --foreground: #ffffff;
+  --muted: #111111;
+  --muted-foreground: #888888;
+  --accent: #d8ff00; /* Trionn-style electric yellow/green */
+  --border: rgba(255, 255, 255, 0.08);
+  --card: rgba(255, 255, 255, 0.03);
 }
 
 @theme inline {
@@ -19,6 +19,7 @@
   --color-border: var(--border);
   --color-card: var(--card);
   --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
   
   --animate-pulse-slow: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -28,14 +29,21 @@
   50% { opacity: 0.2; }
 }
 
+/* Hide default cursor globally for Trionn feel */
+* {
+  cursor: none !important;
+}
+
 html {
-  scroll-behavior: smooth;
+  /* Lenis handles smooth scrolling, but this is fallback */
+  scroll-behavior: auto;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-sans), sans-serif;
-  letter-spacing: -0.06em;
-  line-height: 1.05;
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 body {
@@ -47,6 +55,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-user-select: none;
   user-select: none;
+  overflow-x: hidden;
 }
 
 input, textarea {
@@ -56,23 +65,17 @@ input, textarea {
 
 /* Base selection color for a premium feel */
 ::selection {
-  background: #2563eb;
-  color: #ffffff;
+  background: var(--accent);
+  color: #000000;
 }
 
-/* Subtle scrollbar */
+/* Hide scrollbar completely for sleek look like Trionn */
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none;
 }
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #e5e5e5;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #cccccc;
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* Base animation classes */

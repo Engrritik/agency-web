@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk, Syne } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import ChatWidget from "@/components/ChatWidget";
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
+import Preloader from "@/components/ui/Preloader";
+import CustomCursor from "@/components/ui/CustomCursor";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const syne = Syne({
+  variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
@@ -37,14 +46,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${syne.variable} h-full antialiased bg-[#050505] text-white`}>
       <body className="min-h-full flex flex-col font-sans tracking-tight">
-        <AnimatedBackground />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <FloatingCTA />
-        <ChatWidget />
-        <Footer />
+        <SmoothScroll>
+          <Preloader />
+          <CustomCursor />
+          <AnimatedBackground />
+          <div className="relative z-10 flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <FloatingCTA />
+          <ChatWidget />
+        </SmoothScroll>
       </body>
     </html>
   );

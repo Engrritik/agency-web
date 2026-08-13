@@ -57,25 +57,25 @@ export default function BookingForm() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Your Name</label>
-              <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3.5 bg-transparent border border-border/60 hover:border-border rounded-xl text-foreground text-sm focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600/50 focus:outline-none transition-all placeholder:text-muted-foreground/50" placeholder="Dr. John Doe" />
+              <input type="text" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3.5 bg-transparent border border-border/60 hover:border-border rounded-xl text-foreground text-sm focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] focus:outline-none transition-all placeholder:text-muted-foreground/50" placeholder="Dr. John Doe" />
             </div>
             <div>
               <label className="block text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Clinic Name</label>
-              <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-3.5 bg-transparent border border-border/60 hover:border-border rounded-xl text-foreground text-sm focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600/50 focus:outline-none transition-all placeholder:text-muted-foreground/50" placeholder="Apex Dental Care" />
+              <input type="text" name="clinicName" required value={formData.clinicName} onChange={handleChange} className="w-full px-4 py-3.5 bg-transparent border border-border/60 hover:border-border rounded-xl text-foreground text-sm focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] focus:outline-none transition-all placeholder:text-muted-foreground/50" placeholder="Apex Dental Care" />
             </div>
             <div>
               <label className="block text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Clinic Email</label>
-              <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3.5 bg-transparent border border-border/60 hover:border-border rounded-xl text-foreground text-sm focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600/50 focus:outline-none transition-all placeholder:text-muted-foreground/50" placeholder="office@apexdental.com" />
+              <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3.5 bg-transparent border border-border/60 hover:border-border rounded-xl text-foreground text-sm focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] focus:outline-none transition-all placeholder:text-muted-foreground/50" placeholder="office@apexdental.com" />
             </div>
             <div>
               <label className="block text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">Phone Number</label>
-              <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3.5 bg-transparent border border-border/60 hover:border-border rounded-xl text-foreground text-sm focus:ring-4 focus:ring-blue-600/10 focus:border-blue-600/50 focus:outline-none transition-all placeholder:text-muted-foreground/50" placeholder="(555) 000-0000" />
+              <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3.5 bg-transparent border border-border/60 hover:border-border rounded-xl text-foreground text-sm focus:ring-2 focus:ring-[var(--accent)] focus:border-[var(--accent)] focus:outline-none transition-all placeholder:text-muted-foreground/50" placeholder="(555) 000-0000" />
             </div>
             
             <button 
               type="submit" 
               disabled={loading} 
-              className="w-full mt-4 bg-foreground text-background font-semibold text-sm py-4 rounded-xl hover:bg-foreground/90 transition-all shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(0,0,0,0.2)] disabled:opacity-70 flex items-center justify-center"
+              className="w-full mt-4 bg-[var(--accent)] text-black font-bold text-sm py-4 rounded-xl hover:bg-white transition-all shadow-[0_0_15px_rgba(216,255,0,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] disabled:opacity-70 flex items-center justify-center"
             >
               {loading ? (
                 <motion.div
