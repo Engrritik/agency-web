@@ -15,9 +15,9 @@ export default function NeumorphicBlob() {
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     
     // Size it to container (we'll make it absolute and responsive in CSS)
-    const size = 800; // Render at high res, scale down with CSS
+    const size = 500; // Render at slightly lower res, scale up/down with CSS
     renderer.setSize(size, size);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     
     // Make sure we only append once
     if (containerRef.current.children.length === 0) {
@@ -27,7 +27,7 @@ export default function NeumorphicBlob() {
     }
 
     // Geometry
-    const geometry = new THREE.IcosahedronGeometry(2, 32); // High poly for smooth deformation
+    const geometry = new THREE.IcosahedronGeometry(2, 8); // Reduced poly for better performance
     
     // Store original positions for deformation
     const positionAttribute = geometry.attributes.position;

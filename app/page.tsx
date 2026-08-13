@@ -30,11 +30,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* 3D Blob Background */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] z-0 pointer-events-none">
-          <NeumorphicBlob />
-        </div>
-
         {/* Hero Content */}
         <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center max-w-4xl mt-12">
           
@@ -98,7 +93,11 @@ export default function HomePage() {
       </section>
 
       {/* What the AI Does */}
-      <section className="py-24 relative">
+      <section className="py-24 relative overflow-hidden">
+        {/* 3D Blob Behind Cards */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] z-0 pointer-events-none opacity-60">
+          <NeumorphicBlob />
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="max-w-4xl mx-auto mb-24 text-center">
             <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full neu-pressed mb-6">
