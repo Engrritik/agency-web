@@ -38,33 +38,33 @@ export default function NeumorphicBlob() {
       originalPositions.push(vertex.clone());
     }
 
-    // Material (Neumorphic Glassy/Soft look)
+    // Material (Premium Dark Glass look)
     const material = new THREE.MeshPhysicalMaterial({
-      color: 0xffffff,
-      metalness: 0.1,
-      roughness: 0.2,
-      transmission: 0.5, // Glass-like
+      color: 0x000000,
+      metalness: 0.5,
+      roughness: 0.1,
+      transmission: 0.9, // High transmission for glass
       ior: 1.5,
-      thickness: 1.0,
-      clearcoat: 0.8,
-      clearcoatRoughness: 0.2,
+      thickness: 2.0,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.1,
       side: THREE.DoubleSide
     });
 
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
-    // Lighting to create neumorphic shading
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    // Lighting to create vivid neon reflections
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
     scene.add(ambientLight);
 
-    // Light shadow (top left)
-    const dirLight1 = new THREE.DirectionalLight(0xffffff, 2);
+    // Neon Purple light
+    const dirLight1 = new THREE.DirectionalLight(0x8b5cf6, 5);
     dirLight1.position.set(5, 5, 5);
     scene.add(dirLight1);
 
-    // Dark shadow (bottom right)
-    const dirLight2 = new THREE.DirectionalLight(0xa0a5b0, 1.5); 
+    // Neon Blue light
+    const dirLight2 = new THREE.DirectionalLight(0x3b82f6, 5); 
     dirLight2.position.set(-5, -5, -5);
     scene.add(dirLight2);
 

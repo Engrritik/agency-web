@@ -52,7 +52,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center">
             <Link href="/contact">
-              <button className="text-[13px] font-medium px-5 py-2 rounded-full neu-flat hover:neu-pressed hover-glow transition-all">
+              <button className="text-[13px] font-medium px-5 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(139,92,246,0.7)] transition-all">
                 Book the Demo
               </button>
             </Link>

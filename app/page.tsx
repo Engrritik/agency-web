@@ -39,7 +39,7 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight leading-[1.05] text-foreground mb-8">
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight leading-[1.05] mb-8 bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-200 to-gray-500">
               Never Miss<br />
               Another Patient<br />
               Call. Period.
@@ -47,14 +47,14 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="text-lg md:text-xl text-[#4b5563] max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
               AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7—without hiring another front desk employee. Our AI is always on, always ready, and never takes a break.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.3} className="flex flex-col sm:flex-row items-center gap-6">
             <Link href="/contact">
-              <button className="px-8 py-4 rounded-full neu-flat hover:neu-pressed hover-glow transition-all text-sm font-semibold flex items-center gap-2 text-foreground">
+              <button className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(139,92,246,0.7)] transition-all text-sm font-semibold flex items-center gap-2">
                 Book the Demo <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
@@ -71,7 +71,7 @@ export default function HomePage() {
       {/* Statistics Section */}
       <section className="py-12 my-12 mx-4 sm:mx-8 rounded-[3rem] neu-inset text-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-black/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10">
             <FadeIn delay={0.1} className="text-center px-4 animate-float" style={{ animationDelay: '0s' }}>
               <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2"><AnimatedCounter value={99.9} decimals={1} suffix="%" /></div>
               <div className="text-sm font-medium text-gray-500 uppercase tracking-widest">Call Availability</div>
@@ -115,7 +115,7 @@ export default function HomePage() {
                   <PhoneCall className="w-8 h-8" />
                 </div>
                 <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Answer Calls Instantly</h3>
-                <p className="text-gray-600 leading-relaxed text-xl max-w-lg relative z-10">
+                <p className="text-gray-300 leading-relaxed text-xl max-w-lg relative z-10">
                   Never miss leads or patient calls again. The AI answers on the first ring, 24/7, with zero hold times.
                 </p>
               </InteractiveCard>
@@ -126,7 +126,7 @@ export default function HomePage() {
                   <Calendar className="w-8 h-8" />
                 </div>
                 <h3 className="text-3xl font-bold mb-4 relative z-10 text-foreground">Book Appointments</h3>
-                <p className="text-gray-600 leading-relaxed text-xl relative z-10">
+                <p className="text-gray-300 leading-relaxed text-xl relative z-10">
                   Connected directly to your calendar and scheduling logic.
                 </p>
               </InteractiveCard>
@@ -138,7 +138,7 @@ export default function HomePage() {
                 </div>
                 <div className="relative z-10 text-center md:text-left">
                   <h3 className="text-3xl font-bold mb-4 text-foreground">Transfer Emergencies</h3>
-                  <p className="text-gray-600 leading-relaxed text-xl max-w-3xl">
+                  <p className="text-gray-300 leading-relaxed text-xl max-w-3xl">
                     Escalates emergencies or sensitive requests to your human staff instantly, ensuring no critical issue is ever missed in translation.
                   </p>
                 </div>
