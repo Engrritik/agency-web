@@ -27,7 +27,7 @@ export default function InteractiveCard({
     mouseY.set(clientY - top);
   }
 
-  const radialColor = "rgba(255, 255, 255, 0.08)"; // Subtle white spotlight
+  const radialColor = "rgba(139, 92, 246, 0.15)"; // Vibrant violet spotlight
   
   const innerOpacityClass = permanent ? "opacity-100" : "opacity-0 group-hover:opacity-100 transition duration-500";
 

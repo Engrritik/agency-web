@@ -27,7 +27,7 @@ export default function HomePage() {
         <FadeInStagger className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center max-w-4xl mt-12" staggerDelay={0.15}>
           
           <FadeIn useStagger className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bento-card mb-8">
-            <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+            <span className="w-2 h-2 rounded-full bg-violet-400 shadow-[0_0_10px_rgba(139,92,246,0.8)]"></span>
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Nexus AI Solutions</span>
           </FadeIn>
 
@@ -230,7 +230,7 @@ export default function HomePage() {
           <FadeInStagger staggerDelay={0.15} className="flex flex-col items-center">
             <div className="max-w-3xl mb-16">
               <FadeIn useStagger className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bento-card mb-6 border-white/10">
-                <span className="flex w-2 h-2 rounded-full bg-white"></span>
+                <span className="flex w-2 h-2 rounded-full bg-violet-400 shadow-[0_0_10px_rgba(139,92,246,0.8)]"></span>
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Get Started</p>
               </FadeIn>
               <FadeIn useStagger>

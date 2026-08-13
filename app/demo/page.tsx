@@ -77,7 +77,7 @@ export default function Demo() {
         <FadeInStagger staggerDelay={0.15}>
           <FadeIn useStagger className="max-w-4xl mx-auto mb-16 text-center flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bento-card border-white/10 mb-6">
-              <span className="flex w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+              <span className="flex w-2 h-2 rounded-full bg-violet-400 shadow-[0_0_10px_rgba(139,92,246,0.8)]"></span>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">Live Simulator</p>
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 text-foreground">
