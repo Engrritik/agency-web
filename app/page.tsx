@@ -144,8 +144,11 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-black/5 max-w-7xl mx-auto border border-black/5 rounded-[2rem] overflow-hidden">
             {[
-              { title: "No Long-Term Contracts", icon: <ShieldCheck className="w-8 h-8" /> },
-              { title: "14-Day Risk-Free Pilot", icon: <Activity className="w-8 h-8" /> },
+              { 
+                title: "Custom Setup + Simple Monthly Rate", 
+                subtext: "$3,000 one-time setup (split into two payments), then $500/month for ongoing maintenance — no trial period.",
+                icon: <ShieldCheck className="w-8 h-8" /> 
+              },
               { title: "Custom AI Voice", icon: <PhoneCall className="w-8 h-8" /> },
               { title: "Human Escalation", icon: <CheckCircle2 className="w-8 h-8" /> },
               { title: "Works After Hours", icon: <Clock className="w-8 h-8" /> },
@@ -159,6 +162,7 @@ export default function HomePage() {
                     {item.icon}
                   </div>
                   <h3 className="font-bold text-xl md:text-2xl uppercase tracking-tighter leading-tight">{item.title}</h3>
+                  {item.subtext && <p className="text-sm font-medium text-black/60 font-sans leading-relaxed">{item.subtext}</p>}
                 </div>
               </FadeIn>
             ))}
