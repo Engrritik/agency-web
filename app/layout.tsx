@@ -59,6 +59,28 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.buildwithnexusai.com/#organization",
+      "name": "Nexus AI",
+      "url": "https://www.buildwithnexusai.com/",
+      "logo": "https://www.buildwithnexusai.com/mainlogo.png",
+      "description": "AI voice receptionist systems for independent and private dental practices in the United States."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.buildwithnexusai.com/#software",
+      "name": "Nexus AI Voice Receptionist",
+      "operatingSystem": "Cloud / Phone System",
+      "applicationCategory": "BusinessApplication",
+      "description": "AI voice receptionist for dental practices that answers calls, handles routine questions, and helps patients book appointments."
+    }
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -66,6 +88,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${syne.variable} h-full antialiased bg-[#050505] text-white`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans tracking-tight">
         <SmoothScroll>
           <Preloader />

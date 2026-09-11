@@ -38,21 +38,30 @@ function ParticleSystem(props: any) {
 
 export default function AnimatedBackground() {
   const [mounted, setMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    if (typeof window !== "undefined" && window.innerWidth >= 768) {
+      setIsDesktop(true);
+    }
   }, []);
 
   if (!mounted) return null;
 
   return (
     <div className="fixed inset-0 z-[0] overflow-hidden pointer-events-none">
-      {/* Dark gradient overlay to blend 3D with background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/40 to-[#050505] z-10 pointer-events-none mix-blend-multiply" />
+      {/* Dark gradient overlay to blend background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/90 via-[#050505]/50 to-[#050505] z-10 pointer-events-none mix-blend-multiply" />
       
-      <Canvas camera={{ position: [0, 0, 1.5] }}>
-        <ParticleSystem />
-      </Canvas>
+      {/* CSS Ambient Radial Glow for Mobile & Low-Power Performance */}
+      <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(216,255,0,0.06)_0%,transparent_70%)] blur-3xl pointer-events-none"></div>
+
+      {isDesktop && (
+        <Canvas camera={{ position: [0, 0, 1.5] }}>
+          <ParticleSystem />
+        </Canvas>
+      )}
     </div>
   );
 }

@@ -8,20 +8,12 @@ export default function Preloader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading progress
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => setLoading(false), 500); // Small delay before hiding
-          return 100;
-        }
-        // Random increments to look more realistic
-        return prev + Math.floor(Math.random() * 15) + 1;
-      });
-    }, 150);
+    // Fast initial hide to ensure immediate FCP and LCP
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 100);
 
-    return () => clearInterval(interval);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
