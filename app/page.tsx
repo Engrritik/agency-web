@@ -221,6 +221,61 @@ export default function HomePage() {
         </FadeInStagger>
       </section>
 
+      {/* SEO Practice Solutions Internal Links Section */}
+      <section className="py-20 md:py-28 border-t border-white/10 bg-black/60">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4">
+              Dental Call Handling Solutions
+            </h2>
+            <p className="text-base sm:text-lg text-white/60">
+              Explore how Nexus AI addresses specific operational challenges for independent U.S. dental practices.
+            </p>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                title: "AI Receptionist for Dentists",
+                desc: "Automated phone handling built specifically for dental patient intake, triage, and workflows.",
+                href: "/ai-receptionist-for-dentists"
+              },
+              {
+                title: "Dental Answering Service",
+                desc: "Compare traditional 24/7 call centers with an instant, cost-effective AI voice receptionist.",
+                href: "/dental-answering-service"
+              },
+              {
+                title: "AI Appointment Scheduling",
+                desc: "Streamline patient bookings, rescheduling, and calendar checks directly over the phone.",
+                href: "/ai-appointment-scheduling-dental"
+              },
+              {
+                title: "After-Hours Dental Answering",
+                desc: "24/7 and weekend call coverage, emergency pain triage, and capturing late-night inquiries.",
+                href: "/after-hours-dental-answering"
+              },
+              {
+                title: "Dental Front Desk Automation",
+                desc: "Reduce front desk staff burnout by automating repetitive FAQ calls and routine inquiries.",
+                href: "/dental-front-desk-automation"
+              }
+            ].map((solution, i) => (
+              <FadeIn key={i}>
+                <Link href={solution.href} className="group block h-full p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[var(--accent)]/50 transition-all hover:bg-white/[0.05]">
+                  <h3 className="text-xl font-bold text-white group-hover:text-[var(--accent)] mb-3 transition-colors flex items-center justify-between">
+                    {solution.title}
+                    <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[var(--accent)] group-hover:translate-x-1 transition-all" />
+                  </h3>
+                  <p className="text-sm text-white/60 font-sans leading-relaxed">
+                    {solution.desc}
+                  </p>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 md:py-32 bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
