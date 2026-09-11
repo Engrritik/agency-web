@@ -10,6 +10,8 @@ import Preloader from "@/components/ui/Preloader";
 import CustomCursor from "@/components/ui/CustomCursor";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 
+import Script from "next/script";
+
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -28,6 +30,9 @@ export const metadata: Metadata = {
   description: "AI voice receptionist for dental practices that answers calls, handles routine questions, and helps patients book appointments when your front desk is busy or unavailable.",
   alternates: {
     canonical: '/',
+  },
+  verification: {
+    google: 'google9170e269071faa6b',
   },
   openGraph: {
     title: "AI Voice Receptionist for Dental Practices | Nexus AI",
@@ -95,6 +100,18 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans tracking-tight">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-W5BTF7XH8M"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-W5BTF7XH8M');
+          `}
+        </Script>
         <SmoothScroll>
           <Preloader />
           <CustomCursor />
