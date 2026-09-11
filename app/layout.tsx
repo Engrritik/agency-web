@@ -23,17 +23,36 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Nexus AI | Never Miss Another Patient Call",
-  description: "AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7 for private clinics.",
+  metadataBase: new URL('https://www.buildwithnexusai.com/'),
+  title: "AI Voice Receptionist for Dental Practices | Nexus AI",
+  description: "AI voice receptionist for dental practices that answers calls, handles routine questions, and helps patients book appointments when your front desk is busy or unavailable.",
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: "Nexus AI | AI Voice Receptionists for Clinics",
-    description: "AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7.",
+    title: "AI Voice Receptionist for Dental Practices | Nexus AI",
+    description: "AI voice receptionist for dental practices that answers calls, handles routine questions, and helps patients book appointments when your front desk is busy or unavailable.",
     type: "website",
+    url: "https://www.buildwithnexusai.com/",
+    siteName: "Nexus AI",
+    images: [
+      {
+        url: "/mainlogo.png",
+        width: 1200,
+        height: 630,
+        alt: "Nexus AI Voice Receptionist",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexus AI",
-    description: "AI Voice Receptionists that answer every call, book appointments, answer FAQs, and work 24/7.",
+    title: "AI Voice Receptionist for Dental Practices | Nexus AI",
+    description: "AI voice receptionist for dental practices that answers calls, handles routine questions, and helps patients book appointments when your front desk is busy or unavailable.",
+    images: ["/mainlogo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   icons: {
     icon: "/favicon.ico",
