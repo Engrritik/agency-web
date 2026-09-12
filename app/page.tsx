@@ -5,18 +5,15 @@ import BookingForm from "@/components/BookingForm";
 import FAQItem from "@/components/FAQItem";
 import InteractiveCard from "@/components/InteractiveCard";
 import Button from "@/components/ui/Button";
+import Hero3D from "@/components/Hero3D";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-transparent relative z-10 overflow-x-hidden md:overflow-x-visible">
-      {/* Background Effects */}
-      <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
-        <div className="absolute top-[-10%] right-[-5%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen animate-aurora"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[150px] mix-blend-screen animate-aurora" style={{ animationDelay: '-5s' }}></div>
-      </div>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24">
+        <Hero3D />
         <FadeInStagger className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center w-full" staggerDelay={0.1}>
           
           <FadeIn useStagger className="mb-8">

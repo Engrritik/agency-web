@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Play, Calendar, Clock, ShieldCheck, CheckCircle2, UserPlus, AlertCircle, FileText, ArrowRight, Zap, Lock, Database, X } from "lucide-react";
 import { motion } from "framer-motion";
 import InteractiveCard from "@/components/InteractiveCard";
+import TiltCard from "@/components/ui/TiltCard";
 
 export default function Demo() {
   const [activeScenario, setActiveScenario] = useState("booking");
@@ -73,12 +74,6 @@ export default function Demo() {
 
   return (
     <div className="flex flex-col min-h-screen relative z-10 overflow-x-hidden md:overflow-x-visible">
-      {/* Background Effects */}
-      <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
-        <div className="absolute top-[10%] -left-[10%] w-[50%] h-[50%] bg-blue-600/10 rounded-full blur-[120px] mix-blend-screen animate-aurora"></div>
-        <div className="absolute bottom-[20%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 rounded-full blur-[150px] mix-blend-screen animate-aurora" style={{ animationDelay: '-5s' }}></div>
-      </div>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
         <FadeInStagger staggerDelay={0.15}>
           <FadeIn className="max-w-4xl mx-auto mb-16 text-center flex flex-col items-center mt-8">
@@ -95,115 +90,117 @@ export default function Demo() {
           </FadeIn>
 
         {/* Demo Section (Audio Player + Dashboard + Scenarios) */}
-        <div className="max-w-6xl mx-auto mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          {/* Left Side: Player and Scenarios */}
-          <div className="lg:col-span-7 flex flex-col gap-8">
-            {/* Audio Player */}
-            <FadeIn useStagger>
-              <div className="aspect-[16/10] w-full bg-[#06070a]/90 backdrop-blur-3xl rounded-[2.5rem] overflow-hidden relative border border-white/10 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(3,3,5,0.8)] hover-glow">
-                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] pointer-events-none mix-blend-overlay"></div>
-                
-                {/* Simulated Audio Visualizer (Sleek Dark Mode) */}
-                <div className="flex items-center justify-center gap-[3px] h-32 w-full px-12 mt-[-40px]">
-                  {[...Array(40)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-1.5 bg-blue-500/50 rounded-full transition-all duration-300"
-                      style={{
-                         height: `${Math.max(10, ((i * 23 + Math.random() * 50) % 100))}%`,
-                         animationDelay: `${i * 0.05}s`,
-                      }}
-                    ></div>
-                  ))}
-                </div>
-                
-                <div className="absolute bottom-6 left-6 right-6 p-6 rounded-3xl glass-panel bg-black/40 border-white/5 flex items-center justify-between">
-                  <div className="flex items-center gap-5 text-white">
-                    <button className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-105 hover:bg-blue-500 transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-                      <Play className="w-6 h-6 ml-1" fill="currentColor" />
-                    </button>
-                    <div>
-                      <div className="font-bold tracking-tight text-lg">{active.label}</div>
-                      <div className="text-sm text-gray-400 tracking-tight font-medium flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Listening to patient
+        <TiltCard className="mb-24 w-full z-20">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            {/* Left Side: Player and Scenarios */}
+            <div className="lg:col-span-7 flex flex-col gap-8">
+              {/* Audio Player */}
+              <FadeIn useStagger>
+                <div className="aspect-[16/10] w-full bg-[#06070a]/90 backdrop-blur-3xl rounded-[2.5rem] overflow-hidden relative border border-white/10 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(3,3,5,0.8)] hover-glow">
+                  <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] pointer-events-none mix-blend-overlay"></div>
+                  
+                  {/* Simulated Audio Visualizer (Sleek Dark Mode) */}
+                  <div className="flex items-center justify-center gap-[3px] h-32 w-full px-12 mt-[-40px]">
+                    {[...Array(40)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="w-1.5 bg-blue-500/50 rounded-full transition-all duration-300"
+                        style={{
+                           height: `${Math.max(10, ((i * 23 + Math.random() * 50) % 100))}%`,
+                           animationDelay: `${i * 0.05}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+                  
+                  <div className="absolute bottom-6 left-6 right-6 p-6 rounded-3xl glass-panel bg-black/40 border-white/5 flex items-center justify-between">
+                    <div className="flex items-center gap-5 text-white">
+                      <button className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-105 hover:bg-blue-500 transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                        <Play className="w-6 h-6 ml-1" fill="currentColor" />
+                      </button>
+                      <div>
+                        <div className="font-bold tracking-tight text-lg">{active.label}</div>
+                        <div className="text-sm text-gray-400 tracking-tight font-medium flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Listening to patient
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="font-mono text-sm text-gray-400 font-medium bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
-                    0:12 / {active.outcome.duration}
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Scenario Selector */}
-            <FadeIn useStagger className="glass-panel border-white/10 rounded-3xl p-8 relative z-10">
-              <h3 className="font-bold text-lg mb-6 tracking-tight text-gray-300 uppercase text-sm">Select Scenario</h3>
-              <div className="flex flex-wrap gap-4">
-                {Object.entries(scenarios).map(([key, scenario]) => (
-                  <button
-                    key={key}
-                    onClick={() => setActiveScenario(key)}
-                    className={`flex items-center gap-2.5 px-5 py-3.5 rounded-2xl text-sm font-semibold transition-all border ${
-                      activeScenario === key
-                        ? "bg-blue-600/20 text-blue-400 border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.15)] scale-[1.02]"
-                        : "bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    {scenario.icon}
-                    {scenario.label}
-                  </button>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Right Side: Dashboard */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            <FadeIn useStagger className="glass-panel border-white/10 rounded-3xl overflow-hidden h-full flex flex-col relative z-10">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 blur-[60px] rounded-full pointer-events-none"></div>
-              
-              <div className="flex items-center gap-3 mb-8 border-b border-white/10 p-8 pb-6 bg-white/[0.02]">
-                <div className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
-                </div>
-                <h3 className="font-bold text-xl tracking-tight text-white/90">Execution Output</h3>
-              </div>
-
-              <div className="space-y-8 flex-grow px-8 pb-10">
-                <div>
-                  <div className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2">Call Status</div>
-                  <div className="flex items-center gap-2 font-bold text-2xl tracking-tight text-white">
-                    {active.outcome.status === "Escalated to Human" ? <AlertCircle className="w-6 h-6 text-yellow-500" /> : <CheckCircle2 className="w-6 h-6 text-blue-400" />}
-                    {active.outcome.status}
+                    <div className="font-mono text-sm text-gray-400 font-medium bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                      0:12 / {active.outcome.duration}
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2">Action Taken</div>
-                  <div className="font-bold text-2xl tracking-tight text-white">{active.outcome.appointment}</div>
+              </FadeIn>
+
+              {/* Scenario Selector */}
+              <FadeIn useStagger className="glass-panel border-white/10 rounded-3xl p-8 relative z-10">
+                <h3 className="font-bold text-lg mb-6 tracking-tight text-gray-300 uppercase text-sm">Select Scenario</h3>
+                <div className="flex flex-wrap gap-4">
+                  {Object.entries(scenarios).map(([key, scenario]) => (
+                    <button
+                      key={key}
+                      onClick={() => setActiveScenario(key)}
+                      className={`flex items-center gap-2.5 px-5 py-3.5 rounded-2xl text-sm font-semibold transition-all border ${
+                        activeScenario === key
+                          ? "bg-blue-600/20 text-blue-400 border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.15)] scale-[1.02]"
+                          : "bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white"
+                      }`}
+                    >
+                      {scenario.icon}
+                      {scenario.label}
+                    </button>
+                  ))}
                 </div>
-                <div className="grid grid-cols-2 gap-6 bg-white/5 p-6 rounded-2xl border border-white/5">
+              </FadeIn>
+            </div>
+
+            {/* Right Side: Dashboard */}
+            <div className="lg:col-span-5 flex flex-col gap-8">
+              <FadeIn useStagger className="glass-panel border-white/10 rounded-3xl overflow-hidden h-full flex flex-col relative z-10">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 blur-[60px] rounded-full pointer-events-none"></div>
+                
+                <div className="flex items-center gap-3 mb-8 border-b border-white/10 p-8 pb-6 bg-white/[0.02]">
+                  <div className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                  </div>
+                  <h3 className="font-bold text-xl tracking-tight text-white/90">Execution Output</h3>
+                </div>
+
+                <div className="space-y-8 flex-grow px-8 pb-10">
                   <div>
-                    <div className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-2">Wait Time</div>
-                    <div className="font-bold text-xl tracking-tight text-white">{active.outcome.wait}</div>
+                    <div className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2">Call Status</div>
+                    <div className="flex items-center gap-2 font-bold text-2xl tracking-tight text-white">
+                      {active.outcome.status === "Escalated to Human" ? <AlertCircle className="w-6 h-6 text-yellow-500" /> : <CheckCircle2 className="w-6 h-6 text-blue-400" />}
+                      {active.outcome.status}
+                    </div>
                   </div>
                   <div>
-                    <div className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-2">Duration</div>
-                    <div className="font-bold text-xl tracking-tight text-white">{active.outcome.duration}</div>
+                    <div className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2">Action Taken</div>
+                    <div className="font-bold text-2xl tracking-tight text-white">{active.outcome.appointment}</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-6 bg-white/5 p-6 rounded-2xl border border-white/5">
+                    <div>
+                      <div className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-2">Wait Time</div>
+                      <div className="font-bold text-xl tracking-tight text-white">{active.outcome.wait}</div>
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-2">Duration</div>
+                      <div className="font-bold text-xl tracking-tight text-white">{active.outcome.duration}</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2">System Status</div>
+                    <div className="font-bold text-xl tracking-tight text-white flex items-center gap-3">
+                      <Database className="w-5 h-5 text-gray-400" /> {active.outcome.calendar}
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2">System Status</div>
-                  <div className="font-bold text-xl tracking-tight text-white flex items-center gap-3">
-                    <Database className="w-5 h-5 text-gray-400" /> {active.outcome.calendar}
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
-        </div>
+        </TiltCard>
         </FadeInStagger>
 
         {/* AI Capability Grid */}

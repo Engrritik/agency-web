@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import ChatWidget from "@/components/ChatWidget";
-import AnimatedBackground from "@/components/ui/AnimatedBackground";
+import Scene from "@/components/Scene";
 import Preloader from "@/components/ui/Preloader";
 import CustomCursor from "@/components/ui/CustomCursor";
 import SmoothScroll from "@/components/ui/SmoothScroll";
@@ -115,7 +115,7 @@ export default function RootLayout({
         <SmoothScroll>
           <Preloader />
           <CustomCursor />
-          <AnimatedBackground />
+          <Scene />
           <div className="relative z-10 flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-1">{children}</main>

@@ -9,12 +9,7 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen relative z-10 overflow-x-hidden md:overflow-x-visible">
       
-      {/* Background Effects */}
-      <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
-        <div className="absolute top-[10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] mix-blend-screen animate-aurora"></div>
-        <div className="absolute bottom-[20%] right-[-10%] w-[50%] h-[50%] bg-purple-600/10 rounded-full blur-[150px] mix-blend-screen animate-aurora" style={{ animationDelay: '-5s' }}></div>
-      </div>
-
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
         <FadeInStagger staggerDelay={0.15}>
           <FadeIn className="max-w-5xl mx-auto mb-16 text-center flex flex-col items-center mt-8">
