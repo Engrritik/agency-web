@@ -1,6 +1,6 @@
 import FadeIn, { FadeInStagger } from "@/components/ui/FadeIn";
 import Link from "next/link";
-import { AlertCircle, ArrowRight, Calendar, CheckCircle2, Clock, PhoneCall, ShieldCheck, Stethoscope, Zap } from "lucide-react";
+import { AlertCircle, ArrowRight, Calendar, CheckCircle2, Clock, PhoneCall, ShieldCheck, Stethoscope, Zap, ChevronRight } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
 import FAQItem from "@/components/FAQItem";
 import InteractiveCard from "@/components/InteractiveCard";
@@ -9,266 +9,137 @@ import Button from "@/components/ui/Button";
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-transparent relative z-10 overflow-x-hidden md:overflow-x-visible">
-      
+      {/* Background Effects */}
+      <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+        <div className="absolute top-[-10%] right-[-5%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen animate-aurora"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[150px] mix-blend-screen animate-aurora" style={{ animationDelay: '-5s' }}></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 md:pt-32 md:pb-20">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24">
         <FadeInStagger className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center w-full" staggerDelay={0.1}>
           
-          <FadeIn useStagger className="mb-6 md:mb-8">
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-md">
-              <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_10px_var(--accent)]"></span>
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-white/90">Automate Your Front Desk</span>
+          <FadeIn useStagger className="mb-8">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-panel hover-glow cursor-pointer transition-all hover:bg-white/5">
+              <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)] animate-pulse-slow"></span>
+              <span className="text-sm font-semibold tracking-wide text-gray-300">Nexus AI Engine 2.0 Now Live</span>
+              <ChevronRight className="w-4 h-4 text-gray-500" />
             </div>
           </FadeIn>
 
           <FadeIn useStagger className="w-full">
-            {/* ONE PRIMARY H1 */}
-            <h1 className="text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[6.5vw] leading-[1.1] md:leading-[1] font-black tracking-tighter uppercase mix-blend-difference text-white max-w-[1200px] mx-auto">
-              Your Dental Practice <br className="hidden lg:block" />
-              <span className="block mt-2 lg:mt-4 text-[var(--accent)] drop-shadow-[0_0_30px_rgba(216,255,0,0.2)]">Never Misses</span> 
-              <span className="block mt-2 lg:mt-4">A Call Again.</span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[7.5vw] leading-[1.05] font-black tracking-tight text-white max-w-[1200px] mx-auto">
+              Your Practice <br className="hidden lg:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 animate-gradient-shift">Never Misses</span> 
+              <span className="block mt-2">A Call Again.</span>
             </h1>
           </FadeIn>
 
-          <FadeIn useStagger className="mt-8 md:mt-10 max-w-2xl lg:max-w-3xl px-2">
-            <p className="text-base sm:text-lg md:text-2xl text-white/70 font-medium tracking-tight leading-relaxed">
-              An AI voice receptionist that answers your dental practice's calls, handles routine questions, and helps patients with appointment requests — even when your front desk is busy.
+          <FadeIn useStagger className="mt-8 max-w-2xl lg:max-w-3xl px-4">
+            <p className="text-lg md:text-2xl text-gray-400 font-medium tracking-tight leading-relaxed">
+              An intelligent voice receptionist that handles calls, triage, and scheduling automatically—so your team can focus on the patients in front of them.
             </p>
           </FadeIn>
 
-          <FadeIn useStagger className="mt-10 md:mt-14 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto px-2">
-            <Link href="#booking-form" className="w-full sm:w-auto magnetic">
-              <Button size="lg" className="w-full sm:w-auto bg-[var(--accent)] text-black hover:bg-white border-none rounded-full px-6 sm:px-10 py-5 sm:py-7 text-sm sm:text-lg uppercase tracking-widest font-bold flex items-center justify-center gap-3 transition-colors shadow-[0_0_20px_rgba(216,255,0,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-                See it in Action <ArrowRight className="w-5 h-5 hidden sm:block" />
+          <FadeIn useStagger className="mt-12 flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto px-4">
+            <Link href="#booking-form" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto bg-blue-600 text-white hover:bg-blue-500 border-blue-500/50 rounded-full px-8 py-7 text-lg font-bold flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all moving-glow">
+                Deploy Your AI <ArrowRight className="w-5 h-5 hidden sm:block" />
               </Button>
             </Link>
-            <Link href="/contact" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto bg-transparent border-2 border-white/20 text-white hover:bg-white/10 rounded-full px-6 sm:px-10 py-5 sm:py-7 text-sm sm:text-lg uppercase tracking-widest font-bold flex items-center justify-center transition-colors">
-                Book a Demo
+            <Link href="/demo" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto glass-panel text-white hover:bg-white/10 rounded-full px-8 py-7 text-lg font-bold flex items-center justify-center transition-colors">
+                Experience Demo
               </Button>
             </Link>
           </FadeIn>
-          
         </FadeInStagger>
       </section>
 
-      {/* PHASE 7: PROBLEM SECTION - The Capacity Problem */}
-      <section className="py-20 md:py-32 border-y border-white/10 bg-black/40 backdrop-blur-lg">
+      {/* The Capacity Problem - Bento Style */}
+      <section className="py-24 md:py-32 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center px-2 sm:px-4">
-            <FadeIn>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-8 md:mb-10 text-white leading-[1.1]">
-                Your Front Desk Can't Answer <span className="text-white/40 block mt-2">Two Calls at Once.</span>
-              </h2>
-              <p className="text-base sm:text-lg md:text-2xl text-white/60 font-sans leading-relaxed max-w-4xl mx-auto">
-                A receptionist may be helping a patient at checkout, answering another patient's question, scheduling an appointment, or dealing with insurance. At the exact same time, another patient may be calling.
-              </p>
-              <div className="mt-10 md:mt-14 inline-block px-6 py-4 rounded-2xl bg-[var(--accent)]/10 border border-[var(--accent)]/20">
-                <p className="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-bold tracking-tight">
-                  This isn't a performance problem. It's a capacity problem.
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">The Front Desk Bottleneck</h2>
+          </FadeIn>
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-6xl mx-auto">
+            <FadeIn className="md:col-span-8 glass-panel rounded-3xl p-8 md:p-12 hover-card">
+              <div className="flex flex-col justify-center h-full">
+                <ShieldCheck className="w-12 h-12 text-blue-500 mb-6" />
+                <h3 className="text-2xl md:text-4xl font-black text-white mb-4">Capacity, Not Performance.</h3>
+                <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+                  Your team is amazing, but they can't be in two places at once. When they're helping a patient in person or handling complex insurance billing, incoming calls inevitably go to voicemail—or to the clinic down the street.
                 </p>
               </div>
             </FadeIn>
+            
+            <FadeIn className="md:col-span-4 glass-panel rounded-3xl p-8 flex flex-col items-center justify-center text-center hover-card" delay={0.2}>
+              <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-purple-500 mb-2">25%</div>
+              <p className="text-gray-400 font-medium">Of calls to dental clinics are missed daily.</p>
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* PHASE 8: WHAT NEXUS HANDLES */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
+      {/* Features Grid - What Nexus Handles */}
+      <section className="py-24 relative overflow-hidden">
         <FadeInStagger staggerDelay={0.1} className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <FadeIn useStagger className="mb-14 md:mb-24 text-center md:text-left">
-            <h2 className="text-4xl sm:text-5xl md:text-[6vw] font-black tracking-tighter leading-[1] uppercase max-w-5xl">
-              What Nexus <br className="hidden md:block" />
-              <span className="text-white/40">Handles.</span>
-            </h2>
+          <FadeIn useStagger className="mb-16 text-center md:text-left max-w-4xl mx-auto md:mx-0">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white mb-6">Autonomous Operations.</h2>
+            <p className="text-xl text-gray-400">Instantly route, escalate, and resolve every caller's intent.</p>
           </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            <FadeIn useStagger className="group h-full">
-              <InteractiveCard innerClassName="p-8 md:p-10 flex flex-col justify-between h-full bg-black/60 backdrop-blur-md border-white/5 hover:border-[var(--accent)]/50 transition-colors">
-                <div className="w-16 h-16 rounded-full bg-[var(--accent)]/10 flex items-center justify-center mb-10 md:mb-24 text-[var(--accent)] shrink-0">
-                  <PhoneCall className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">Inbound Calls</h3>
-                  <p className="text-white/60 text-base md:text-lg font-sans leading-relaxed">
-                    Answers incoming calls immediately when your team is busy, assisting other patients, or unavailable.
-                  </p>
-                </div>
-              </InteractiveCard>
-            </FadeIn>
-
-            <FadeIn useStagger className="group h-full">
-              <InteractiveCard innerClassName="p-8 md:p-10 flex flex-col justify-between h-full bg-black/60 backdrop-blur-md border-white/5 hover:border-white/20 transition-colors">
-                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-10 md:mb-24 text-white shrink-0">
-                  <AlertCircle className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">Routine Questions</h3>
-                  <p className="text-white/60 text-base md:text-lg font-sans leading-relaxed">
-                    Handles common questions about your practice, hours, location, and services based on your configured knowledge.
-                  </p>
-                </div>
-              </InteractiveCard>
-            </FadeIn>
-
-            <FadeIn useStagger className="group h-full">
-              <InteractiveCard innerClassName="p-8 md:p-10 flex flex-col justify-between h-full bg-black/60 backdrop-blur-md border-white/5 hover:border-white/20 transition-colors">
-                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-10 md:mb-24 text-white shrink-0">
-                  <Calendar className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">Appointments</h3>
-                  <p className="text-white/60 text-base md:text-lg font-sans leading-relaxed">
-                    Helps patients request or schedule appointments directly according to your clinic's workflow.
-                  </p>
-                </div>
-              </InteractiveCard>
-            </FadeIn>
-
-            <FadeIn useStagger className="group h-full md:col-span-2 lg:col-span-1">
-              <InteractiveCard innerClassName="p-8 md:p-10 flex flex-col justify-between h-full bg-black/60 backdrop-blur-md border-white/5 hover:border-white/20 transition-colors">
-                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-10 md:mb-24 text-white shrink-0">
-                  <Clock className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">After-Hours Care</h3>
-                  <p className="text-white/60 text-base md:text-lg font-sans leading-relaxed">
-                    Provides coverage when the office is closed, ensuring patients are heard instead of sent to a generic voicemail box.
-                  </p>
-                </div>
-              </InteractiveCard>
-            </FadeIn>
-
-            <FadeIn useStagger className="group h-full md:col-span-2 lg:col-span-2">
-              <InteractiveCard innerClassName="p-8 md:p-10 flex flex-col sm:flex-row items-center gap-8 md:gap-12 bg-[var(--accent)] border-none h-full">
-                <div className="w-20 h-20 shrink-0 rounded-full bg-black/10 flex items-center justify-center text-black">
-                  <ShieldCheck className="w-10 h-10" />
-                </div>
-                <div className="text-center sm:text-left text-black">
-                  <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight mb-4">Call Escalation</h3>
-                  <p className="text-black/80 text-base sm:text-lg md:text-2xl font-sans font-medium leading-relaxed">
-                    Escalates situations that require human attention directly to your team according to configured rules, making sure urgent matters actually get through.
-                  </p>
-                </div>
-              </InteractiveCard>
-            </FadeIn>
-          </div>
-        </FadeInStagger>
-      </section>
-
-      {/* PHASE 9: HOW IT WORKS */}
-      <section className="py-24 md:py-32 bg-white/5 border-y border-white/10 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center mb-16 md:mb-24 px-2">
-             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter mb-6 text-white">How It Works</h2>
-             <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-sans leading-relaxed">A seamless extension of your front office designed to feel invisible to patients.</p>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative max-w-6xl mx-auto">
-             <div className="hidden md:block absolute top-[50%] left-12 right-12 h-[1px] bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.2),transparent)] -z-10 -translate-y-1/2"></div>
-             
-             {[
-               { step: "01", title: "Patient Calls", desc: "A patient calls your practice when the team is busy or after hours. The call routes instantly." },
-               { step: "02", title: "Nexus Answers", desc: "The AI answers immediately, understanding the caller's intent using natural language processing." },
-               { step: "03", title: "Action Taken", desc: "Nexus books the appointment, provides the answer, or escalates priority calls to a human line." }
-             ].map((item, i) => (
-                <FadeIn key={i} delay={i * 0.15} className="flex flex-col items-center text-center px-4 bg-[#0a0a0a]/50 md:bg-transparent rounded-3xl py-8 md:py-0">
-                  <div className="w-20 h-20 rounded-full bg-black/80 backdrop-blur-xl border-2 border-[var(--accent)] text-[var(--accent)] font-bold text-3xl flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(216,255,0,0.15)] relative">
-                    <span className="relative z-10">{item.step}</span>
-                  </div>
-                  <h3 className="text-2xl font-black uppercase tracking-tight mb-5">{item.title}</h3>
-                  <p className="text-white/60 text-base md:text-lg font-sans max-w-sm leading-relaxed">{item.desc}</p>
-                </FadeIn>
-             ))}
-           </div>
-        </div>
-      </section>
-
-      {/* Trust / The Advantage */}
-      <section className="py-20 md:py-32 bg-white text-black relative rounded-t-[2.5rem] md:rounded-t-[8rem] mt-16 md:mt-24">
-        <FadeInStagger staggerDelay={0.05} className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-4">
-          <FadeIn useStagger className="mb-12 md:mb-20 text-center px-2">
-            <h2 className="text-[2.25rem] sm:text-5xl md:text-[6vw] font-black tracking-tighter leading-[1] uppercase">
-              The Advantage
-            </h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-black/10 max-w-7xl mx-auto border border-black/10 rounded-2xl md:rounded-[2rem] overflow-hidden">
             {[
-              { 
-                title: "Custom Setup & Simple Rate", 
-                subtext: "Straightforward implementation with a flat monthly rate and one-time setup fee.",
-                icon: <Zap className="w-8 h-8" /> 
-              },
-              { title: "Custom AI Voice", icon: <PhoneCall className="w-8 h-8" />, subtext: "Configured to sound natural and highly professional for a healthcare environment." },
-              { title: "Human Escalation", icon: <CheckCircle2 className="w-8 h-8" />, subtext: "Smart routing ensures complex or urgent medical requests reach your team." },
-              { title: "After-Hours Coverage", icon: <Clock className="w-8 h-8" />, subtext: "Deliver reliable 24/7 availability for patients attempting to reach you." },
-              { title: "Calendar Integrated", icon: <Calendar className="w-8 h-8" />, subtext: "Reads availability and seamlessly books directly into your existing workflow." },
-              { title: "Built For Clinics", icon: <Stethoscope className="w-8 h-8" />, subtext: "Engineered specifically to handle the operations of U.S. dental practices." },
-            ].map((item, i) => (
-              <FadeIn useStagger key={i}>
-                <div className="p-8 md:p-12 flex flex-col items-center text-center gap-5 md:gap-6 h-full bg-white hover:bg-[#fafafa] transition-colors cursor-default">
-                  <div className="text-[var(--accent)] mix-blend-difference mb-2">
-                    {item.icon}
+              { icon: PhoneCall, title: "Inbound Calls", desc: "Instantly picks up the phone when your staff is occupied. Zero wait times." },
+              { icon: AlertCircle, title: "Routine Questions", desc: "Trained on your clinic's FAQs, hours, parking, and post-op instructions." },
+              { icon: Calendar, title: "Smart Scheduling", desc: "Checks your live calendar and helps patients book according to your custom rules." },
+              { icon: Clock, title: "After-Hours Care", desc: "Never rely on a basic voicemail again. Be there for emergencies 24/7." },
+              { icon: Zap, title: "Call Escalation", desc: "Immediately detects urgency and hot-routes calls to a designated human line." },
+              { icon: CheckCircle2, title: "HIPAA Compliant", desc: "Built with secure infrastructure ensuring all patient data remains protected." }
+            ].map((feature, i) => (
+              <FadeIn useStagger key={i} className="h-full">
+                <InteractiveCard innerClassName="glass-panel p-8 rounded-3xl h-full flex flex-col hover-glow transition-all">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-8">
+                    <feature.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="font-bold text-xl md:text-2xl uppercase tracking-tighter leading-tight">{item.title}</h3>
-                  <p className="text-base font-medium text-black/60 font-sans leading-relaxed px-2">{item.subtext}</p>
-                </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
+                </InteractiveCard>
               </FadeIn>
             ))}
           </div>
         </FadeInStagger>
       </section>
 
-      {/* SEO Practice Solutions Internal Links Section */}
-      <section className="py-20 md:py-28 border-t border-white/10 bg-black/60">
+      {/* Trust / SEO Links (Redesigned as Dark Glass) */}
+      <section className="py-24 border-y border-white/5 relative bg-[#06070a]/80 backdrop-blur-3xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4">
-              Dental Call Handling Solutions
+          <FadeIn className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-4">
+              Comprehensive Call Solutions
             </h2>
-            <p className="text-base sm:text-lg text-white/60">
-              Explore how Nexus AI addresses specific operational challenges for independent U.S. dental practices.
+            <p className="text-lg text-gray-400">
+              Deploy specialized AI agents mapped perfectly to your clinic's workflows.
             </p>
           </FadeIn>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
-              {
-                title: "AI Receptionist for Dentists",
-                desc: "Automated phone handling built specifically for dental patient intake, triage, and workflows.",
-                href: "/ai-receptionist-for-dentists"
-              },
-              {
-                title: "Dental Answering Service",
-                desc: "Compare traditional 24/7 call centers with an instant, cost-effective AI voice receptionist.",
-                href: "/dental-answering-service"
-              },
-              {
-                title: "AI Appointment Scheduling",
-                desc: "Streamline patient bookings, rescheduling, and calendar checks directly over the phone.",
-                href: "/ai-appointment-scheduling-dental"
-              },
-              {
-                title: "After-Hours Dental Answering",
-                desc: "24/7 and weekend call coverage, emergency pain triage, and capturing late-night inquiries.",
-                href: "/after-hours-dental-answering"
-              },
-              {
-                title: "Dental Front Desk Automation",
-                desc: "Reduce front desk staff burnout by automating repetitive FAQ calls and routine inquiries.",
-                href: "/dental-front-desk-automation"
-              }
+              { title: "AI Receptionist", desc: "Automate intake & triage.", href: "/ai-receptionist-for-dentists" },
+              { title: "Smart Answering", desc: "24/7 instant phone response.", href: "/dental-answering-service" },
+              { title: "Live Scheduling", desc: "Seamless appointment booking.", href: "/ai-appointment-scheduling-dental" },
+              { title: "After-Hours AI", desc: "Overnight & weekend coverage.", href: "/after-hours-dental-answering" },
+              { title: "Front Desk Automation", desc: "Eliminate repetitive tasks.", href: "/dental-front-desk-automation" }
             ].map((solution, i) => (
               <FadeIn key={i}>
-                <Link href={solution.href} className="group block h-full p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[var(--accent)]/50 transition-all hover:bg-white/[0.05]">
-                  <h3 className="text-xl font-bold text-white group-hover:text-[var(--accent)] mb-3 transition-colors flex items-center justify-between">
+                <Link href={solution.href} className="group block p-6 rounded-2xl glass-panel hover:border-blue-500/30 transition-all hover:bg-white/5">
+                  <h3 className="text-lg font-bold text-white group-hover:text-blue-400 mb-2 transition-colors flex items-center justify-between">
                     {solution.title}
-                    <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[var(--accent)] group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
                   </h3>
-                  <p className="text-sm text-white/60 font-sans leading-relaxed">
-                    {solution.desc}
-                  </p>
+                  <p className="text-sm text-gray-400">{solution.desc}</p>
                 </Link>
               </FadeIn>
             ))}
@@ -277,80 +148,45 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 md:py-32 bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-          <FadeIn className="mb-10 md:mb-16 text-center md:text-left px-2">
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase mb-6">FAQ.</h2>
-          </FadeIn>
-
-          <div className="space-y-3 sm:space-y-4 px-2">
-            {[
-              {
-                q: "Does Nexus replace my front desk?",
-                a: "No. Nexus AI is built to assist your team, not replace them. It handles high-volume, repetitive tasks—like routine questions and basic appointment requests—freeing up your staff to provide an excellent in-person patient experience and address complex billing or insurance matters."
-              },
-              {
-                q: "What happens when the AI can't answer something?",
-                a: "If a patient asks a question outside of its configured knowledge base, or if a situation explicitly requires nuance, the AI is programmed to politely inform the patient and escalate the call to your human staff according to your specific rules."
-              },
-              {
-                q: "Can it handle calls after hours?",
-                a: "Yes. Nexus AI can be configured to continuously take calls 24/7, effectively providing robust coverage exactly when your office is closed."
-              },
-              {
-                q: "Can it help with appointment requests?",
-                a: "Yes. It can help patients request or directly schedule appointments, adhering firmly to your specific scheduling workflow and real-time calendar availability."
-              },
-              {
-                q: "Can patients speak naturally with it?",
-                a: "Absolutely. The AI utilizes highly advanced natural language processing. Callers do not need to press keypad buttons or speak like robots; they just converse naturally exactly as they would when speaking to a human receptionist."
-              },
-              {
-                q: "What happens with urgent or emergency calls?",
-                a: "Nexus AI can be programmed to instantly recognize critical emergency keywords defined by your clinic (like 'pain', 'broken', or 'emergency'). When detected, it will immediately escalate the call to a designated priority human line."
-              },
-              {
-                q: "How does implementation work?",
-                a: "We collaborate directly with your team to configure the AI's internal knowledge base, meticulously map out your scheduling workflow, and securely integrate it with your existing phone system—typically achieved via simple call forwarding or a direct SIP transfer."
-              },
-              {
-                q: "What does the practice need to provide?",
-                a: "Implementation requires your standard FAQs, your precise preferences for how specific questions should be answered, your scheduling logic/rules, and your protocol requirements for human call escalation."
-              },
-              {
-                q: "Can I test it before making a decision?",
-                a: "Yes. You can schedule a live demo to personally call the AI and audibly experience exactly how it processes realistic patient inquiries before committing."
-              }
-            ].map((faq, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <FAQItem question={faq.q} answer={faq.a} />
-              </FadeIn>
-            ))}
-          </div>
+      <section className="py-24 md:py-32 relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+        <FadeIn className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white mb-6">Frequently Asked.</h2>
+        </FadeIn>
+        <div className="space-y-4">
+          {[
+            { q: "Does Nexus replace my front desk?", a: "No. Nexus AI handles high-volume routine calls so your staff can focus on the in-person patient experience and complex billing matters." },
+            { q: "Can it handle calls after hours?", a: "Yes. Nexus AI provides robust 24/7 coverage exactly when your office is closed." },
+            { q: "Can patients speak naturally?", a: "Absolutely. Using advanced NLP, callers converse naturally just as they would with a human—no rigid menus." },
+            { q: "What happens with urgent calls?", a: "The AI recognizes emergency keywords (e.g., 'pain', 'emergency') and immediately escalates the call to a priority human line." }
+          ].map((faq, i) => (
+            <FadeIn key={i} delay={i * 0.1}>
+              <FAQItem question={faq.q} answer={faq.a} />
+            </FadeIn>
+          ))}
         </div>
       </section>
 
-      {/* Final CTA & Booking Form */}
-      <section id="booking-form" className="py-20 md:py-32 relative bg-[#050505] rounded-t-[2.5rem] md:rounded-t-[8rem] -mt-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
+      {/* Final CTA */}
+      <section id="booking-form" className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900/10 pointer-events-none"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <FadeInStagger staggerDelay={0.1} className="flex flex-col items-center">
-            <div className="max-w-4xl mb-12 md:mb-20 px-2 sm:px-4">
+            <div className="max-w-3xl mb-12">
               <FadeIn useStagger>
-                <h2 className="text-3xl sm:text-5xl md:text-[5vw] font-black tracking-tighter leading-[1.1] md:leading-[1] uppercase text-white mb-6 md:mb-10">
-                  Don't Take Our Word For It. <br className="hidden md:block" />
-                  <span className="text-[var(--accent)] mt-2 md:mt-4 block">Try The Receptionist Yourself.</span>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-6">
+                  Ready to Automate?
                 </h2>
               </FadeIn>
               <FadeIn useStagger>
-                <p className="text-base sm:text-lg md:text-2xl text-white/70 mb-8 md:mb-12 mx-auto font-sans font-medium max-w-2xl px-2 leading-relaxed">
-                  Book a quick demo session. We'll show you exactly how the AI handles realistic calls and how it seamlessly fits into your clinic's workflow.
+                <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+                  Book a live demo to call the AI yourself and see exactly how it integrates into your clinic's workflow.
                 </p>
               </FadeIn>
             </div>
             
-            <FadeIn useStagger className="w-full max-w-[50rem] mx-auto px-0 sm:px-4">
-              <div className="bg-white/[0.03] backdrop-blur-2xl rounded-2xl md:rounded-[3rem] p-4 sm:p-8 md:p-12 border border-white/10 text-left w-full shadow-2xl overflow-hidden relative">
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-20"></div>
+            <FadeIn useStagger className="w-full max-w-2xl mx-auto">
+              <div className="glass-panel rounded-3xl p-6 md:p-10 text-left border-blue-500/20 shadow-[0_0_50px_rgba(59,130,246,0.1)] relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
                 <BookingForm />
               </div>
             </FadeIn>
