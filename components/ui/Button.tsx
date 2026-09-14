@@ -1,39 +1,39 @@
 "use client";
 
-import { forwardRef } from "react";
-import { motion, HTMLMotionProps } from "framer-motion";
+import * as React from "react";
+import { motion, HTMLMotionProps } from "motion/react";
 
-export interface ButtonProps extends Omit<HTMLMotionProps<"button">, "ref"> {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
+interface ButtonProps extends HTMLMotionProps<"button"> {
+  variant?: "primary" | "secondary" | "ghost";
   size?: "sm" | "md" | "lg";
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className = "", variant = "primary", size = "md", children, ...props }, ref) => {
-    const baseStyles = "inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/50 disabled:pointer-events-none disabled:opacity-50 relative tracking-tight hover-glow group";
     
-    const variants = {
-      primary: "bg-[var(--accent)] text-black hover:bg-white border-none shadow-[0_0_20px_rgba(216,255,0,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]",
-      secondary: "bg-white/5 text-foreground border border-white/10 hover:bg-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.3)] backdrop-blur-md",
-      outline: "border border-white/10 bg-transparent hover:bg-white/5 text-foreground shadow-[0_4px_20px_rgba(0,0,0,0.3)] backdrop-blur-md",
-      ghost: "hover:bg-white/5 hover:text-foreground text-muted-foreground",
-    };
+    let baseStyles = "inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:opacity-50 disabled:pointer-events-none rounded-[12px]";
     
-    const sizes = {
-      sm: "h-8 px-4 py-1.5 text-[13px]",
-      md: "h-10 px-5 py-2",
-      lg: "h-12 px-8 text-base",
-    };
+    let variantStyles = "";
+    if (variant === "primary") {
+      variantStyles = "bg-primary text-white shadow-premium border border-transparent";
+    } else if (variant === "secondary") {
+      variantStyles = "bg-white text-foreground border border-border shadow-sm";
+    } else if (variant === "ghost") {
+      variantStyles = "bg-transparent text-foreground hover:bg-muted";
+    }
 
-    const combinedClassName = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
-
+    let sizeStyles = "";
+    if (size === "sm") sizeStyles = "px-4 py-2 text-sm";
+    else if (size === "md") sizeStyles = "px-6 py-3 text-[15px]";
+    else if (size === "lg") sizeStyles = "px-8 py-4 text-base";
+    
     return (
       <motion.button
         ref={ref}
-        className={combinedClassName}
-        whileHover={{ scale: 1.02, y: -1 }}
-        whileTap={{ scale: 0.98, y: 0 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        whileHover={{ y: -2, scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+        className={`${baseStyles} ${variantStyles} ${sizeStyles} ${className}`}
         {...props}
       >
         {children}
@@ -41,8 +41,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-
 Button.displayName = "Button";
-
-export default Button;
-

@@ -1,25 +1,12 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Syne } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
-import ChatWidget from "@/components/ChatWidget";
-import Scene from "@/components/Scene";
-import Preloader from "@/components/ui/Preloader";
-import CustomCursor from "@/components/ui/CustomCursor";
-import SmoothScroll from "@/components/ui/SmoothScroll";
-
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Script from "next/script";
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const syne = Syne({
-  variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
@@ -92,14 +79,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${syne.variable} h-full antialiased bg-[#050505] text-white`}>
+    <html lang="en" className={`${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans tracking-tight">
+      <body className="min-h-full flex flex-col font-sans tracking-tight text-[#101114] bg-[#F7F8FC]">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-W5BTF7XH8M"
           strategy="afterInteractive"
@@ -112,18 +99,12 @@ export default function RootLayout({
             gtag('config', 'G-W5BTF7XH8M');
           `}
         </Script>
-        <SmoothScroll>
-          <Preloader />
-          <CustomCursor />
-          <Scene />
-          <div className="relative z-10 flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-          <FloatingCTA />
-          <ChatWidget />
-        </SmoothScroll>
+        
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
